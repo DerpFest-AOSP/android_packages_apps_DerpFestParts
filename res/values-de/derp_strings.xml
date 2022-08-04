@@ -53,4 +53,9 @@
     <!-- Status bar - Icon tinting -->
     <string name="status_bar_tint_icons_title">Statusleisten-Symbole einfärben</string>
     <string name="status_bar_tint_icons_summary">Statusleisten-Symbole mit der System-Akzentfarbe einfärben</string>
+
+    <!-- Statusbar lyric -->
+    <string name="status_bar_lyric_title">Statusleisten-Lyric</string>
+    <string name="status_bar_lyric_summary">Lyrik in der Statusleiste anzeigen (App-Unterstützung erforderlich)</string>
+    <string name="status_bar_show_lyric_title">Statusleisten-Lyric aktivieren</string>
 </resources>
