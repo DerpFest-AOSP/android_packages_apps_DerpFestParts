@@ -4,7 +4,9 @@
  */
 
 android_app {
-    name: "LineageParts",
+    name: "DerpFest-Parts",
+
+    overrides: ["LineageParts"],
 
     // Include SettingsLib and it's dependencies
     defaults: ["SettingsLibDefaults"],
