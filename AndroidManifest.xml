@@ -224,7 +224,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
-            <meta-data
+        <!-- <meta-data
                 android:name="com.android.settings.category"
                 android:value="com.android.settings.category.ia.system" />
             <meta-data
@@ -241,7 +241,7 @@
                 android:value="primary_profile_only" />
             <meta-data
                 android:name="com.android.settings.summary"
-                android:resource="@string/summary_empty" />
+                android:resource="@string/summary_empty" /> -->
         </activity-alias>
 
         <!-- Touchscreen gesture settings (Gestures category) -->
