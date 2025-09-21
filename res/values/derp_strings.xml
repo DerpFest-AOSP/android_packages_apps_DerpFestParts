@@ -55,6 +55,10 @@
     <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
     <string name="status_bar_logo_style_mint">Linux Mint</string>
 
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_tint_icons_title">Tint status bar icons</string>
+    <string name="status_bar_tint_icons_summary">Tint status bar icons with system accent color</string>
+
     <!-- Statusbar lyric -->
     <string name="status_bar_lyric_title">Status bar lyric</string>
     <string name="status_bar_lyric_summary">Show lyric in status bar (needs app support)</string>
