@@ -45,6 +45,11 @@
             android:summary="@string/status_bar_tint_icons_summary"
             android:defaultValue="false" />
 
+        <org.derpfest.support.preferences.SystemSettingSwitchPreference
+            android:key="statusbar_combined_notif_count"
+            android:title="@string/status_bar_combined_notification_count"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

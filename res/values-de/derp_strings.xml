@@ -58,4 +58,7 @@
     <string name="status_bar_lyric_title">Statusleisten-Lyric</string>
     <string name="status_bar_lyric_summary">Lyrik in der Statusleiste anzeigen (App-Unterstützung erforderlich)</string>
     <string name="status_bar_show_lyric_title">Statusleisten-Lyric aktivieren</string>
+
+    <!-- Combined notification count -->
+    <string name="status_bar_combined_notification_count">Kombinierte Benachrichtigungsanzahl anzeigen</string>
 </resources>
