@@ -64,6 +64,10 @@
     <string name="status_bar_icon_tint_custom_title">Custom icon color</string>
     <string name="status_bar_icon_tint_custom_summary">Used when Custom color is selected above</string>
 
+    <!-- Combined notification count -->
+    <string name="status_bar_combined_notification_count">Show combined notification count</string>
+    <string name="status_bar_combined_notification_count_summary">Replace individual notification icons with a single count</string>
+
     <!-- Statusbar lyric -->
     <string name="status_bar_lyric_title">Status bar lyric</string>
     <string name="status_bar_lyric_summary">Show lyric in status bar (needs app support)</string>

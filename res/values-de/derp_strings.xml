@@ -64,6 +64,10 @@
     <string name="status_bar_icon_tint_custom_title">Benutzerdefinierte Symbolfarbe</string>
     <string name="status_bar_icon_tint_custom_summary">Wird verwendet, wenn oben „Benutzerdefinierte Farbe“ gewählt ist</string>
 
+    <!-- Combined notification count -->
+    <string name="status_bar_combined_notification_count">Kombinierte Benachrichtigungsanzahl anzeigen</string>
+    <string name="status_bar_combined_notification_count_summary">Einzelne Benachrichtigungssymbole durch eine kombinierte Anzahl ersetzen</string>
+
     <!-- Statusbar lyric -->
     <string name="status_bar_lyric_title">Statusleisten-Lyric</string>
     <string name="status_bar_lyric_summary">Lyrik in der Statusleiste anzeigen (App-Unterstützung erforderlich)</string>

@@ -90,6 +90,12 @@
             android:defaultValue="-1"
             app:defaultDisplayColorRes="@android:color/white" />
 
+        <org.derpfest.support.preferences.SystemSettingSwitchPreference
+            android:key="statusbar_combined_notif_count"
+            android:title="@string/status_bar_combined_notification_count"
+            android:summary="@string/status_bar_combined_notification_count_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
