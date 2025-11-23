@@ -18,12 +18,12 @@
         android:entryValues="@array/charging_control_mode_values"
         android:dependency="charging_control_enabled" />
 
-    <org.lineageos.lineageparts.health.StartTimePreference
+    <Preference
         android:key="charging_control_start_time"
         android:title="@string/charging_control_start_time_title"
         android:dependency="charging_control_enabled" />
 
-    <org.lineageos.lineageparts.health.TargetTimePreference
+    <Preference
         android:key="charging_control_target_time"
         android:title="@string/charging_control_target_time_title"
         android:dependency="charging_control_enabled" />
