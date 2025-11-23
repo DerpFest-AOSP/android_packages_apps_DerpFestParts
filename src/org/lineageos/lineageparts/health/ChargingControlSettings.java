@@ -5,10 +5,13 @@
 
 package org.lineageos.lineageparts.health;
 
+import static java.time.format.FormatStyle.SHORT;
 import static lineageos.health.HealthInterface.MODE_AUTO;
 import static lineageos.health.HealthInterface.MODE_LIMIT;
 import static lineageos.health.HealthInterface.MODE_MANUAL;
 
+import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -31,6 +34,8 @@ import org.lineageos.lineageparts.search.BaseSearchIndexProvider;
 import org.lineageos.lineageparts.search.Searchable;
 
 import java.lang.reflect.Array;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Stream;
@@ -48,13 +53,18 @@ public class ChargingControlSettings extends SettingsPreferenceFragment implemen
 
     private LineageSystemSettingMainSwitchPreference mChargingControlEnabledPref;
     private LineageSystemSettingListPreference mChargingControlModePref;
-    private StartTimePreference mChargingControlStartTimePref;
-    private TargetTimePreference mChargingControlTargetTimePref;
+    private Preference mChargingControlStartTimePref;
+    private Preference mChargingControlTargetTimePref;
     private ChargingLimitPreference mChargingControlLimitPref;
 
     private HealthInterface mHealthInterface;
 
     private static final int MENU_RESET = Menu.FIRST;
+
+    private static final int DIALOG_START_TIME = 0;
+    private static final int DIALOG_TARGET_TIME = 1;
+
+    private static final DateTimeFormatter mFormatter = DateTimeFormatter.ofLocalizedTime(SHORT);
 
     @Override
     public void onActivityCreated(final Bundle savedInstanceState) {
@@ -115,13 +125,11 @@ public class ChargingControlSettings extends SettingsPreferenceFragment implemen
         }
 
         if (mChargingControlStartTimePref != null) {
-            mChargingControlStartTimePref.setValue(
-                    mChargingControlStartTimePref.getTimeSetting());
+            updateStartTime(LocalTime.ofSecondOfDay(mHealthInterface.getStartTime()));
         }
 
         if (mChargingControlTargetTimePref != null) {
-            mChargingControlTargetTimePref.setValue(
-                    mChargingControlTargetTimePref.getTimeSetting());
+            updateTargetTime(LocalTime.ofSecondOfDay(mHealthInterface.getTargetTime()));
         }
 
         if (mChargingControlLimitPref != null) {
@@ -177,6 +185,42 @@ public class ChargingControlSettings extends SettingsPreferenceFragment implemen
     }
 
     @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if (preference == mChargingControlStartTimePref) {
+            showDialog(DIALOG_START_TIME);
+            return true;
+        } else if (preference == mChargingControlTargetTimePref) {
+            showDialog(DIALOG_TARGET_TIME);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preference);
+    }
+
+    @Override
+    public Dialog onCreateDialog(final int dialogId) {
+        if (dialogId == DIALOG_START_TIME || dialogId == DIALOG_TARGET_TIME) {
+            final LocalTime initialTime;
+            if (dialogId == DIALOG_START_TIME) {
+                initialTime = LocalTime.ofSecondOfDay(mHealthInterface.getStartTime());
+            } else {
+                initialTime = LocalTime.ofSecondOfDay(mHealthInterface.getTargetTime());
+            }
+
+            final Context context = getContext();
+            final boolean use24HourFormat = android.text.format.DateFormat.is24HourFormat(context);
+            return new TimePickerDialog(context, (view, hourOfDay, minute) -> {
+                final LocalTime time = LocalTime.of(hourOfDay, minute);
+                if (dialogId == DIALOG_START_TIME) {
+                    updateStartTime(time);
+                } else {
+                    updateTargetTime(time);
+                }
+            }, initialTime.getHour(), initialTime.getMinute(), use24HourFormat);
+        }
+        return super.onCreateDialog(dialogId);
+    }
+
+    @Override
     public void onCreateOptionsMenu(final Menu menu, final MenuInflater inflater) {
         menu.add(0, MENU_RESET, 0, R.string.reset)
                 .setIcon(R.drawable.ic_settings_backup_restore)
@@ -204,6 +248,20 @@ public class ChargingControlSettings extends SettingsPreferenceFragment implemen
             refreshUi(chargingControlMode);
         }
         return true;
+    }
+
+    private void updateStartTime(final LocalTime time) {
+        mHealthInterface.setStartTime(time.toSecondOfDay());
+        mChargingControlStartTimePref.setSummary(
+                String.format(getContext().getString(R.string.charging_control_start_time_summary),
+                time.format(mFormatter)));
+    }
+
+    private void updateTargetTime(final LocalTime time) {
+        mHealthInterface.setTargetTime(time.toSecondOfDay());
+        mChargingControlTargetTimePref.setSummary(
+                String.format(getContext().getString(R.string.charging_control_target_time_summary),
+                time.format(mFormatter)));
     }
 
     private void resetToDefaults() {
