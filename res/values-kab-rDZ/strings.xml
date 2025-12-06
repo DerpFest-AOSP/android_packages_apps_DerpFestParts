@@ -254,9 +254,6 @@
     <string name="status_bar_brightness_category">Abruṛeq</string>
     <string name="status_bar_brightness_slider_title">Taḥnaccaḍt n tafat</string>
     <string name="status_bar_brightness_slider_auto_title">Abruṛeq awurman</string>
-    <string name="network_traffic_mode_disable">Yensa</string>
-    <string name="network_traffic_show_units_off">Insa</string>
-    <string name="network_traffic_show_units_on">Rmed</string>
     <string name="protected_apps_manager_title">Isnasen immestnen</string>
     <string name="contributors_cloud_fragment_title">Iwiziwen</string>
     <string name="anonymous_statistics_title">Tiddadanin n DerpFest</string>

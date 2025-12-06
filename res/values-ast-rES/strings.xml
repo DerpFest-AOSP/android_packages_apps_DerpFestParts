@@ -181,22 +181,6 @@
     <string name="status_bar_brightness_slider_show_never">Nun amosar enxamás</string>
     <string name="status_bar_brightness_slider_show_expanded">Amosar al espander</string>
     <string name="status_bar_brightness_slider_show_always">Amosar siempre</string>
-    <string name="network_traffic_settings_title">Supervisor del tránsitu de rede</string>
-    <string name="network_traffic_settings_summary">Amuesa\'l nivel del tránsitu de rede na barra d\'estáu</string>
-    <string name="network_traffic_mode_title">Mou de visualización</string>
-    <string name="network_traffic_mode_up">Namás la xuba</string>
-    <string name="network_traffic_mode_down">Namás la baxada</string>
-    <string name="network_traffic_mode_all">Xuba y baxada</string>
-    <string name="network_traffic_position_title">Posición</string>
-    <string name="network_traffic_autohide_summary">Anubre\'l supervisor del tránsitu de rede cuando nun hai actividá</string>
-    <string name="network_traffic_units_title">Unidaes de midida del tránsitu</string>
-    <string name="network_traffic_units_kilobits">Kilobits per segundu (Kb/s)</string>
-    <string name="network_traffic_units_megabits">Megabits per segundu (Mb/s)</string>
-    <string name="network_traffic_units_kilobytes">Kilobytes per segundu (KB/s)</string>
-    <string name="network_traffic_units_megabytes">Megabytes per segundu (MB/s)</string>
-    <string name="network_traffic_units_auto">Automáticu (KB/s o MB/s)</string>
-    <string name="network_traffic_show_units_compact">Compautu</string>
-    <string name="network_traffic_disabled_clock">El supervisor del tránsitu de rede ta desactiváu pola mor de la posición del reló</string>
     <string name="protected_apps_manager_title">Aplicaciones protexíes</string>
     <string name="contributors_cloud_fragment_title">Collaboradores</string>
     <string name="contributor_info_msg"><![CDATA[<b>Nome:</b> <xliff:g id="name">%1$s</xliff:g><br/><br/>

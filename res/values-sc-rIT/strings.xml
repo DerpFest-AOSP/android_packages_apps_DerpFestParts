@@ -385,28 +385,6 @@
     <string name="status_bar_brightness_slider_position_title">Positzione de su trisinadore de lugore</string>
     <string name="status_bar_brightness_slider_position_top">In artu</string>
     <string name="status_bar_brightness_slider_position_bottom">In bàsciu</string>
-    <string name="network_traffic_settings_title">Monitoràgiu tràficu rete</string>
-    <string name="network_traffic_settings_summary">Mustra is livellos atuales de rete dae sa barra de istadu</string>
-    <string name="network_traffic_mode_title">Modalidade ischermu</string>
-    <string name="network_traffic_mode_disable">Disabilitadu</string>
-    <string name="network_traffic_mode_up">Càrriga ebbia</string>
-    <string name="network_traffic_mode_down">Iscàrriga ebbia</string>
-    <string name="network_traffic_mode_all">Càrriga e iscàrriga</string>
-    <string name="network_traffic_position_title">Positzione</string>
-    <string name="network_traffic_autohide">Cua in automàticu</string>
-    <string name="network_traffic_autohide_summary">Cua s\'indicadore de tràficu cando non nch\'at atividade</string>
-    <string name="network_traffic_units_title">Unidades de medida de su tràficu</string>
-    <string name="network_traffic_units_kilobits">Kilobits a su segundu (kb/s)</string>
-    <string name="network_traffic_units_megabits">Megabits a su segundu (Mb/s)</string>
-    <string name="network_traffic_units_kilobytes">Kilobytes a su segundu (kB/s)</string>
-    <string name="network_traffic_units_megabytes">Megabytes a su segundu (MB/s)</string>
-    <string name="network_traffic_units_auto">Automàticu (kB/s o MB/s)</string>
-    <string name="network_traffic_show_units">Mustra unidades de medida</string>
-    <string name="network_traffic_show_units_off">Istudadu</string>
-    <string name="network_traffic_show_units_on">Ativu</string>
-    <string name="network_traffic_show_units_compact">Cumpatadu</string>
-    <string name="network_traffic_show_units_summary">Ìndita si mustrare s\'unidade de medida de su tràficu in sa barra de istadu</string>
-    <string name="network_traffic_disabled_clock">Tràficu de rete disabilitadu a càusa de sa positzione de su rellògiu</string>
     <string name="protected_apps_manager_title">Aplicatziones protetas</string>
     <string name="protected_apps_manager_summary">Gesti is aplizatziones amparadas dae unu còdighe de seguresa</string>
     <string name="contributors_cloud_fragment_title">Collaboratziones</string>
@@ -422,6 +400,7 @@
                  <b>Ùrtima atualizatzione:</b> <xliff:g id="date">%3$s</xliff:g>]]></string>
     <string name="anonymous_statistics_title">Istatìsticas de DerpFest</string>
     <string name="anonymous_statistics_summary">Agiuda a megiorare DerpFest permitende s\'imbiu de istatìsticas anònimas</string>
+
     <string name="anonymous_statistics_warning_title">Informatziones</string>
     <string name="anonymous_statistics_warning">Ativende is Istatìsticas DerpFest as a permìtere s\'imbiu de datos non personales a s\'iscuadra de isvilupu
         pro contare su nùmeru de installatziones ùnicas in is dispositivos. S\'informatzione imbiada includet un\'identificadore ùnicu
