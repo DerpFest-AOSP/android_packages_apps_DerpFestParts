@@ -351,10 +351,6 @@
     <string name="status_bar_brightness_slider_show_never">Ніколи</string>
     <string name="status_bar_brightness_slider_show_expanded">Коли розгорнуто</string>
     <string name="status_bar_brightness_slider_show_always">Завжди</string>
-    <string name="network_traffic_autohide">Приховувати автоматично</string>
-    <string name="network_traffic_units_title">Одиниці вимірювання трафіку</string>
-    <string name="network_traffic_show_units_off">Вимк</string>
-    <string name="network_traffic_show_units_on">Увімк</string>
     <string name="protected_apps_manager_title">Захищені додатки</string>
     <string name="protected_apps_manager_summary">Оберіть, для запуску яких застосунків потрібно вводити пароль</string>
     <string name="contributors_cloud_fragment_title">Учасники проекту</string>
