@@ -46,6 +46,7 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
     private CheckBoxPreference mBugReportPref;
     private CheckBoxPreference mEmergencyPref;
     private CheckBoxPreference mDeviceControlsPref;
+    private CheckBoxPreference mRestartSystemUIPref;
 
     private LineageGlobalActions mLineageGlobalActions;
 
@@ -81,6 +82,8 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
                 mEmergencyPref = findPreference(GLOBAL_ACTION_KEY_EMERGENCY);
             } else if (action.equals(GLOBAL_ACTION_KEY_DEVICECONTROLS)) {
                 mDeviceControlsPref = findPreference(GLOBAL_ACTION_KEY_DEVICECONTROLS);
+            } else if (action.equals(GLOBAL_ACTION_KEY_RESTART_SYSTEMUI)) {
+                mRestartSystemUIPref = findPreference(GLOBAL_ACTION_KEY_RESTART_SYSTEMUI);
             }
         }
 
@@ -146,6 +149,11 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
             serviceListing.reload();
         }
 
+        if (mRestartSystemUIPref != null) {
+            mRestartSystemUIPref.setChecked(mLineageGlobalActions.userConfigContains(
+                    GLOBAL_ACTION_KEY_RESTART_SYSTEMUI));
+        }
+
         updatePreferences();
     }
 
@@ -184,6 +192,10 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
         } else if (preference == mDeviceControlsPref) {
             value = mDeviceControlsPref.isChecked();
             mLineageGlobalActions.updateUserConfig(value, GLOBAL_ACTION_KEY_DEVICECONTROLS);
+
+        } else if (preference == mRestartSystemUIPref) {
+            value = mRestartSystemUIPref.isChecked();
+            mLineageGlobalActions.updateUserConfig(value, GLOBAL_ACTION_KEY_RESTART_SYSTEMUI);
 
         } else {
             return super.onPreferenceTreeClick(preference);
