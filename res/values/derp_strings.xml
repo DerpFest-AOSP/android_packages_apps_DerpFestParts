@@ -7,5 +7,6 @@
 
     <!-- Power menu -->
     <string name="power_menu_restart_systemui_title">Restart SystemUI</string>
+    <string name="power_menu_panic_title">Panic trigger</string>
 
 </resources>

@@ -25,6 +25,7 @@ import com.android.internal.util.EmergencyAffordanceManager;
 import com.android.settingslib.applications.ServiceListing;
 
 import lineageos.app.LineageGlobalActions;
+import lineageos.providers.LineageSettings;
 
 import org.lineageos.internal.util.PowerMenuConstants;
 import org.lineageos.lineageparts.R;
@@ -47,6 +48,7 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
     private CheckBoxPreference mEmergencyPref;
     private CheckBoxPreference mDeviceControlsPref;
     private CheckBoxPreference mRestartSystemUIPref;
+    private CheckBoxPreference mPanicPref;
 
     private LineageGlobalActions mLineageGlobalActions;
 
@@ -84,6 +86,8 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
                 mDeviceControlsPref = findPreference(GLOBAL_ACTION_KEY_DEVICECONTROLS);
             } else if (action.equals(GLOBAL_ACTION_KEY_RESTART_SYSTEMUI)) {
                 mRestartSystemUIPref = findPreference(GLOBAL_ACTION_KEY_RESTART_SYSTEMUI);
+            } else if (action.equals(GLOBAL_ACTION_KEY_PANIC)) {
+                mPanicPref = findPreference(GLOBAL_ACTION_KEY_PANIC);
             }
         }
 
@@ -154,6 +158,12 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
                     GLOBAL_ACTION_KEY_RESTART_SYSTEMUI));
         }
 
+        if (mPanicPref != null) {
+            mPanicPref.setChecked(LineageSettings.Secure.getIntForUser(
+                    getContentResolver(), LineageSettings.Secure.PANIC_IN_POWER_MENU, 0,
+                    UserHandle.myUserId()) != 0);
+        }
+
         updatePreferences();
     }
 
@@ -196,6 +206,12 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
         } else if (preference == mRestartSystemUIPref) {
             value = mRestartSystemUIPref.isChecked();
             mLineageGlobalActions.updateUserConfig(value, GLOBAL_ACTION_KEY_RESTART_SYSTEMUI);
+
+        } else if (preference == mPanicPref) {
+            value = mPanicPref.isChecked();
+            LineageSettings.Secure.putIntForUser(getContentResolver(),
+                    LineageSettings.Secure.PANIC_IN_POWER_MENU, value ? 1 : 0,
+                    UserHandle.myUserId());
 
         } else {
             return super.onPreferenceTreeClick(preference);
