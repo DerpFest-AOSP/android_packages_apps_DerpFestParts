@@ -28,8 +28,6 @@ import androidx.preference.PreferenceCategory;
 
 import com.android.settingslib.fuelgauge.BatteryUtils;
 
-import lineageos.preference.LineageSecureSettingListPreference;
-import lineageos.preference.LineageSecureSettingSwitchPreference;
 import lineageos.preference.LineageSystemSettingListPreference;
 
 import org.derpfest.support.colorpicker.ColorPickerSystemPreference;
@@ -47,10 +45,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
     private static final String CATEGORY_CLOCK = "status_bar_clock_key";
 
     private static final String ICON_BLACKLIST = "icon_blacklist";
-
-    private static final String QS_BRIGHTNESS_SLIDER_POSITION = "qs_brightness_slider_position";
-    private static final String QS_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
-    private static final String QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
 
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
     private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
@@ -75,14 +69,10 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
     private static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
     private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
 
-    private static final int QS_BRIGHTNESS_SLIDER_HIDDEN = 0;
-
     private static final int PULLDOWN_DIR_NONE = 0;
     private static final int PULLDOWN_DIR_RIGHT = 1;
     private static final int PULLDOWN_DIR_LEFT = 2;
 
-    private LineageSecureSettingListPreference mQsBrightnessSliderPosition;
-    private LineageSecureSettingSwitchPreference mQsShowAutoBrightness;
     private LineageSystemSettingListPreference mQuickPulldown;
     private LineageSystemSettingListPreference mStatusBarClock;
     private LineageSystemSettingListPreference mStatusBarAmPm;
@@ -179,16 +169,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
             mBatteryPresent = intent.getBooleanExtra(BatteryManager.EXTRA_PRESENT, true);
         }
         mStatusBarBatteryCategory = getPreferenceScreen().findPreference(CATEGORY_BATTERY);
-
-        mQsShowAutoBrightness = findPreference(QS_SHOW_AUTO_BRIGHTNESS);
-        mQsBrightnessSliderPosition = findPreference(QS_BRIGHTNESS_SLIDER_POSITION);
-        LineageSecureSettingListPreference qsShowBrightnessSlider =
-                findPreference(QS_SHOW_BRIGHTNESS_SLIDER);
-        qsShowBrightnessSlider.setOnPreferenceChangeListener((preference, newValue) -> {
-            enableQuickSettingsBrightnessSliderDependents(Integer.parseInt((String) newValue));
-            return true;
-        });
-        enableQuickSettingsBrightnessSliderDependents(qsShowBrightnessSlider.getIntValue(1));
 
         mQuickPulldown = findPreference(STATUS_BAR_QUICK_QS_PULLDOWN);
         mQuickPulldown.setSummaryProvider(preference -> {
@@ -346,13 +326,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
         if (mCustomCarrierTextPref != null) {
             mCustomCarrierTextPref.setEnabled(showCarrier != 0);
         }
-    }
-
-    private void enableQuickSettingsBrightnessSliderDependents(int showBrightnessSlider) {
-        boolean enabled = showBrightnessSlider != QS_BRIGHTNESS_SLIDER_HIDDEN;
-
-        mQsBrightnessSliderPosition.setEnabled(enabled);
-        mQsShowAutoBrightness.setEnabled(enabled);
     }
 
     private void enableStatusBarBatteryDependents(int batteryIconStyle) {
