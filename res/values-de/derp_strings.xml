@@ -101,6 +101,10 @@
     <string name="custom_carrier_label_dialog_message">Ersetzt die Netzbetreiber-Anzeige mit eigenem Text. Leer lassen, um tatsächliche Bezeichnung anzuzeigen.</string>
     <string name="never">Niemals</string>
 
+    <!-- Statusbar clock background chip -->
+    <string name="statusbar_clock_chip_title">Farbig unterlegen</string>
+    <string name="statusbar_clock_chip_summary">Eingefärbte Fläche hinter der Uhr anzeigen</string>
+
     <!-- Advanced restart options -->
     <string name="advanced_reboot_secured_title">Bei nicht entsperrtem Gerät</string>
     <string name="advanced_reboot_secured_summary">Erweitertes Neustartmenü auch anzeigen, wenn das Gerät nicht entsperrt wurde</string>
