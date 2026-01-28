@@ -488,6 +488,23 @@
     <string name="status_bar_am_pm_small">Small</string>
     <string name="status_bar_am_pm_hidden">Hidden</string>
 
+    <!-- Status bar - Clock Date -->
+    <string name="status_bar_date_title">Date display</string>
+    <string name="status_bar_date_hidden">Hidden</string>
+    <string name="status_bar_date_small">Small</string>
+    <string name="status_bar_date_normal">Normal</string>
+    <string name="clock_date_position">Date position</string>
+    <string name="clock_date_position_left">Left of clock</string>
+    <string name="clock_date_position_right">Right of clock</string>
+    <string name="status_bar_date_style">Date style</string>
+    <string name="status_bar_date_style_regular">Regular</string>
+    <string name="status_bar_date_style_lowercase">Lowercase</string>
+    <string name="status_bar_date_style_uppercase">Uppercase</string>
+    <string name="status_bar_date_format_title">Date format</string>
+    <string name="status_bar_date_string_edittext_title">Enter date format</string>
+    <string name="status_bar_date_string_edittext_summary">Enter a custom date format string. See java.text.SimpleDateFormat for available options.</string>
+    <string name="menu_save">Save</string>
+
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_title">Battery indicator</string>
     <string name="status_bar_battery_style_title">Battery status style</string>

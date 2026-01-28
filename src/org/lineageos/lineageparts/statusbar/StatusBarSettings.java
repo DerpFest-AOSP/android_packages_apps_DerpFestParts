@@ -22,6 +22,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 
@@ -33,9 +34,12 @@ import lineageos.preference.LineageSystemSettingListPreference;
 
 import org.derpfest.support.colorpicker.ColorPickerSystemPreference;
 import org.derpfest.support.preferences.SystemSettingIntListPreference;
+import org.derpfest.support.preferences.SystemSettingListPreference;
 import org.lineageos.lineageparts.R;
 import org.lineageos.lineageparts.SettingsPreferenceFragment;
 import org.lineageos.lineageparts.utils.DeviceUtils;
+
+import java.util.Date;
 
 public class StatusBarSettings extends SettingsPreferenceFragment {
 
@@ -53,6 +57,10 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String STATUS_BAR_QUICK_QS_PULLDOWN = "qs_quick_pulldown";
+    private static final String CLOCK_DATE_DISPLAY = "status_bar_clock_date_display";
+    private static final String CLOCK_DATE_POSITION = "status_bar_clock_date_position";
+    private static final String CLOCK_DATE_STYLE = "status_bar_clock_date_style";
+    private static final String CLOCK_DATE_FORMAT = "status_bar_clock_date_format";
 
     private static final String CARRIER_NAME = "lockscreen_show_carrier";
     private static final String CUSTOM_CARRIER_LABEL = "lockscreen_show_custom_carrier_text";
@@ -63,6 +71,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
     private static final String TINT_STATUSBAR_ICONS_WITH_ACCENT = "tint_statusbar_icons_with_accent";
 
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 2;
+    private static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
+    private static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
+    private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
 
     private static final int QS_BRIGHTNESS_SLIDER_HIDDEN = 0;
 
@@ -76,6 +87,10 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
     private LineageSystemSettingListPreference mStatusBarClock;
     private LineageSystemSettingListPreference mStatusBarAmPm;
     private LineageSystemSettingListPreference mStatusBarBatteryShowPercent;
+    private SystemSettingListPreference mClockDateDisplay;
+    private SystemSettingListPreference mClockDatePosition;
+    private SystemSettingListPreference mClockDateStyle;
+    private ListPreference mClockDateFormat;
 
     private SystemSettingIntListPreference mStatusBarIconTintMode;
     private ColorPickerSystemPreference mStatusBarIconTintCustomColor;
@@ -109,6 +124,45 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
         mStatusBarClock = findPreference(STATUS_BAR_CLOCK_STYLE);
 
         mStatusBarClockCategory = getPreferenceScreen().findPreference(CATEGORY_CLOCK);
+
+        ContentResolver resolver = getActivity().getContentResolver();
+        int dateDisplay = Settings.System.getIntForUser(resolver,
+                CLOCK_DATE_DISPLAY, 0, UserHandle.USER_CURRENT);
+
+        mClockDateDisplay = findPreference(CLOCK_DATE_DISPLAY);
+        if (mClockDateDisplay != null) {
+            mClockDateDisplay.setOnPreferenceChangeListener((preference, newValue) -> {
+                enableClockDateDependents(Integer.parseInt((String) newValue) > 0);
+                return true;
+            });
+        }
+
+        mClockDatePosition = findPreference(CLOCK_DATE_POSITION);
+        if (mClockDatePosition != null) {
+            mClockDatePosition.setOnPreferenceChangeListener((preference, newValue) -> {
+                parseClockDateFormats();
+                return true;
+            });
+        }
+
+        mClockDateStyle = findPreference(CLOCK_DATE_STYLE);
+        if (mClockDateStyle != null) {
+            mClockDateStyle.setOnPreferenceChangeListener((preference, newValue) -> {
+                parseClockDateFormats();
+                return true;
+            });
+        }
+
+        mClockDateFormat = findPreference(CLOCK_DATE_FORMAT);
+        if (mClockDateFormat != null) {
+            if (mClockDateFormat.getValue() == null) {
+                mClockDateFormat.setValue("EEE");
+            }
+            parseClockDateFormats();
+            mClockDateFormat.setOnPreferenceChangeListener((preference, newValue) ->
+                    handleClockDateFormatChange((String) newValue));
+        }
+        enableClockDateDependents(dateDisplay > 0);
 
         mStatusBarBatteryShowPercent = findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
         LineageSystemSettingListPreference statusBarBattery =
@@ -195,6 +249,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
             mStatusBarAmPm.setEnabled(false);
             mStatusBarAmPm.setSummaryProvider(preference -> preference.getContext()
                     .getString(R.string.status_bar_am_pm_info));
+        }
+
+        int dateDisplay = Settings.System.getIntForUser(getContext().getContentResolver(),
+                CLOCK_DATE_DISPLAY, 0, UserHandle.USER_CURRENT);
+        enableClockDateDependents(dateDisplay > 0);
+        if (mClockDateFormat != null) {
+            parseClockDateFormats();
         }
 
         final boolean disallowCenteredClock = DeviceUtils.hasCenteredCutout(getActivity());
@@ -297,6 +358,58 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
         mStatusBarBatteryShowPercent.setEnabled(batteryIconStyle != STATUS_BAR_BATTERY_STYLE_TEXT);
     }
 
+    private void enableClockDateDependents(boolean enabled) {
+        if (mClockDatePosition != null) {
+            mClockDatePosition.setEnabled(enabled);
+        }
+        if (mClockDateStyle != null) {
+            mClockDateStyle.setEnabled(enabled);
+        }
+        if (mClockDateFormat != null) {
+            mClockDateFormat.setEnabled(enabled);
+        }
+    }
+
+    private boolean handleClockDateFormatChange(String newValue) {
+        if (mClockDateFormat == null || newValue == null) {
+            return true;
+        }
+
+        int index = mClockDateFormat.findIndexOfValue(newValue);
+        if (index == CUSTOM_CLOCK_DATE_FORMAT_INDEX) {
+            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+            alert.setTitle(R.string.status_bar_date_string_edittext_title);
+            alert.setMessage(R.string.status_bar_date_string_edittext_summary);
+
+            final EditText input = new EditText(getActivity());
+            String oldText = Settings.System.getStringForUser(
+                    getActivity().getContentResolver(),
+                    CLOCK_DATE_FORMAT, UserHandle.USER_CURRENT);
+            if (oldText != null) {
+                input.setText(oldText);
+            }
+            alert.setView(input);
+
+            alert.setPositiveButton(R.string.menu_save, (dialogInterface, whichButton) -> {
+                String value = input.getText().toString();
+                if (value.equals("")) {
+                    return;
+                }
+                Settings.System.putStringForUser(getActivity().getContentResolver(),
+                        CLOCK_DATE_FORMAT, value, UserHandle.USER_CURRENT);
+                mClockDateFormat.setValue(value);
+                mClockDateFormat.setSummary(value);
+            });
+            alert.setNegativeButton(R.string.cancel, null);
+            alert.show();
+            return false;
+        }
+
+        Settings.System.putStringForUser(getActivity().getContentResolver(),
+                CLOCK_DATE_FORMAT, newValue, UserHandle.USER_CURRENT);
+        return true;
+    }
+
     /**
      * One-time migration from the legacy accent-only toggle to {@link #STATUSBAR_ICON_TINT_MODE}.
      */
@@ -327,5 +440,33 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
         if (mStatusBarIconTintCustomColor != null) {
             mStatusBarIconTintCustomColor.setEnabled(mode == 2);
         }
+    }
+    private void parseClockDateFormats() {
+        if (mClockDateFormat == null) {
+            return;
+        }
+        String[] dateEntries = getResources().getStringArray(
+                R.array.status_bar_date_format_entries_values);
+        CharSequence[] parsedDateEntries = new String[dateEntries.length];
+        Date now = new Date();
+
+        int lastEntry = dateEntries.length - 1;
+        int dateFormat = Settings.System.getIntForUser(getActivity().getContentResolver(),
+                CLOCK_DATE_STYLE, 0, UserHandle.USER_CURRENT);
+        for (int i = 0; i < dateEntries.length; i++) {
+            if (i == lastEntry) {
+                parsedDateEntries[i] = dateEntries[i];
+            } else {
+                CharSequence dateString = DateFormat.format(dateEntries[i], now);
+                if (dateFormat == CLOCK_DATE_STYLE_LOWERCASE) {
+                    parsedDateEntries[i] = dateString.toString().toLowerCase();
+                } else if (dateFormat == CLOCK_DATE_STYLE_UPPERCASE) {
+                    parsedDateEntries[i] = dateString.toString().toUpperCase();
+                } else {
+                    parsedDateEntries[i] = dateString.toString();
+                }
+            }
+        }
+        mClockDateFormat.setEntries(parsedDateEntries);
     }
 }
