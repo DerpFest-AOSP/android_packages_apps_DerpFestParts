@@ -104,6 +104,18 @@
     <!-- Statusbar clock background chip -->
     <string name="statusbar_clock_chip_title">Farbig unterlegen</string>
     <string name="statusbar_clock_chip_summary">Eingefärbte Fläche hinter der Uhr anzeigen</string>
+    <string name="solid_accent">Einfarbige Akzentfarbe</string>
+    <string name="outline">Umrandung</string>
+    <string name="solid_accent_gradient">Einfarbiger Akzentfarbverlauf</string>
+    <string name="solid_gradient">Einfarbiger Verlauf seitlich</string>
+    <string name="solid_gradient_corner">Einfarbiger Akzentverlauf kantig</string>
+    <string name="solid_gradient_void">Verlauf Void</string>
+    <string name="solid_gradient_neumorph">Neumorpher Verlauf</string>
+    <string name="solid_gradient_stroke">Kantiger Verlauf mit Kontur</string>
+    <string name="solid_accent_transperent">Akzent transparent</string>
+    <string name="solid_gradient_light">Verlauf hell</string>
+    <string name="solid_gradient_shape">Kantiger Verlauf abgerundet</string>
+    <string name="solid_gradient_void_light">Verlauf Void hell</string>
 
     <!-- Advanced restart options -->
     <string name="advanced_reboot_secured_title">Bei nicht entsperrtem Gerät</string>
