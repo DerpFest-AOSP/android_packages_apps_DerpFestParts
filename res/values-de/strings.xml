@@ -371,6 +371,24 @@
     <string name="status_bar_am_pm_normal">Standard</string>
     <string name="status_bar_am_pm_small">Klein</string>
     <string name="status_bar_am_pm_hidden">Ausgeblendet</string>
+
+    <!-- Status bar - Clock Date -->
+    <string name="status_bar_date_title">Datumsanzeige</string>
+    <string name="status_bar_date_hidden">Ausgeblendet</string>
+    <string name="status_bar_date_small">Klein</string>
+    <string name="status_bar_date_normal">Normal</string>
+    <string name="clock_date_position">Datumsposition</string>
+    <string name="clock_date_position_left">Links von der Uhr</string>
+    <string name="clock_date_position_right">Rechts von der Uhr</string>
+    <string name="status_bar_date_style">Datumstil</string>
+    <string name="status_bar_date_style_regular">Standard</string>
+    <string name="status_bar_date_style_lowercase">Kleinbuchstaben</string>
+    <string name="status_bar_date_style_uppercase">Großbuchstaben</string>
+    <string name="status_bar_date_format_title">Datumsformat</string>
+    <string name="status_bar_date_string_edittext_title">Datumsformat eingeben</string>
+    <string name="status_bar_date_string_edittext_summary">Geben Sie eine benutzerdefinierte Datumsformatzeichenfolge ein. Siehe java.text.SimpleDateFormat für verfügbare Optionen.</string>
+    <string name="menu_save">Speichern</string>
+
     <string name="status_bar_battery_title">Akkuanzeige</string>
     <string name="status_bar_battery_style_title">Anzeigeformat</string>
     <string name="status_bar_battery_style_icon_portrait">Symbol (Hochformat)</string>
