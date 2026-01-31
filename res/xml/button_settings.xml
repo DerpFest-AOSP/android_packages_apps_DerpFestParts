@@ -307,6 +307,12 @@
             android:summary="%s"
             android:entries="@array/volume_panel_position_entries"
             android:entryValues="@array/volume_panel_position_values" />
+
+        <org.derpfest.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_volume_gradient_enabled"
+            android:title="@string/volume_slider_gradient_title"
+            android:summary="@string/volume_slider_gradient_summary"
+            android:defaultValue="true" />
     </PreferenceCategory>
 
     <PreferenceCategory
