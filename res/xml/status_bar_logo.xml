@@ -24,13 +24,9 @@
         android:summary="@string/status_bar_logo_summary"
         android:defaultValue="false" />
 
-    <org.derpfest.support.preferences.SystemSettingListPreference
+    <org.lineageos.lineageparts.statusbar.StatusBarLogoStylePreference
         android:key="status_bar_logo_style"
         android:title="@string/status_bar_logo_style_title"
-        android:dialogTitle="@string/status_bar_logo_style_title"
         android:summary="%s"
-        android:entries="@array/status_bar_logo_style_entries"
-        android:entryValues="@array/status_bar_logo_style_values"
-        android:dependency="status_bar_logo"
-        android:defaultValue="0" />
+        android:dependency="status_bar_logo" />
 </PreferenceScreen>
