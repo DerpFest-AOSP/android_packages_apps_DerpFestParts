@@ -39,9 +39,15 @@ import android.util.Log;
 import android.util.SparseIntArray;
 import android.view.KeyEvent;
 
+import androidx.preference.PreferenceManager;
+
 import com.android.internal.os.DeviceKeyHandler;
 
+import lineageos.hardware.LineageHardwareManager;
+import lineageos.hardware.TouchscreenGesture;
 import lineageos.providers.LineageSettings;
+
+import org.lineageos.lineageparts.R;
 
 import java.util.List;
 
@@ -125,6 +131,46 @@ public class KeyHandler implements DeviceKeyHandler {
         mContext.registerReceiver(mUpdateReceiver,
                 new IntentFilter(TouchscreenGestureConstants.UPDATE_PREFS_ACTION),
                 Context.RECEIVER_NOT_EXPORTED);
+
+        loadInitialMapping();
+    }
+
+    /**
+     * Load gesture keycode->action mapping from saved preferences so gestures work
+     * even if UPDATE_SETTINGS broadcast was sent before KeyHandler was created (e.g. at boot).
+     */
+    private void loadInitialMapping() {
+        try {
+            LineageHardwareManager manager = LineageHardwareManager.getInstance(mContext);
+            if (!manager.isSupported(LineageHardwareManager.FEATURE_TOUCHSCREEN_GESTURES)) {
+                return;
+            }
+            TouchscreenGesture[] gestures = manager.getTouchscreenGestures();
+            if (gestures == null || gestures.length == 0) {
+                return;
+            }
+            int[] defaultActions = mContext.getResources().getIntArray(
+                    R.array.config_defaultTouchscreenGestureActions);
+            if (defaultActions == null) {
+                defaultActions = new int[0];
+            }
+            android.content.SharedPreferences prefs =
+                    PreferenceManager.getDefaultSharedPreferences(mContext);
+            mActionMapping.clear();
+            for (TouchscreenGesture gesture : gestures) {
+                String key = "touchscreen_gesture_" + gesture.id;
+                int defaultAction = gesture.id < defaultActions.length
+                        ? defaultActions[gesture.id] : 0;
+                int action = Integer.parseInt(prefs.getString(key,
+                        String.valueOf(defaultAction)));
+                mActionMapping.put(gesture.keycode, action);
+            }
+            if (Log.isLoggable(TAG, Log.DEBUG)) {
+                Log.d(TAG, "Loaded initial gesture mapping: " + mActionMapping.size() + " entries");
+            }
+        } catch (Exception e) {
+            Log.w(TAG, "Could not load initial gesture mapping", e);
+        }
     }
 
     private class TorchModeCallback extends CameraManager.TorchCallback {

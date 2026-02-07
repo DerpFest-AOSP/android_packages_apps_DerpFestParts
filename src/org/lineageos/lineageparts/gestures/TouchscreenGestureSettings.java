@@ -51,6 +51,16 @@ public class TouchscreenGestureSettings extends SettingsPreferenceFragment
         }
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        // Refresh KeyHandler's mapping whenever the user opens this screen, so gestures
+        // work even if the handler missed the boot broadcast or was recreated.
+        if (isTouchscreenGesturesSupported(getContext()) && mTouchscreenGestures != null) {
+            sendUpdateBroadcast(getContext(), mTouchscreenGestures);
+        }
+    }
+
     private void initTouchscreenGestures() {
         final LineageHardwareManager manager = LineageHardwareManager.getInstance(getContext());
         mTouchscreenGestures = manager.getTouchscreenGestures();
