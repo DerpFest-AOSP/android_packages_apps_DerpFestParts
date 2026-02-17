@@ -59,4 +59,8 @@
     <string name="status_bar_lyric_title">Status bar lyric</string>
     <string name="status_bar_lyric_summary">Show lyric in status bar (needs app support)</string>
     <string name="status_bar_show_lyric_title">Enable status bar lyric</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Secured lockscreen</string>
+    <string name="advanced_reboot_secured_summary">Display advanced restart options on secured lockscreen</string>
 </resources>
