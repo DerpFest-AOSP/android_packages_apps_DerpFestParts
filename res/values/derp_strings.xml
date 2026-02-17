@@ -61,4 +61,8 @@
 
     <!-- Combined notification count -->
     <string name="status_bar_combined_notification_count">Show combined notification count</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Secured lockscreen</string>
+    <string name="advanced_reboot_secured_summary">Display advanced restart options on secured lockscreen</string>
 </resources>
