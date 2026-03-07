@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      SPDX-FileCopyrightText: 2015 The CyanogenMod Project
-     SPDX-FileCopyrightText: 2017-2023 The LineageOS Project
+     SPDX-FileCopyrightText: 2017-2025 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -177,8 +177,7 @@
     <string name="power_end_call_summary">توك مەنبە توپچىسى بېسىلسا نۆۋەتتىكى چاقىرىشنى ئاخىرلاشتۇرىدۇ</string>
     <string name="swap_volume_buttons_title">قايتا تەڭشە</string>
     <string name="swap_volume_buttons_summary">ئېكراننى ئايلاندۇرغاندا ئاۋاز كۇنۇپكىسىنى ئالماشتۇرىدۇ</string>
-    <string name="volume_panel_on_left_title">تاختىنى سولدا كۆرسەت</string>
-    <string name="volume_panel_on_left_summary">ئاۋاز تاختىسىنى ئېكرانىڭ سول تەرىپىدە كۆرسىتىدۇ</string>
+
     <string name="button_wake_title">ئۈسكۈنىنى ئويغات</string>
     <string name="volume_answer_call_title">چاقىرىشقا جاۋاب</string>
     <string name="volume_answer_call_summary">ئاۋاز توپچىسىنى بېسىپ كەلگەن تېلېفونغا جاۋاب قايتۇرىدۇ</string>
@@ -205,8 +204,6 @@
     <string name="swap_capacitive_keys_summary">يېقىندا ئىشلەتكەن ۋە قايت توپچىنىڭ تەرتىپىنى ئالماشتۇرىدۇ</string>
     <string name="navigation_bar_category">يولباشچى بالداق</string>
     <string name="navigation_bar_enable_taskbar_title">ۋەزىپە بالداقنى قوزغات</string>
-    <string name="navigation_bar_invert_layout_title">ئەكسىچە جايلاشتۇرۇش</string>
-    <string name="navigation_bar_invert_layout_summary">يولباشچى بالداقنى ئەكسىچە جايلاشتۇرىدۇ</string>
     <string name="navigation_bar_left_summary">يانتۇ ئېكران ھالىتىدە يولباشچى بالداقنى ئېكراننىڭ سول تەرىپىدە كۆرسىتىدۇ</string>
     <string name="navigation_bar_back_long_press_title">قايت كۇنۇپكا ئۇزۇن بېسىلغاندىكى مەشغۇلات</string>
     <string name="navigation_bar_home_long_press_title">باش بەت كۇنۇپكا ئۇزۇن بېسىلغاندىكى مەشغۇلات</string>
@@ -370,7 +367,7 @@
     <string name="status_bar_am_pm_hidden">يوشۇرۇن</string>
     <string name="status_bar_battery_title">توكدان كۆرسەتكۈچى</string>
     <string name="status_bar_battery_style_title">توكدان ھالەت ئۇسلۇبى</string>
-    <string name="status_bar_battery_style_icon_portrait">سىنبەلگە رەسىمى</string>
+    <string name="status_bar_battery_style_icon_landscape">Icon landscape</string>
     <string name="status_bar_battery_style_circle">چەمبەر</string>
     <string name="status_bar_battery_style_dotted_circle">چېكىتلىك چەمبەر</string>
     <string name="status_bar_battery_style_text">تېكىست</string>

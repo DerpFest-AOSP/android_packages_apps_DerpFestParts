@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      SPDX-FileCopyrightText: 2015 The CyanogenMod Project
-     SPDX-FileCopyrightText: 2017-2023 The LineageOS Project
+     SPDX-FileCopyrightText: 2017-2025 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -54,6 +54,8 @@
     <string name="adj_contrast_title">Cuntrastu</string>
     <string name="volbtn_cursor_control_off">Disabilitadu</string>
     <string name="power_end_call_title">Acabba sa mutida</string>
+    <string name="volume_panel_position_left">Manca</string>
+    <string name="volume_panel_position_right">Dereta</string>
     <string name="backlight_summary_disabled">Disabilitadu</string>
     <string name="backlight_summary_enabled">Abilitadu</string>
     <string name="power_menu_screenshot_title">Ischermada</string>

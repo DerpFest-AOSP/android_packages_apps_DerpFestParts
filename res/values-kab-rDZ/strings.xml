@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      SPDX-FileCopyrightText: 2015 The CyanogenMod Project
-     SPDX-FileCopyrightText: 2017-2023 The LineageOS Project
+     SPDX-FileCopyrightText: 2017-2025 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -244,7 +244,7 @@
     <string name="status_bar_am_pm_small">Meẓẓi</string>
     <string name="status_bar_am_pm_hidden">Yeffer</string>
     <string name="status_bar_battery_style_title">Aɣanib n waddad n uẓru</string>
-    <string name="status_bar_battery_style_icon_portrait">Tugna s teɣzi</string>
+    <string name="status_bar_battery_style_icon_landscape">Icon landscape</string>
     <string name="status_bar_battery_style_circle">Tawinest</string>
     <string name="status_bar_battery_style_text">Aḍris</string>
     <string name="status_bar_battery_percentage_title">Afmiḍi uɛemmaṛ n uẓru</string>

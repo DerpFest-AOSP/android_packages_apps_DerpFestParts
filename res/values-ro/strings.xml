@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      SPDX-FileCopyrightText: 2015 The CyanogenMod Project
-     SPDX-FileCopyrightText: 2017-2023 The LineageOS Project
+     SPDX-FileCopyrightText: 2017-2025 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -177,8 +177,7 @@
     <string name="power_end_call_summary">Terminați apelul curent prin apăsarea butonului pornire</string>
     <string name="swap_volume_buttons_title">Reorientare</string>
     <string name="swap_volume_buttons_summary">Schimbă între ele butoanele de volum atunci când ecranul este rotit</string>
-    <string name="volume_panel_on_left_title">Afișează panoul pe stânga</string>
-    <string name="volume_panel_on_left_summary">Afișează panoul de volum pe stânga ecranului</string>
+
     <string name="button_wake_title">Trezește dispozitivul</string>
     <string name="volume_answer_call_title">Răspundere apel</string>
     <string name="volume_answer_call_summary">Răspundeți la apelurile de intrare apăsând butoanele de volum</string>
@@ -205,8 +204,6 @@
     <string name="swap_capacitive_keys_summary">Interschimbă ordinea butoanelor Recente și Înapoi</string>
     <string name="navigation_bar_category">Bară de navigare</string>
     <string name="navigation_bar_enable_taskbar_title">Activează bara de activități</string>
-    <string name="navigation_bar_invert_layout_title">Inversare aspect</string>
-    <string name="navigation_bar_invert_layout_summary">Inversează aspectul bării de navigare</string>
     <string name="navigation_bar_left_summary">Pune bara de navigare în partea stângă a ecranului în modul peisaj</string>
     <string name="navigation_bar_back_long_press_title">Acțiune apăsare lungă Înapoi</string>
     <string name="navigation_bar_home_long_press_title">Acțiunea apăsării lungi pe Acasă</string>
@@ -370,7 +367,7 @@
     <string name="status_bar_am_pm_hidden">Ascuns</string>
     <string name="status_bar_battery_title">Indicator baterie</string>
     <string name="status_bar_battery_style_title">Stilul stării bateriei</string>
-    <string name="status_bar_battery_style_icon_portrait">Iconiță portret</string>
+    <string name="status_bar_battery_style_icon_landscape">Icon landscape</string>
     <string name="status_bar_battery_style_circle">Cerc</string>
     <string name="status_bar_battery_style_dotted_circle">Cerc punctat</string>
     <string name="status_bar_battery_style_text">Text</string>

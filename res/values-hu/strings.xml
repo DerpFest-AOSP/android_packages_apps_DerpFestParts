@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      SPDX-FileCopyrightText: 2015 The CyanogenMod Project
-     SPDX-FileCopyrightText: 2017-2023 The LineageOS Project
+     SPDX-FileCopyrightText: 2017-2025 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -177,8 +177,7 @@
     <string name="power_end_call_summary">A bekapcsoló gomb megnyomása befejezi az aktuális hívást</string>
     <string name="swap_volume_buttons_title">Hangerőgombok felcserélése</string>
     <string name="swap_volume_buttons_summary">Hangerőgombok felcserélése, ha a képernyő el van forgatva</string>
-    <string name="volume_panel_on_left_title">Panelmegjelenítés a bal oldalon</string>
-    <string name="volume_panel_on_left_summary">A hangerőpanelt a képernyő bal oldalán jeleníti meg</string>
+
     <string name="button_wake_title">Eszköz felébresztése</string>
     <string name="volume_answer_call_title">Hívás fogadása</string>
     <string name="volume_answer_call_summary">Bejövő hívások fogadása a hangerő gombok megnyomásával</string>
@@ -205,8 +204,6 @@
     <string name="swap_capacitive_keys_summary">Az Előzmények és a Vissza gomb sorrendjének felcserélése</string>
     <string name="navigation_bar_category">Navigációs sáv</string>
     <string name="navigation_bar_enable_taskbar_title">Feladatkezelő-engedélyezés</string>
-    <string name="navigation_bar_invert_layout_title">Fordított elrendezés</string>
-    <string name="navigation_bar_invert_layout_summary">Megfordítja a navigációs sáv elrendezését</string>
     <string name="navigation_bar_left_summary">Fekvő módban a navigációs sáv megjelenítése bal oldalon</string>
     <string name="navigation_bar_back_long_press_title">A Vissza-gomb hosszan nyomásának művelete</string>
     <string name="navigation_bar_home_long_press_title">Kezdőlap hosszan nyomási művelet</string>
@@ -370,7 +367,7 @@
     <string name="status_bar_am_pm_hidden">Rejtett</string>
     <string name="status_bar_battery_title">Akkumulátor indikátor</string>
     <string name="status_bar_battery_style_title">Akkumulátor állapotjelző stílusa</string>
-    <string name="status_bar_battery_style_icon_portrait">Álló ikon</string>
+    <string name="status_bar_battery_style_icon_landscape">Icon landscape</string>
     <string name="status_bar_battery_style_circle">Kör</string>
     <string name="status_bar_battery_style_dotted_circle">Pontozott kör</string>
     <string name="status_bar_battery_style_text">Szöveg</string>
