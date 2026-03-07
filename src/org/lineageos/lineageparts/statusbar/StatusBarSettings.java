@@ -5,6 +5,8 @@
  */
 package org.lineageos.lineageparts.statusbar;
 
+import static org.lineageos.lineageparts.utils.ResourceUtils.isRtlMode;
+
 import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
@@ -15,7 +17,6 @@ import android.os.UserHandle;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
-import android.view.View;
 import android.widget.EditText;
 
 import androidx.preference.ListPreference;
@@ -168,7 +169,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         final boolean disallowCenteredClock = DeviceUtils.hasCenteredCutout(getActivity());
 
         // Adjust status bar preferences for RTL
-        if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
+        if (isRtlMode(getResources())) {
             if (disallowCenteredClock) {
                 mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch_rtl);
                 mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
@@ -285,9 +286,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
                 summary = getResources().getString(
                     R.string.status_bar_quick_qs_pulldown_summary,
                     getResources().getString(
-                        (value == PULLDOWN_DIR_LEFT) ^
-                        (getResources().getConfiguration().getLayoutDirection()
-                            == View.LAYOUT_DIRECTION_RTL)
+                        (value == PULLDOWN_DIR_LEFT) ^ isRtlMode(getResources())
                         ? R.string.status_bar_quick_qs_pulldown_summary_left
                         : R.string.status_bar_quick_qs_pulldown_summary_right));
                 break;
