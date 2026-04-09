@@ -194,6 +194,20 @@
             android:defaultValue="0"
             app:useSimpleSummaryProvider="true" />
 
+        <Preference
+            android:key="battery_style_theme_store"
+            android:title="@string/status_bar_battery_theme_store_title"
+            android:summary="@string/status_bar_battery_theme_store_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.axion.axthemestore"
+                android:targetClass="com.android.axion.axthemestore.MainActivity">
+                <extra
+                    android:name="com.android.axion.axthemestore.extra.STORE_SECTION"
+                    android:value="battery_style" />
+            </intent>
+        </Preference>
+
     </PreferenceCategory>
 
 </PreferenceScreen>
