@@ -472,6 +472,9 @@
     <string name="status_bar_clock_period_separator_title">Period time separator</string>
     <string name="status_bar_clock_period_separator_summary">Use a period between hours and minutes (for example 12.30 instead of 12:30)</string>
 
+    <string name="status_bar_clock_bold_title">Bold clock</string>
+    <string name="status_bar_clock_bold_summary">Use bold text for the status bar clock</string>
+
     <string name="status_bar_clock_auto_hide_title">Auto hide</string>
     <string name="status_bar_clock_auto_hide_summary">Hide clock if launcher is visible</string>
 

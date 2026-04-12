@@ -78,6 +78,12 @@
             android:summary="@string/status_bar_clock_period_separator_summary"
             android:defaultValue="false" />
 
+        <org.derpfest.support.preferences.SystemSettingSwitchPreference
+            android:key="status_bar_clock_bold"
+            android:title="@string/status_bar_clock_bold_title"
+            android:summary="@string/status_bar_clock_bold_summary"
+            android:defaultValue="false" />
+
         <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="status_bar_clock_auto_hide"
             android:title="@string/status_bar_clock_auto_hide_title"
