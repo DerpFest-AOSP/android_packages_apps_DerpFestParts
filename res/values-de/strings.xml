@@ -367,6 +367,8 @@
     <string name="status_bar_clock_title">Uhr</string>
     <string name="status_bar_clock_show_seconds_title">Sekunden anzeigen</string>
     <string name="status_bar_clock_show_seconds_summary">Stunden, Minuten und Sekunden anzeigen</string>
+    <string name="status_bar_clock_period_separator_title">Punkt als Trennzeichen</string>
+    <string name="status_bar_clock_period_separator_summary">Zwischen Stunden und Minuten einen Punkt statt eines Doppelpunkts verwenden (z. B. 12.30 statt 12:30)</string>
     <string name="status_bar_clock_auto_hide_title">Automatisch ausblenden</string>
     <string name="status_bar_clock_auto_hide_summary">Uhr auf dem Startbildschirm ausblenden</string>
 
