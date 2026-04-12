@@ -7,6 +7,7 @@ package org.lineageos.lineageparts.statusbar;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Outline;
 import android.graphics.drawable.Drawable;
 import android.os.UserHandle;
 import android.provider.Settings;
@@ -15,6 +16,7 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewOutlineProvider;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ListView;
@@ -74,6 +76,28 @@ public class StatusBarClockChipStylePreference extends Preference {
         mEntries = context.getResources().getStringArray(R.array.statusbar_clock_chip_entries);
         mEntryValues = context.getResources().getStringArray(R.array.statusbar_clock_chip_values);
         mPm = context.getPackageManager();
+    }
+
+    /** Matches SystemUI clock chip: {@code min(chip_corner_radius, min(w,h)/2)}. */
+    private static void applyClockChipPreviewOutline(View chipContainer) {
+        chipContainer.setClipToOutline(true);
+        chipContainer.setOutlineProvider(new ViewOutlineProvider() {
+            @Override
+            public void getOutline(View view, Outline outline) {
+                int w = view.getWidth();
+                int h = view.getHeight();
+                if (w <= 0 || h <= 0) {
+                    outline.setEmpty();
+                    return;
+                }
+                float density = view.getResources().getDisplayMetrics().density;
+                float cornerPx = 28f * density;
+                float maxR = Math.min(w, h) / 2f;
+                float r = Math.min(cornerPx, maxR);
+                outline.setRoundRect(0, 0, w, h, r);
+            }
+        });
+        chipContainer.post(() -> chipContainer.invalidateOutline());
     }
 
     private Drawable getChipDrawableForStyle(int styleIndex) {
@@ -328,6 +352,9 @@ public class StatusBarClockChipStylePreference extends Preference {
                     ? Integer.parseInt(mEntryValues[position]) : 0;
             Drawable chipBg = mPreference.getChipDrawableForStyle(styleIndex);
             if (styleIndex == 0) {
+                chipContainer.setClipToOutline(false);
+                chipContainer.setOutlineProvider(null);
+                timePreview.setShadowLayer(0, 0, 0, 0);
                 chipContainer.setBackgroundResource(R.drawable.chip_preview_disabled);
                 TypedValue tv = new TypedValue();
                 if (mPreference.getContext().getTheme().resolveAttribute(
@@ -335,7 +362,19 @@ public class StatusBarClockChipStylePreference extends Preference {
                     timePreview.setTextColor(tv.resourceId != 0
                             ? mPreference.getContext().getColor(tv.resourceId) : tv.data);
                 }
+            } else if (styleIndex == CHIP_STYLE_WALLPAPER_THUMBNAIL) {
+                ClockChipWallpaperThumbnailHelper.ChipBackground wb =
+                        ClockChipWallpaperThumbnailHelper.loadChipBackground(
+                                mPreference.getContext());
+                chipContainer.setBackground(wb.drawable);
+                double lum = ColorUtils.calculateLuminance(wb.contrastSampleArgb);
+                timePreview.setTextColor(lum > 0.5 ? Color.BLACK : Color.WHITE);
+                timePreview.setShadowLayer(0, 0, 0, 0);
+                applyClockChipPreviewOutline(chipContainer);
             } else {
+                chipContainer.setClipToOutline(false);
+                chipContainer.setOutlineProvider(null);
+                timePreview.setShadowLayer(0, 0, 0, 0);
                 chipContainer.setBackground(chipBg);
                 if (OUTLINE_CHIP_STYLES.contains(styleIndex)) {
                     TypedValue tv = new TypedValue();
