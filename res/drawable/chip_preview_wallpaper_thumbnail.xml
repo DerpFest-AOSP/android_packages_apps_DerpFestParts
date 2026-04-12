@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Preview only (Settings list): stadium pill hint; SystemUI uses outline clip for all chips.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="135"
+        android:endColor="#ff223344"
+        android:startColor="#ff556677"
+        android:type="linear" />
+    <!-- Large radius → capsule / pill in typical list row height -->
+    <corners
+        android:bottomLeftRadius="999dp"
+        android:bottomRightRadius="999dp"
+        android:topLeftRadius="999dp"
+        android:topRightRadius="999dp" />
+</shape>

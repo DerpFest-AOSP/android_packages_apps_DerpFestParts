@@ -43,6 +43,8 @@ public class StatusBarClockChipStylePreference extends Preference {
 
     private static final String SETTING_KEY = "statusbar_clock_chip";
     private static final String SYSTEMUI_PACKAGE = "com.android.systemui";
+    /** Must match SystemUI [HomeStatusBarViewBinder] CHIP_STYLE_WALLPAPER_THUMBNAIL */
+    private static final int CHIP_STYLE_WALLPAPER_THUMBNAIL = 13;
 
     /** Outline-only chip styles (transparent fill) - use primary text color for time preview */
     private static final java.util.Set<Integer> OUTLINE_CHIP_STYLES =
@@ -75,6 +77,9 @@ public class StatusBarClockChipStylePreference extends Preference {
     }
 
     private Drawable getChipDrawableForStyle(int styleIndex) {
+        if (styleIndex == CHIP_STYLE_WALLPAPER_THUMBNAIL) {
+            return getContext().getDrawable(R.drawable.chip_preview_wallpaper_thumbnail);
+        }
         if (styleIndex < 1 || styleIndex > SYSTEMUI_CHIP_DRAWABLES.length) {
             return null;
         }
