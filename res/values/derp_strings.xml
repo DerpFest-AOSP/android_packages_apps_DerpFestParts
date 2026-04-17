@@ -62,6 +62,10 @@
     <!-- Combined notification count -->
     <string name="status_bar_combined_notification_count">Show combined notification count</string>
 
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Colored icons</string>
+    <string name="status_bar_colored_icons_summary">Use proper app icons for notification icons in the status bar</string>
+
     <!-- Advanced restart options -->
     <string name="advanced_reboot_secured_title">Secured lockscreen</string>
     <string name="advanced_reboot_secured_summary">Display advanced restart options on secured lockscreen</string>

@@ -62,6 +62,10 @@
     <!-- Combined notification count -->
     <string name="status_bar_combined_notification_count">Kombinierte Benachrichtigungsanzahl anzeigen</string>
 
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Bunte Symbole</string>
+    <string name="status_bar_colored_icons_summary">Die tatsächlichen App-Symbole als Benachr.-Symbole in der Statusleiste verwenden</string>
+
     <!-- Advanced restart options -->
     <string name="advanced_reboot_secured_title">Bei nicht entsperrtem Gerät</string>
     <string name="advanced_reboot_secured_summary">Erweitertes Neustartmenü auch anzeigen, wenn das Gerät nicht entsperrt wurde</string>
