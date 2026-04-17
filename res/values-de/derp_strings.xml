@@ -125,6 +125,10 @@
     <string name="status_bar_colored_icons_title">Bunte Symbole</string>
     <string name="status_bar_colored_icons_summary">Die tatsächlichen App-Symbole als Benachr.-Symbole in der Statusleiste verwenden</string>
 
+    <!-- Pink Bean themed notification icons (bundled in SystemUI when available) -->
+    <string name="status_bar_pinkbean_icons_title">Pink-Bean-Symbole</string>
+    <string name="status_bar_pinkbean_icons_summary">Wo vorhanden, die mitgelieferten Pink-Bean-Symbole nutzen; sonst weiter das normale App-Symbol</string>
+
     <!-- Advanced restart options -->
     <string name="advanced_reboot_secured_title">Bei nicht entsperrtem Gerät</string>
     <string name="advanced_reboot_secured_summary">Erweitertes Neustartmenü auch anzeigen, wenn das Gerät nicht entsperrt wurde</string>

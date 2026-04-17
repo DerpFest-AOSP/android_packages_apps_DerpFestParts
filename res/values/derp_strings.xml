@@ -125,6 +125,10 @@
     <string name="status_bar_colored_icons_title">Colored icons</string>
     <string name="status_bar_colored_icons_summary">Use proper app icons for notification icons in the status bar</string>
 
+    <!-- Pink Bean themed notification icons (bundled in SystemUI when available) -->
+    <string name="status_bar_pinkbean_icons_title">Pink Bean icons</string>
+    <string name="status_bar_pinkbean_icons_summary">Use themed launcher-style icons from the Pink Bean pack where bundled; other apps keep the normal launcher icon</string>
+
     <!-- Advanced restart options -->
     <string name="advanced_reboot_secured_title">Secured lockscreen</string>
     <string name="advanced_reboot_secured_summary">Display advanced restart options on secured lockscreen</string>
