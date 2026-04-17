@@ -51,8 +51,13 @@
     <string name="status_bar_logo_style_mint">Linux Mint</string>
 
     <!-- Status bar - Icon tinting -->
-    <string name="status_bar_tint_icons_title">Statusleisten-Symbole einfärben</string>
-    <string name="status_bar_tint_icons_summary">Statusleisten-Symbole mit der System-Akzentfarbe einfärben</string>
+    <string name="status_bar_icon_tint_mode_title">Statusleisten-Symbolfarbe</string>
+    <string name="status_bar_icon_tint_mode_summary">Wie Statusleisten-Symbole eingefärbt werden (System, Akzent oder benutzerdefiniert)</string>
+    <string name="status_bar_icon_tint_system">Standard (hintergrundabhängig)</string>
+    <string name="status_bar_icon_tint_accent">Akzentfarbe (Monet)</string>
+    <string name="status_bar_icon_tint_custom">Benutzerdefinierte Farbe</string>
+    <string name="status_bar_icon_tint_custom_title">Benutzerdefinierte Symbolfarbe</string>
+    <string name="status_bar_icon_tint_custom_summary">Wird verwendet, wenn oben „Benutzerdefinierte Farbe“ gewählt ist</string>
 
     <!-- Statusbar lyric -->
     <string name="status_bar_lyric_title">Statusleisten-Lyric</string>

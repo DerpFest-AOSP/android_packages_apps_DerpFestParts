@@ -6,6 +6,19 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Status bar icon tint mode (see Settings.System.STATUSBAR_ICON_TINT_MODE) -->
+    <string-array name="status_bar_icon_tint_entries" translatable="false">
+        <item>@string/status_bar_icon_tint_system</item>
+        <item>@string/status_bar_icon_tint_accent</item>
+        <item>@string/status_bar_icon_tint_custom</item>
+    </string-array>
+
+    <string-array name="status_bar_icon_tint_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <!-- Status bar logo position -->
     <string-array name="status_bar_logo_position_entries" translatable="false">
         <item>@string/status_bar_logo_position_left</item>

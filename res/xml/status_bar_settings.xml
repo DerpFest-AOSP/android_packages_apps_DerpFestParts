@@ -40,11 +40,21 @@
             android:summary="@string/status_bar_logo_summary"
             android:fragment="org.lineageos.lineageparts.statusbar.StatusBarLogo" />
 
-        <org.derpfest.support.preferences.SystemSettingSwitchPreference
-            android:key="tint_statusbar_icons_with_accent"
-            android:title="@string/status_bar_tint_icons_title"
-            android:summary="@string/status_bar_tint_icons_summary"
-            android:defaultValue="false" />
+        <org.derpfest.support.preferences.SystemSettingIntListPreference
+            android:key="statusbar_icon_tint_mode"
+            android:title="@string/status_bar_icon_tint_mode_title"
+            android:summary="@string/status_bar_icon_tint_mode_summary"
+            android:entries="@array/status_bar_icon_tint_entries"
+            android:entryValues="@array/status_bar_icon_tint_values"
+            android:defaultValue="0"
+            app:useSimpleSummaryProvider="true" />
+
+        <org.derpfest.support.colorpicker.ColorPickerSystemPreference
+            android:key="statusbar_icon_tint_custom_color"
+            android:title="@string/status_bar_icon_tint_custom_title"
+            android:summary="@string/status_bar_icon_tint_custom_summary"
+            android:defaultValue="-1"
+            app:defaultDisplayColorRes="@android:color/white" />
 
         <org.derpfest.support.preferences.SystemSettingSwitchPreference
             android:key="statusbar_combined_notif_count"
