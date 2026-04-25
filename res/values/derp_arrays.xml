@@ -137,4 +137,17 @@
         <item>12</item>
         <item>13</item>
     </string-array>
+
+    <!-- Volume panel style (see Settings.System VOLUME_PANEL_STYLE) -->
+    <string-array name="volume_panel_style_entries" translatable="false">
+        <item>@string/volume_panel_style_default</item>
+        <item>@string/volume_panel_style_oneplus</item>
+        <item>@string/volume_panel_style_samsung</item>
+    </string-array>
+
+    <string-array name="volume_panel_style_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 </resources>

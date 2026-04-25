@@ -309,6 +309,15 @@
             android:entries="@array/volume_panel_position_entries"
             android:entryValues="@array/volume_panel_position_values"
             app:useSimpleSummaryProvider="true" />
+
+        <org.derpfest.support.preferences.SystemSettingListPreference
+            android:key="volume_panel_style"
+            android:title="@string/volume_panel_style_title"
+            android:dialogTitle="@string/volume_panel_style_title"
+            android:entries="@array/volume_panel_style_entries"
+            android:entryValues="@array/volume_panel_style_values"
+            android:defaultValue="0"
+            app:useSimpleSummaryProvider="true" />
     </PreferenceCategory>
 
     <PreferenceCategory
