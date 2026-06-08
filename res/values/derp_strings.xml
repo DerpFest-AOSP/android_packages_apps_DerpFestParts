@@ -59,6 +59,27 @@
     <string name="status_bar_lyric_title">Status bar lyric</string>
     <string name="status_bar_lyric_summary">Show lyric in status bar (needs app support)</string>
     <string name="status_bar_show_lyric_title">Enable status bar lyric</string>
+    <string name="status_bar_lyric_section_behavior">Behavior</string>
+    <string name="status_bar_lyric_section_apps">Apps</string>
+    <string name="status_bar_lyric_position_title">Display position</string>
+    <string name="status_bar_lyric_position_entry_overlay">Replace start-side content</string>
+    <string name="status_bar_lyric_position_entry_clock_right">Right of clock</string>
+    <string name="status_bar_lyric_position_summary_overlay">Show on the start side of the status bar</string>
+    <string name="status_bar_lyric_position_summary_clock_right">Show to the right of the clock</string>
+    <string name="status_bar_lyric_show_translation_title">Show translation</string>
+    <string name="status_bar_lyric_show_translation_summary">Show a second translated lyric line when available. Translations currently come from NetEase and are typically Chinese only</string>
+    <string name="status_bar_lyric_hide_icon_clock_right_title">Hide music app icon</string>
+    <string name="status_bar_lyric_hide_icon_clock_right_summary">Hide the music app icon when showing lyrics to the right of the clock</string>
+    <string name="status_bar_lyric_notification_listener_title">Notification access</string>
+    <string name="status_bar_lyric_notification_listener_summary_on">Allowed</string>
+    <string name="status_bar_lyric_notification_listener_summary_off">Tap to grant access</string>
+    <string name="status_bar_lyric_whitelist_title">Allowed apps</string>
+    <string name="status_bar_lyric_whitelist_summary_empty">All apps</string>
+    <string name="status_bar_lyric_whitelist_no_apps">No apps found</string>
+    <plurals name="status_bar_lyric_whitelist_summary_count">
+        <item quantity="one">%d allowed app</item>
+        <item quantity="other">%d allowed apps</item>
+    </plurals>
 
     <!-- Carrier name on lockscreen/statusbar -->
     <string name="status_bar_carrier_category_title">Carrier label</string>

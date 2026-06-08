@@ -59,6 +59,27 @@
     <string name="status_bar_lyric_title">Statusleisten-Lyric</string>
     <string name="status_bar_lyric_summary">Lyrik in der Statusleiste anzeigen (App-Unterstützung erforderlich)</string>
     <string name="status_bar_show_lyric_title">Statusleisten-Lyric aktivieren</string>
+    <string name="status_bar_lyric_section_behavior">Verhalten</string>
+    <string name="status_bar_lyric_section_apps">Apps</string>
+    <string name="status_bar_lyric_position_title">Anzeigeposition</string>
+    <string name="status_bar_lyric_position_entry_overlay">Startseitigen Inhalt ersetzen</string>
+    <string name="status_bar_lyric_position_entry_clock_right">Rechts von der Uhr</string>
+    <string name="status_bar_lyric_position_summary_overlay">Auf der Startseite der Statusleiste anzeigen</string>
+    <string name="status_bar_lyric_position_summary_clock_right">Rechts von der Uhr anzeigen</string>
+    <string name="status_bar_lyric_show_translation_title">Übersetzung anzeigen</string>
+    <string name="status_bar_lyric_show_translation_summary">Zweite übersetzte Lyric-Zeile anzeigen, wenn verfügbar. Übersetzungen kommen derzeit von NetEase und sind typischerweise nur auf Chinesisch</string>
+    <string name="status_bar_lyric_hide_icon_clock_right_title">Musik-App-Symbol ausblenden</string>
+    <string name="status_bar_lyric_hide_icon_clock_right_summary">Musik-App-Symbol ausblenden, wenn Lyrics rechts von der Uhr angezeigt werden</string>
+    <string name="status_bar_lyric_notification_listener_title">Benachrichtigungszugriff</string>
+    <string name="status_bar_lyric_notification_listener_summary_on">Erlaubt</string>
+    <string name="status_bar_lyric_notification_listener_summary_off">Tippen, um Zugriff zu gewähren</string>
+    <string name="status_bar_lyric_whitelist_title">Erlaubte Apps</string>
+    <string name="status_bar_lyric_whitelist_summary_empty">Alle Apps</string>
+    <string name="status_bar_lyric_whitelist_no_apps">Keine Apps gefunden</string>
+    <plurals name="status_bar_lyric_whitelist_summary_count">
+        <item quantity="one">%d erlaubte App</item>
+        <item quantity="other">%d erlaubte Apps</item>
+    </plurals>
 
     <!-- Carrier name on lockscreen/statusbar -->
     <string name="status_bar_carrier_category_title">Netzbetreiber-Anzeige</string>
