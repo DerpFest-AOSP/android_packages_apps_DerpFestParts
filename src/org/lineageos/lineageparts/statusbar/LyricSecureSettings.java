@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 final class LyricSecureSettings {
-    private static final String KEY_ALLOWED_PACKAGES = "status_bar_lyric_allowed_packages";
     static final int POSITION_OVERLAY = 0;
     static final int POSITION_CLOCK_RIGHT = 1;
 
@@ -28,12 +27,13 @@ final class LyricSecureSettings {
 
     static void setAllowedPackages(Context context, List<String> packages) {
         Settings.Secure.putString(context.getContentResolver(),
-                KEY_ALLOWED_PACKAGES, joinFiltered(packages, ";"));
+                Settings.Secure.STATUS_BAR_LYRIC_ALLOWED_PACKAGES,
+                joinFiltered(packages, ";"));
     }
 
     static List<String> getAllowedPackages(Context context) {
         return splitAndFilter(Settings.Secure.getString(context.getContentResolver(),
-                KEY_ALLOWED_PACKAGES), ";");
+                Settings.Secure.STATUS_BAR_LYRIC_ALLOWED_PACKAGES), ";");
     }
 
     static void addAllowedPackage(Context context, String packageName) {

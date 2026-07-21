@@ -74,7 +74,7 @@
     <string name="status_bar_lyric_notification_listener_summary_on">Allowed</string>
     <string name="status_bar_lyric_notification_listener_summary_off">Tap to grant access</string>
     <string name="status_bar_lyric_whitelist_title">Allowed apps</string>
-    <string name="status_bar_lyric_whitelist_summary_empty">All apps</string>
+    <string name="status_bar_lyric_whitelist_summary_empty">No apps allowed</string>
     <string name="status_bar_lyric_whitelist_no_apps">No apps found</string>
     <plurals name="status_bar_lyric_whitelist_summary_count">
         <item quantity="one">%d allowed app</item>

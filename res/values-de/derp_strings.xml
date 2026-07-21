@@ -74,7 +74,7 @@
     <string name="status_bar_lyric_notification_listener_summary_on">Erlaubt</string>
     <string name="status_bar_lyric_notification_listener_summary_off">Tippen, um Zugriff zu gewähren</string>
     <string name="status_bar_lyric_whitelist_title">Erlaubte Apps</string>
-    <string name="status_bar_lyric_whitelist_summary_empty">Alle Apps</string>
+    <string name="status_bar_lyric_whitelist_summary_empty">Keine Apps erlaubt</string>
     <string name="status_bar_lyric_whitelist_no_apps">Keine Apps gefunden</string>
     <plurals name="status_bar_lyric_whitelist_summary_count">
         <item quantity="one">%d erlaubte App</item>
