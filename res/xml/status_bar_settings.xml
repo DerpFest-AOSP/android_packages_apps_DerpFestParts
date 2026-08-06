@@ -37,6 +37,12 @@
         android:summary="@string/status_bar_lyric_summary"
         android:fragment="org.lineageos.lineageparts.statusbar.StatusbarLyricSettings"/>
 
+    <org.derpfest.support.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_show_carrier"
+        android:title="@string/lockscreen_show_carrier_title"
+        android:summary="@string/lockscreen_show_carrier_summary"
+        android:defaultValue="true" />
+
     <PreferenceCategory
         android:title="@string/status_bar_icons_title">
 

@@ -63,4 +63,8 @@
     <!-- Advanced restart options -->
     <string name="advanced_reboot_secured_title">Bei nicht entsperrtem Gerät</string>
     <string name="advanced_reboot_secured_summary">Erweitertes Neustartmenü auch anzeigen, wenn das Gerät nicht entsperrt wurde</string>
+
+    <!-- Carrier name on lockscreen -->
+    <string name="lockscreen_show_carrier_title">Name des Mobilfunkanbieters</string>
+    <string name="lockscreen_show_carrier_summary">Mobilfunkanbieter in Statusleiste anzeigen</string>
 </resources>
