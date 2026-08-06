@@ -60,11 +60,18 @@
     <string name="status_bar_lyric_summary">Lyrik in der Statusleiste anzeigen (App-Unterstützung erforderlich)</string>
     <string name="status_bar_show_lyric_title">Statusleisten-Lyric aktivieren</string>
 
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="status_bar_carrier_category_title">Netzbetreiber-Anzeige</string>
+    <string name="lockscreen_show_carrier_title">Netzbetreiber anzeigen</string>
+    <string name="carrier_show_lockscreen_only">Nur auf Sperrbildschirm</string>
+    <string name="carrier_show_statusbar_only">Nur in Statusleiste</string>
+    <string name="carrier_show_both">Sperrbildschirm &amp; Statusleiste</string>
+    <string name="custom_carrier_label_title">Eigener Bezeichnung des Netzbetreibers</string>
+    <string name="custom_carrier_label_summary">Tippen zum Festlegen einer eigenen Netzbetreiber-Bezeichnung</string>
+    <string name="custom_carrier_label_dialog_message">Ersetzt die Netzbetreiber-Anzeige mit eigenem Text. Leer lassen, um tatsächliche Bezeichnung anzuzeigen.</string>
+    <string name="never">Niemals</string>
+
     <!-- Advanced restart options -->
     <string name="advanced_reboot_secured_title">Bei nicht entsperrtem Gerät</string>
     <string name="advanced_reboot_secured_summary">Erweitertes Neustartmenü auch anzeigen, wenn das Gerät nicht entsperrt wurde</string>
-
-    <!-- Carrier name on lockscreen -->
-    <string name="lockscreen_show_carrier_title">Name des Mobilfunkanbieters</string>
-    <string name="lockscreen_show_carrier_summary">Mobilfunkanbieter in Statusleiste anzeigen</string>
 </resources>

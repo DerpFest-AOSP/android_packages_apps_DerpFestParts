@@ -7,14 +7,22 @@ package org.lineageos.lineageparts.statusbar;
 
 import static org.lineageos.lineageparts.utils.ResourceUtils.isRtlMode;
 
+import android.content.ContentResolver;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.BatteryManager;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
+import android.view.Gravity;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 
 import com.android.settingslib.fuelgauge.BatteryUtils;
@@ -44,6 +52,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String STATUS_BAR_QUICK_QS_PULLDOWN = "qs_quick_pulldown";
 
+    private static final String CARRIER_NAME = "lockscreen_show_carrier";
+    private static final String CUSTOM_CARRIER_LABEL = "lockscreen_show_custom_carrier_text";
+
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 2;
 
     private static final int QS_BRIGHTNESS_SLIDER_HIDDEN = 0;
@@ -61,6 +72,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
 
     private PreferenceCategory mStatusBarBatteryCategory;
     private PreferenceCategory mStatusBarClockCategory;
+
+    private Preference mCustomCarrierTextPref;
+    private String mCustomCarrierText;
 
     private boolean mBatteryPresent;
 
@@ -119,11 +133,24 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
             }
             return "";
         });
+
+        mCustomCarrierTextPref = findPreference(CUSTOM_CARRIER_LABEL);
+        updateCustomCarrierTextSummary();
+
+        Preference carrierPref = findPreference(CARRIER_NAME);
+        if (carrierPref != null) {
+            carrierPref.setOnPreferenceChangeListener((preference, newValue) -> {
+                updateCustomCarrierLabelEnabled(Integer.parseInt((String) newValue));
+                return true;
+            });
+        }
     }
 
     @Override
     public void onResume() {
         super.onResume();
+
+        updateCustomCarrierTextSummary();
 
         final String curIconBlacklist = Settings.Secure.getString(getContext().getContentResolver(),
                 ICON_BLACKLIST);
@@ -168,6 +195,71 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
                 mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values);
             }
             mQuickPulldown.setEntries(R.array.status_bar_quick_qs_pulldown_entries);
+        }
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if (CUSTOM_CARRIER_LABEL.equals(preference.getKey())) {
+            final ContentResolver resolver = requireActivity().getContentResolver();
+
+            AlertDialog.Builder alert = new AlertDialog.Builder(requireActivity());
+            alert.setTitle(R.string.custom_carrier_label_title);
+            alert.setMessage(R.string.custom_carrier_label_dialog_message);
+
+            LinearLayout container = new LinearLayout(requireActivity());
+            container.setOrientation(LinearLayout.VERTICAL);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT);
+            int margin = (int) (24 * requireActivity().getResources()
+                    .getDisplayMetrics().density);
+            lp.setMargins(margin, margin / 2, margin, margin / 2);
+
+            final EditText input = new EditText(requireActivity());
+            input.setText(TextUtils.isEmpty(mCustomCarrierText) ? "" : mCustomCarrierText);
+            input.setSelection(input.getText().length());
+            input.setLayoutParams(lp);
+            input.setGravity(Gravity.START | Gravity.TOP);
+            container.addView(input);
+            alert.setView(container);
+
+            alert.setPositiveButton(getString(android.R.string.ok),
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            String value = input.getText().toString();
+                            Settings.System.putStringForUser(resolver,
+                                    CUSTOM_CARRIER_LABEL, value, UserHandle.USER_CURRENT);
+                            updateCustomCarrierTextSummary();
+                        }
+                    });
+            alert.setNegativeButton(getString(android.R.string.cancel), null);
+            alert.show();
+            return true;
+        }
+        return super.onPreferenceTreeClick(preference);
+    }
+
+    private void updateCustomCarrierTextSummary() {
+        if (mCustomCarrierTextPref == null) return;
+        mCustomCarrierText = Settings.System.getStringForUser(
+                requireActivity().getContentResolver(),
+                CUSTOM_CARRIER_LABEL, UserHandle.USER_CURRENT);
+        if (TextUtils.isEmpty(mCustomCarrierText)) {
+            mCustomCarrierTextPref.setSummary(R.string.custom_carrier_label_summary);
+        } else {
+            mCustomCarrierTextPref.setSummary(mCustomCarrierText);
+        }
+        int showCarrier = Settings.System.getIntForUser(
+                requireActivity().getContentResolver(),
+                CARRIER_NAME, 1, UserHandle.USER_CURRENT);
+        updateCustomCarrierLabelEnabled(showCarrier);
+    }
+
+    private void updateCustomCarrierLabelEnabled(int showCarrier) {
+        if (mCustomCarrierTextPref != null) {
+            mCustomCarrierTextPref.setEnabled(showCarrier != 0);
         }
     }
 
