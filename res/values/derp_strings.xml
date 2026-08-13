@@ -56,8 +56,13 @@
     <string name="status_bar_logo_style_mint">Linux Mint</string>
 
     <!-- Status bar - Icon tinting -->
-    <string name="status_bar_tint_icons_title">Tint status bar icons</string>
-    <string name="status_bar_tint_icons_summary">Tint status bar icons with system accent color</string>
+    <string name="status_bar_icon_tint_mode_title">Status bar icon color</string>
+    <string name="status_bar_icon_tint_mode_summary">How status bar icons are tinted (system, accent, or custom)</string>
+    <string name="status_bar_icon_tint_system">Default (wallpaper-aware)</string>
+    <string name="status_bar_icon_tint_accent">Accent (Monet)</string>
+    <string name="status_bar_icon_tint_custom">Custom color</string>
+    <string name="status_bar_icon_tint_custom_title">Custom icon color</string>
+    <string name="status_bar_icon_tint_custom_summary">Used when Custom color is selected above</string>
 
     <!-- Statusbar lyric -->
     <string name="status_bar_lyric_title">Status bar lyric</string>

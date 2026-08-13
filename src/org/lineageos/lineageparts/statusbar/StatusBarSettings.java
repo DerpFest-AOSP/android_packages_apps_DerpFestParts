@@ -31,6 +31,8 @@ import lineageos.preference.LineageSecureSettingListPreference;
 import lineageos.preference.LineageSecureSettingSwitchPreference;
 import lineageos.preference.LineageSystemSettingListPreference;
 
+import org.derpfest.support.colorpicker.ColorPickerSystemPreference;
+import org.derpfest.support.preferences.SystemSettingIntListPreference;
 import org.lineageos.lineageparts.R;
 import org.lineageos.lineageparts.SettingsPreferenceFragment;
 import org.lineageos.lineageparts.utils.DeviceUtils;
@@ -55,6 +57,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
     private static final String CARRIER_NAME = "lockscreen_show_carrier";
     private static final String CUSTOM_CARRIER_LABEL = "lockscreen_show_custom_carrier_text";
 
+    private static final String STATUSBAR_ICON_TINT_MODE = "statusbar_icon_tint_mode";
+    private static final String STATUSBAR_ICON_TINT_CUSTOM_COLOR = "statusbar_icon_tint_custom_color";
+    /** @see android.provider.Settings.System#TINT_STATUSBAR_ICONS_WITH_ACCENT */
+    private static final String TINT_STATUSBAR_ICONS_WITH_ACCENT = "tint_statusbar_icons_with_accent";
+
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 2;
 
     private static final int QS_BRIGHTNESS_SLIDER_HIDDEN = 0;
@@ -70,6 +77,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
     private LineageSystemSettingListPreference mStatusBarAmPm;
     private LineageSystemSettingListPreference mStatusBarBatteryShowPercent;
 
+    private SystemSettingIntListPreference mStatusBarIconTintMode;
+    private ColorPickerSystemPreference mStatusBarIconTintCustomColor;
+
     private PreferenceCategory mStatusBarBatteryCategory;
     private PreferenceCategory mStatusBarClockCategory;
 
@@ -82,6 +92,18 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.status_bar_settings);
+
+        maybeMigrateStatusBarIconTint();
+
+        mStatusBarIconTintMode = findPreference(STATUSBAR_ICON_TINT_MODE);
+        mStatusBarIconTintCustomColor = findPreference(STATUSBAR_ICON_TINT_CUSTOM_COLOR);
+        if (mStatusBarIconTintMode != null) {
+            mStatusBarIconTintMode.setOnPreferenceChangeListener((preference, newValue) -> {
+                updateStatusBarIconTintCustomColorEnabled(Integer.parseInt((String) newValue));
+                return true;
+            });
+        }
+        updateStatusBarIconTintCustomColorEnabled();
 
         mStatusBarAmPm = findPreference(STATUS_BAR_AM_PM);
         mStatusBarClock = findPreference(STATUS_BAR_CLOCK_STYLE);
@@ -150,6 +172,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
     public void onResume() {
         super.onResume();
 
+        updateStatusBarIconTintCustomColorEnabled();
         updateCustomCarrierTextSummary();
 
         final String curIconBlacklist = Settings.Secure.getString(getContext().getContentResolver(),
@@ -272,5 +295,37 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
 
     private void enableStatusBarBatteryDependents(int batteryIconStyle) {
         mStatusBarBatteryShowPercent.setEnabled(batteryIconStyle != STATUS_BAR_BATTERY_STYLE_TEXT);
+    }
+
+    /**
+     * One-time migration from the legacy accent-only toggle to {@link #STATUSBAR_ICON_TINT_MODE}.
+     */
+    private void maybeMigrateStatusBarIconTint() {
+        ContentResolver cr = getActivity().getContentResolver();
+        final int unset = -1;
+        int mode = Settings.System.getIntForUser(cr, STATUSBAR_ICON_TINT_MODE, unset,
+                UserHandle.USER_CURRENT);
+        if (mode != unset) {
+            return;
+        }
+        boolean legacyAccent = Settings.System.getIntForUser(cr,
+                TINT_STATUSBAR_ICONS_WITH_ACCENT, 0, UserHandle.USER_CURRENT) == 1;
+        Settings.System.putIntForUser(cr, STATUSBAR_ICON_TINT_MODE,
+                legacyAccent ? 1 : 0, UserHandle.USER_CURRENT);
+    }
+
+    private void updateStatusBarIconTintCustomColorEnabled() {
+        if (mStatusBarIconTintMode == null || mStatusBarIconTintCustomColor == null) {
+            return;
+        }
+        String v = mStatusBarIconTintMode.getValue();
+        int mode = v != null ? Integer.parseInt(v) : 0;
+        updateStatusBarIconTintCustomColorEnabled(mode);
+    }
+
+    private void updateStatusBarIconTintCustomColorEnabled(int mode) {
+        if (mStatusBarIconTintCustomColor != null) {
+            mStatusBarIconTintCustomColor.setEnabled(mode == 2);
+        }
     }
 }
