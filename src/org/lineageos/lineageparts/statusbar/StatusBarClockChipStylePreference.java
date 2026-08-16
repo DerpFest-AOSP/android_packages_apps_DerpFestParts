@@ -6,40 +6,41 @@
 package org.lineageos.lineageparts.statusbar;
 
 import android.content.Context;
+import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.graphics.ColorUtils;
 import androidx.preference.Preference;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.android.settingslib.Utils;
 
 import org.lineageos.lineageparts.R;
-
-import java.util.function.Consumer;
+import org.lineageos.lineageparts.widget.DialogSurfaceBlur;
 
 public class StatusBarClockChipStylePreference extends Preference {
 
-    private static final int BACKGROUND_BLUR_RADIUS = 80;
-    private static final int WINDOW_BG_ALPHA_WITH_BLUR = 105;
-    private static final int WINDOW_BG_ALPHA_NO_BLUR = 255;
-    private static final float DIM_AMOUNT_WITH_BLUR = 0.1f;
-    private static final float DIM_AMOUNT_NO_BLUR = 0.4f;
-
-    private Drawable mWindowBackgroundDrawable;
-    private Drawable mDecorBackgroundDrawable;
-    private Consumer<Boolean> mBlurEnabledListener;
+    private DialogSurfaceBlur mSurfaceBlur;
     private AlertDialog mDialog;
+    private boolean mDialogConfirmed;
+    private int mOriginalValue;
 
     private static final String SETTING_KEY = "statusbar_clock_chip";
     private static final String SYSTEMUI_PACKAGE = "com.android.systemui";
@@ -65,13 +66,38 @@ public class StatusBarClockChipStylePreference extends Preference {
 
     private String[] mEntries;
     private String[] mEntryValues;
-    private android.content.pm.PackageManager mPm;
+    private Context mSystemUiThemedContext;
 
     public StatusBarClockChipStylePreference(Context context, AttributeSet attrs) {
         super(context, attrs);
         mEntries = context.getResources().getStringArray(R.array.statusbar_clock_chip_entries);
         mEntryValues = context.getResources().getStringArray(R.array.statusbar_clock_chip_values);
-        mPm = context.getPackageManager();
+    }
+
+    /**
+     * SystemUI application theme ({@code Theme.SystemUI} / DeviceDefault.SystemUI), not the
+     * Settings Material3 dialog theme. colorAccent there is what the status bar clock uses.
+     */
+    private Context getSystemUiThemedContext() {
+        if (mSystemUiThemedContext != null) {
+            return mSystemUiThemedContext;
+        }
+        try {
+            Context sysUi = getContext().createPackageContext(SYSTEMUI_PACKAGE, 0);
+            sysUi = sysUi.createConfigurationContext(
+                    getContext().getResources().getConfiguration());
+            int themeId = sysUi.getResources().getIdentifier(
+                    "Theme.SystemUI", "style", SYSTEMUI_PACKAGE);
+            mSystemUiThemedContext = new ContextThemeWrapper(sysUi,
+                    themeId != 0 ? themeId : android.R.style.Theme_DeviceDefault);
+            return mSystemUiThemedContext;
+        } catch (PackageManager.NameNotFoundException e) {
+            return getContext();
+        }
+    }
+
+    private Resources getSystemUiResources() {
+        return getSystemUiThemedContext().getResources();
     }
 
     private Drawable getChipDrawableForStyle(int styleIndex) {
@@ -79,15 +105,94 @@ public class StatusBarClockChipStylePreference extends Preference {
             return null;
         }
         try {
-            android.content.res.Resources sysUiRes = mPm.getResourcesForApplication(SYSTEMUI_PACKAGE);
+            Resources sysUiRes = getSystemUiResources();
+            if (sysUiRes == null) {
+                return null;
+            }
             String name = SYSTEMUI_CHIP_DRAWABLES[styleIndex - 1];
             int id = sysUiRes.getIdentifier(name, "drawable", SYSTEMUI_PACKAGE);
             if (id != 0) {
-                return sysUiRes.getDrawable(id, getContext().getTheme());
+                return sysUiRes.getDrawable(id, getSystemUiThemedContext().getTheme());
             }
         } catch (Exception e) {
         }
         return null;
+    }
+
+    private int getSystemUiColor(String name, int fallback) {
+        try {
+            Resources sysUiRes = getSystemUiResources();
+            if (sysUiRes == null) {
+                return fallback;
+            }
+            int id = sysUiRes.getIdentifier(name, "color", SYSTEMUI_PACKAGE);
+            if (id != 0) {
+                return sysUiRes.getColor(id, getSystemUiThemedContext().getTheme());
+            }
+        } catch (Exception e) {
+        }
+        return fallback;
+    }
+
+    private boolean useHighEndBatteryContrast() {
+        try {
+            Resources sysUiRes = getSystemUiResources();
+            if (sysUiRes == null) {
+                return true;
+            }
+            int id = sysUiRes.getIdentifier(
+                    "config_useHighEndBatteryContrast", "bool", SYSTEMUI_PACKAGE);
+            if (id != 0) {
+                return sysUiRes.getBoolean(id);
+            }
+        } catch (Exception e) {
+        }
+        return true;
+    }
+
+    /**
+     * Same background SystemUI uses for chip text contrast: colorAccent like the battery
+     * glyph, with style 5 on neumorph paper and style 9 compositing the scrim.
+     */
+    private int getChipContrastBackground(int styleIndex) {
+        int accent = Utils.getColorAccentDefaultColor(getSystemUiThemedContext());
+        if (styleIndex == 5) {
+            return ColorUtils.blendARGB(
+                    getSystemUiColor("neumorph_outline_start", 0xFFBDBDBD),
+                    getSystemUiColor("neumorph_outline_end", 0xFFF0F0F0),
+                    0.5f);
+        }
+        if (styleIndex == 9) {
+            return ColorUtils.compositeColors(
+                    getSystemUiColor("clock_chip_overlay", 0x40000000), accent);
+        }
+        return accent;
+    }
+
+    /**
+     * Matches {@code BatteryColors.textColorOnBackground}: blend toward black or white
+     * until contrast is met (or 80% blend on low-end).
+     */
+    private int getTextColorOnBackground(int backgroundArgb) {
+        boolean isBgLight = ColorUtils.calculateLuminance(backgroundArgb) > 0.5;
+        int targetColor = isBgLight ? Color.BLACK : Color.WHITE;
+        if (!useHighEndBatteryContrast()) {
+            return ColorUtils.blendARGB(backgroundArgb, targetColor, 0.8f);
+        }
+        final double minContrast = 6.5;
+        float blendRatio = 0f;
+        while (blendRatio <= 1.0f) {
+            int newColor = ColorUtils.blendARGB(backgroundArgb, targetColor, blendRatio);
+            if (ColorUtils.calculateContrast(newColor, backgroundArgb) >= minContrast) {
+                return newColor;
+            }
+            blendRatio += 0.05f;
+        }
+        return targetColor;
+    }
+
+    private int getChipPreviewTextColor(int styleIndex) {
+        return getTextColorOnBackground(getChipContrastBackground(styleIndex));
     }
 
     private int getCurrentValue() {
@@ -101,17 +206,6 @@ public class StatusBarClockChipStylePreference extends Preference {
         setSummary(index >= 0 ? mEntries[index] : mEntries[0]);
     }
 
-    /** Returns contrasting text color for use on accent/chip background (matches SystemUI logic). */
-    private int getTextColorOnAccent() {
-        TypedValue tv = new TypedValue();
-        if (!getContext().getTheme().resolveAttribute(android.R.attr.colorAccent, tv, true)) {
-            return Color.WHITE;
-        }
-        int accent = tv.resourceId != 0 ? getContext().getColor(tv.resourceId) : tv.data;
-        double luminance = ColorUtils.calculateLuminance(accent);
-        return luminance > 0.5 ? Color.BLACK : Color.WHITE;
-    }
-
     private int indexOfValue(String value) {
         for (int i = 0; i < mEntryValues.length; i++) {
             if (mEntryValues[i].equals(value)) {
@@ -122,10 +216,9 @@ public class StatusBarClockChipStylePreference extends Preference {
     }
 
     private void clearDialogSolidBackgrounds(View root) {
-        View listView = root.findViewById(R.id.logo_style_list);
-        View ourContentRoot = (listView != null && listView.getParent() instanceof View
-                && ((View) listView.getParent()).getParent() instanceof View)
-                ? (View) ((View) listView.getParent()).getParent() : null;
+        View grid = root.findViewById(R.id.style_picker_grid);
+        View ourContentRoot = (grid != null && grid.getParent() instanceof View)
+                ? (View) grid.getParent() : null;
         if (root instanceof ViewGroup) {
             ViewGroup group = (ViewGroup) root;
             for (int i = 0; i < group.getChildCount(); i++) {
@@ -136,6 +229,7 @@ public class StatusBarClockChipStylePreference extends Preference {
 
     private void clearOpaqueBackgroundsRecursive(View view, View excludeSubtree) {
         if (view == excludeSubtree) return;
+        if (view instanceof android.widget.Button) return;
         view.setBackgroundResource(android.R.color.transparent);
         if (view instanceof ViewGroup) {
             ViewGroup group = (ViewGroup) view;
@@ -151,137 +245,102 @@ public class StatusBarClockChipStylePreference extends Preference {
         updateSummary();
     }
 
+    private void applyStyleValue(int position) {
+        Settings.System.putIntForUser(getContext().getContentResolver(),
+                SETTING_KEY, Integer.parseInt(mEntryValues[position]), UserHandle.USER_CURRENT);
+    }
+
     @Override
     protected void onClick() {
         View view = View.inflate(getContext(), R.layout.dialog_statusbar_logo_style, null);
-        ListView listView = view.findViewById(R.id.logo_style_list);
+        RecyclerView grid = view.findViewById(R.id.style_picker_grid);
 
-        int mCurrentValue = getCurrentValue();
-        int selectedIndex = indexOfValue(String.valueOf(mCurrentValue));
+        mOriginalValue = getCurrentValue();
+        mDialogConfirmed = false;
+        int selectedIndex = indexOfValue(String.valueOf(mOriginalValue));
         if (selectedIndex < 0) selectedIndex = 0;
 
-        listView.setAdapter(new ChipStyleAdapter(getContext(), mEntries, mEntryValues, this,
-                selectedIndex));
-        listView.setOnItemClickListener((parent, v, position, id) -> {
-            String value = mEntryValues[position];
-            Settings.System.putIntForUser(getContext().getContentResolver(),
-                    SETTING_KEY, Integer.parseInt(value), UserHandle.USER_CURRENT);
-            setSummary(mEntries[position]);
-            if (mDialog != null) {
-                mDialog.dismiss();
-            }
+        grid.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        grid.setHasFixedSize(true);
+        int gap = getContext().getResources().getDimensionPixelSize(
+                R.dimen.settingslib_expressive_space_extrasmall4);
+        grid.addItemDecoration(new GridSpacingDecoration(gap));
+        ChipStyleAdapter adapter = new ChipStyleAdapter(getContext(), mEntries, mEntryValues, this,
+                selectedIndex);
+        adapter.setOnStyleClickListener(position -> {
+            adapter.setSelectedIndex(position);
+            applyStyleValue(position);
         });
+        grid.setAdapter(adapter);
+        grid.scrollToPosition(selectedIndex);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), R.style.LogoStyleDialogTheme);
         builder.setTitle(getTitle());
         builder.setView(view);
         builder.setNegativeButton(android.R.string.cancel, null);
+        builder.setPositiveButton(android.R.string.ok, (dialog, which) -> {
+            mDialogConfirmed = true;
+            updateSummary();
+        });
 
         mDialog = builder.create();
         Window window = mDialog.getWindow();
         if (window != null) {
             float density = getContext().getResources().getDisplayMetrics().density;
-            int maxWidthPx = (int) (320 * density + 0.5f);
+            int maxWidthPx = (int) (400 * density + 0.5f);
             int screenWidth = getContext().getResources().getDisplayMetrics().widthPixels;
             WindowManager.LayoutParams lp = window.getAttributes();
-            lp.width = Math.min(maxWidthPx, (int) (screenWidth * 0.85f));
+            lp.width = Math.min(maxWidthPx, (int) (screenWidth * 0.92f));
             window.setAttributes(lp);
-            setupWindowBlur(window);
         }
+        mSurfaceBlur = new DialogSurfaceBlur(getContext());
         mDialog.setOnShowListener(dialog -> {
-            TypedValue tv = new TypedValue();
-            int accent = 0;
-            if (getContext().getTheme().resolveAttribute(android.R.attr.colorAccent, tv, true)) {
-                accent = tv.resourceId != 0 ? getContext().getColor(tv.resourceId) : tv.data;
-            }
-            if (accent != 0) {
-                android.widget.Button negativeButton =
-                        ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_NEGATIVE);
-                if (negativeButton != null) negativeButton.setTextColor(accent);
-                int titleId = getContext().getResources().getIdentifier("alertTitle", "id",
-                        "android");
-                TextView titleView = titleId != 0
-                        ? (TextView) ((AlertDialog) dialog).getWindow()
-                                .getDecorView().findViewById(titleId) : null;
-                if (titleView != null) titleView.setTextColor(accent);
+            if (mSurfaceBlur != null) {
+                mSurfaceBlur.attach(mDialog);
             }
             Window w = ((AlertDialog) dialog).getWindow();
             if (w != null) clearDialogSolidBackgrounds(w.getDecorView());
         });
         mDialog.setOnDismissListener(dialog -> {
-            if (mBlurEnabledListener != null && mDialog != null) {
-                Window w = mDialog.getWindow();
-                if (w != null) {
-                    w.getWindowManager().removeCrossWindowBlurEnabledListener(mBlurEnabledListener);
-                }
+            if (!mDialogConfirmed) {
+                Settings.System.putIntForUser(getContext().getContentResolver(),
+                        SETTING_KEY, mOriginalValue, UserHandle.USER_CURRENT);
             }
-            mBlurEnabledListener = null;
-            mWindowBackgroundDrawable = null;
-            mDecorBackgroundDrawable = null;
+            if (mSurfaceBlur != null) {
+                mSurfaceBlur.detach();
+                mSurfaceBlur = null;
+            }
             mDialog = null;
         });
 
         mDialog.show();
     }
 
-    private void setupWindowBlur(Window window) {
-        if (window == null) return;
-        mWindowBackgroundDrawable = getContext().getDrawable(
-                R.drawable.dialog_logo_style_window_background);
-        if (mWindowBackgroundDrawable != null) {
-            mWindowBackgroundDrawable = mWindowBackgroundDrawable.mutate();
-            window.setBackgroundDrawable(mWindowBackgroundDrawable);
+    private static class GridSpacingDecoration extends RecyclerView.ItemDecoration {
+        private final int mSpacing;
+
+        GridSpacingDecoration(int spacingPx) {
+            mSpacing = spacingPx;
         }
-        mDecorBackgroundDrawable = getContext().getDrawable(
-                R.drawable.dialog_logo_style_window_background);
-        if (mDecorBackgroundDrawable != null) {
-            mDecorBackgroundDrawable = mDecorBackgroundDrawable.mutate();
-            View decor = window.getDecorView();
-            if (decor != null) {
-                decor.setBackground(mDecorBackgroundDrawable);
-                decor.setClipToOutline(true);
-            }
+
+        @Override
+        public void getItemOffsets(@NonNull Rect outRect, @NonNull View view,
+                @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
+            outRect.set(mSpacing, mSpacing, mSpacing, mSpacing);
         }
-        window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
-        window.setBackgroundBlurRadius(BACKGROUND_BLUR_RADIUS);
-        window.setDimAmount(DIM_AMOUNT_WITH_BLUR);
-        if (mWindowBackgroundDrawable != null) {
-            mWindowBackgroundDrawable.setAlpha(WINDOW_BG_ALPHA_WITH_BLUR);
-        }
-        if (mDecorBackgroundDrawable != null) {
-            mDecorBackgroundDrawable.setAlpha(WINDOW_BG_ALPHA_WITH_BLUR);
-        }
-        mBlurEnabledListener = this::updateWindowForBlur;
-        window.getWindowManager().addCrossWindowBlurEnabledListener(mBlurEnabledListener);
-        boolean enabled = window.getWindowManager().isCrossWindowBlurEnabled();
-        updateWindowForBlur(enabled);
     }
 
-    private void updateWindowForBlur(boolean blursEnabled) {
-        if (mDialog == null) return;
-        Window window = mDialog.getWindow();
-        if (window == null) return;
-        int alpha = blursEnabled && BACKGROUND_BLUR_RADIUS > 0
-                ? WINDOW_BG_ALPHA_WITH_BLUR : WINDOW_BG_ALPHA_NO_BLUR;
-        if (mWindowBackgroundDrawable != null) {
-            mWindowBackgroundDrawable.setAlpha(alpha);
-        }
-        if (mDecorBackgroundDrawable != null) {
-            mDecorBackgroundDrawable.setAlpha(alpha);
-        }
-        window.setDimAmount(blursEnabled && BACKGROUND_BLUR_RADIUS > 0
-                ? DIM_AMOUNT_WITH_BLUR : DIM_AMOUNT_NO_BLUR);
-        window.setBackgroundBlurRadius(BACKGROUND_BLUR_RADIUS);
-        window.setAttributes(window.getAttributes());
+    private interface OnStyleClickListener {
+        void onStyleClicked(int position);
     }
 
-    private static class ChipStyleAdapter extends android.widget.BaseAdapter {
+    private static class ChipStyleAdapter extends RecyclerView.Adapter<ChipStyleAdapter.Holder> {
         private final LayoutInflater mInflater;
         private final String[] mEntries;
         private final String[] mEntryValues;
         private final StatusBarClockChipStylePreference mPreference;
-        private final int mSelectedIndex;
-        private final Drawable mSelectedBackground;
+        private int mSelectedIndex;
+        private OnStyleClickListener mListener;
 
         ChipStyleAdapter(Context context, String[] entries, String[] entryValues,
                 StatusBarClockChipStylePreference preference, int selectedIndex) {
@@ -290,61 +349,83 @@ public class StatusBarClockChipStylePreference extends Preference {
             mEntryValues = entryValues;
             mPreference = preference;
             mSelectedIndex = selectedIndex;
-            mSelectedBackground = context.getDrawable(R.drawable.logo_style_item_selected);
         }
 
-        @Override
-        public int getCount() {
-            return mEntries.length;
+        void setOnStyleClickListener(OnStyleClickListener listener) {
+            mListener = listener;
         }
 
-        @Override
-        public Object getItem(int position) {
-            return mEntries[position];
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            if (convertView == null) {
-                convertView = mInflater.inflate(R.layout.m3_chip_style_list_item, parent, false);
+        void setSelectedIndex(int index) {
+            if (index == mSelectedIndex) {
+                return;
             }
-            convertView.setBackground(position == mSelectedIndex
-                    ? mSelectedBackground : null);
-            TextView text = convertView.findViewById(android.R.id.text1);
-            View chipContainer = convertView.findViewById(R.id.chip_preview_container);
-            TextView timePreview = convertView.findViewById(R.id.chip_time_preview);
-            text.setText(mEntries[position]);
+            int oldIndex = mSelectedIndex;
+            mSelectedIndex = index;
+            if (oldIndex >= 0) {
+                notifyItemChanged(oldIndex);
+            }
+            notifyItemChanged(mSelectedIndex);
+        }
+
+        @NonNull
+        @Override
+        public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            return new Holder(mInflater.inflate(R.layout.m3_chip_style_list_item, parent, false));
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull Holder holder, int position) {
+            holder.itemView.setSelected(position == mSelectedIndex);
+            holder.itemView.setContentDescription(mEntries[position]);
+            holder.text.setText(mEntries[position]);
             int styleIndex = position < mEntryValues.length
                     ? Integer.parseInt(mEntryValues[position]) : 0;
             Drawable chipBg = mPreference.getChipDrawableForStyle(styleIndex);
             if (styleIndex == 0) {
-                chipContainer.setBackgroundResource(R.drawable.chip_preview_disabled);
+                holder.chipContainer.setBackgroundResource(R.drawable.chip_preview_disabled);
                 TypedValue tv = new TypedValue();
                 if (mPreference.getContext().getTheme().resolveAttribute(
                         android.R.attr.textColorSecondary, tv, true)) {
-                    timePreview.setTextColor(tv.resourceId != 0
+                    holder.timePreview.setTextColor(tv.resourceId != 0
                             ? mPreference.getContext().getColor(tv.resourceId) : tv.data);
                 }
             } else {
-                chipContainer.setBackground(chipBg);
+                holder.chipContainer.setBackground(chipBg);
                 if (OUTLINE_CHIP_STYLES.contains(styleIndex)) {
                     TypedValue tv = new TypedValue();
                     if (mPreference.getContext().getTheme().resolveAttribute(
                             android.R.attr.textColorPrimary, tv, true)) {
-                        timePreview.setTextColor(tv.resourceId != 0
+                        holder.timePreview.setTextColor(tv.resourceId != 0
                                 ? mPreference.getContext().getColor(tv.resourceId) : tv.data);
                     }
                 } else {
-                    timePreview.setTextColor(mPreference.getTextColorOnAccent());
+                    holder.timePreview.setTextColor(mPreference.getChipPreviewTextColor(styleIndex));
                 }
             }
-            chipContainer.setVisibility(View.VISIBLE);
-            return convertView;
+            holder.itemView.setOnClickListener(v -> {
+                int pos = holder.getBindingAdapterPosition();
+                if (pos != RecyclerView.NO_POSITION && mListener != null) {
+                    mListener.onStyleClicked(pos);
+                }
+            });
+        }
+
+        @Override
+        public int getItemCount() {
+            return mEntries.length;
+        }
+
+        static class Holder extends RecyclerView.ViewHolder {
+            final TextView text;
+            final View chipContainer;
+            final TextView timePreview;
+
+            Holder(@NonNull View itemView) {
+                super(itemView);
+                text = itemView.findViewById(android.R.id.text1);
+                chipContainer = itemView.findViewById(R.id.chip_preview_container);
+                timePreview = itemView.findViewById(R.id.chip_time_preview);
+            }
         }
     }
 }

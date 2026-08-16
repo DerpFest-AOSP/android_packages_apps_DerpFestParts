@@ -33,5 +33,9 @@
     <dimen name="package_list_padding_top">16dp</dimen>
 
     <dimen name="color_mode_preview_height">320dp</dimen>
+
+    <!-- Match SystemUI volume panel / slider surface blur -->
+    <dimen name="dialog_surface_blur_radius">23dp</dimen>
+    <dimen name="dialog_surface_corner_radius">30dp</dimen>
 </resources>
 
