@@ -90,24 +90,10 @@
             android:defaultValue="-1"
             app:defaultDisplayColorRes="@android:color/white" />
 
-        <org.derpfest.support.preferences.SystemSettingSwitchPreference
-            android:key="statusbar_combined_notif_count"
-            android:title="@string/status_bar_combined_notification_count"
-            android:summary="@string/status_bar_combined_notification_count_summary"
-            android:defaultValue="false" />
-
-        <org.derpfest.support.preferences.SystemSettingSwitchPreference
-            android:key="statusbar_colored_icons"
-            android:title="@string/status_bar_colored_icons_title"
-            android:summary="@string/status_bar_colored_icons_summary"
-            android:defaultValue="false" />
-
-        <org.derpfest.support.preferences.SystemSettingSwitchPreference
-            android:key="statusbar_pinkbean_notification_icons"
-            android:title="@string/status_bar_pinkbean_icons_title"
-            android:summary="@string/status_bar_pinkbean_icons_summary"
-            android:dependency="statusbar_colored_icons"
-            android:defaultValue="false" />
+        <org.lineageos.lineageparts.statusbar.StatusBarNotificationIconStylePreference
+            android:key="statusbar_notification_icon_mode"
+            android:title="@string/status_bar_notification_icons_title"
+            android:summary="@string/status_bar_notification_icons_summary" />
 
     </PreferenceCategory>
 

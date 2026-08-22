@@ -109,6 +109,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
         addPreferencesFromResource(R.xml.status_bar_settings);
 
         maybeMigrateStatusBarIconTint();
+        maybeMigrateNotificationIconMode();
 
         mStatusBarIconTintMode = findPreference(STATUSBAR_ICON_TINT_MODE);
         mStatusBarIconTintCustomColor = findPreference(STATUSBAR_ICON_TINT_CUSTOM_COLOR);
@@ -408,6 +409,21 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
         Settings.System.putStringForUser(getActivity().getContentResolver(),
                 CLOCK_DATE_FORMAT, newValue, UserHandle.USER_CURRENT);
         return true;
+    }
+
+    /**
+     * One-time migration from the independent notification-icon toggles to
+     * {@code statusbar_notification_icon_mode}.
+     */
+    private void maybeMigrateNotificationIconMode() {
+        ContentResolver cr = getActivity().getContentResolver();
+        if (Settings.System.getIntForUser(cr,
+                StatusBarNotificationIconStylePreference.SETTING_KEY, -1,
+                UserHandle.USER_CURRENT) >= 0) {
+            return;
+        }
+        StatusBarNotificationIconStylePreference.writeMode(cr,
+                StatusBarNotificationIconStylePreference.readMode(cr));
     }
 
     /**

@@ -68,6 +68,14 @@
     <string name="status_bar_combined_notification_count">Kombinierte Benachrichtigungsanzahl anzeigen</string>
     <string name="status_bar_combined_notification_count_summary">Einzelne Benachrichtigungssymbole durch eine kombinierte Anzahl ersetzen</string>
 
+    <!-- Status bar notification icon mode -->
+    <string name="status_bar_notification_icons_title">Benachrichtigungssymbole</string>
+    <string name="status_bar_notification_icons_summary">Festlegen, wie Benachrichtigungen in der Statusleiste angezeigt werden</string>
+    <string name="status_bar_notification_icons_show_icon">Symbole anzeigen</string>
+    <string name="status_bar_notification_icons_app_icons">App-Symbole</string>
+    <string name="status_bar_notification_icons_show_number">Anzahl anzeigen</string>
+    <string name="status_bar_notification_icons_hidden">Nicht anzeigen</string>
+
     <!-- Statusbar lyric -->
     <string name="status_bar_lyric_title">Statusleisten-Lyric</string>
     <string name="status_bar_lyric_summary">Lyrik in der Statusleiste anzeigen (App-Unterstützung erforderlich)</string>

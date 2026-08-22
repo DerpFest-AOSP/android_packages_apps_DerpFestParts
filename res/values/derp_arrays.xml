@@ -19,6 +19,23 @@
         <item>2</item>
     </string-array>
 
+    <!-- Status bar notification icon mode -->
+    <string-array name="status_bar_notification_icon_mode_entries" translatable="false">
+        <item>@string/status_bar_notification_icons_show_icon</item>
+        <item>@string/status_bar_notification_icons_app_icons</item>
+        <item>@string/status_bar_pinkbean_icons_title</item>
+        <item>@string/status_bar_notification_icons_show_number</item>
+        <item>@string/status_bar_notification_icons_hidden</item>
+    </string-array>
+
+    <string-array name="status_bar_notification_icon_mode_values" translatable="false">
+        <item>0</item>
+        <item>4</item>
+        <item>3</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <!-- Status bar logo position -->
     <string-array name="status_bar_logo_position_entries" translatable="false">
         <item>@string/status_bar_logo_position_left</item>

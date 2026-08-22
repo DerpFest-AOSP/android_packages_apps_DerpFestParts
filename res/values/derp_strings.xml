@@ -68,6 +68,14 @@
     <string name="status_bar_combined_notification_count">Show combined notification count</string>
     <string name="status_bar_combined_notification_count_summary">Replace individual notification icons with a single count</string>
 
+    <!-- Status bar notification icon mode -->
+    <string name="status_bar_notification_icons_title">Notification icons</string>
+    <string name="status_bar_notification_icons_summary">Choose how notifications appear in the status bar</string>
+    <string name="status_bar_notification_icons_show_icon">Show icon</string>
+    <string name="status_bar_notification_icons_app_icons">App icons</string>
+    <string name="status_bar_notification_icons_show_number">Show number</string>
+    <string name="status_bar_notification_icons_hidden">Do not show</string>
+
     <!-- Statusbar lyric -->
     <string name="status_bar_lyric_title">Status bar lyric</string>
     <string name="status_bar_lyric_summary">Show lyric in status bar (needs app support)</string>
