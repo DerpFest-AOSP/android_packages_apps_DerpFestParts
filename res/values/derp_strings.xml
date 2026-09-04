@@ -128,6 +128,7 @@
     <string name="solid_gradient_light">Gradient light</string>
     <string name="solid_gradient_shape">Sharp gradient corner</string>
     <string name="solid_gradient_void_light">Gradient Void light</string>
+    <string name="clock_chip_wallpaper_thumbnail">Wallpaper thumbnail</string>
 
     <!-- Status bar colored notification icons -->
     <string name="status_bar_colored_icons_title">Colored icons</string>
