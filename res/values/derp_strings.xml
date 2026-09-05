@@ -130,6 +130,10 @@
     <string name="solid_gradient_void_light">Gradient Void light</string>
     <string name="clock_chip_wallpaper_thumbnail">Wallpaper thumbnail</string>
 
+    <!-- Status bar - Battery estimate -->
+    <string name="status_bar_battery_estimate_title">Battery time remaining</string>
+    <string name="status_bar_battery_estimate_summary">Show estimated time until the battery is empty in Quick Settings</string>
+
     <!-- Status bar colored notification icons -->
     <string name="status_bar_colored_icons_title">Colored icons</string>
     <string name="status_bar_colored_icons_summary">Use proper app icons for notification icons in the status bar</string>

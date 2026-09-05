@@ -129,6 +129,10 @@
     <string name="solid_gradient_shape">Kantiger Verlauf abgerundet</string>
     <string name="solid_gradient_void_light">Verlauf Void hell</string>
 
+    <!-- Status bar - Battery estimate -->
+    <string name="status_bar_battery_estimate_title">Akkuschätzung</string>
+    <string name="status_bar_battery_estimate_summary">Geschätzte verbleibende Akkulaufzeit in den Schnelleinstellungen anzeigen, wenn verfügbar</string>
+
     <!-- Status bar colored notification icons -->
     <string name="status_bar_colored_icons_title">Bunte Symbole</string>
     <string name="status_bar_colored_icons_summary">Die tatsächlichen App-Symbole als Benachr.-Symbole in der Statusleiste verwenden</string>
