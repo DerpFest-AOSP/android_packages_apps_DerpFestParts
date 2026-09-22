@@ -5,14 +5,17 @@
 
 package org.lineageos.lineageparts.statusbar;
 
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.provider.Settings;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.ArraySet;
+import android.view.Gravity;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.SwitchPreferenceCompat;
@@ -22,7 +25,6 @@ import org.lineageos.lineageparts.SettingsPreferenceFragment;
 import org.lineageos.lineageparts.search.BaseSearchIndexProvider;
 import org.lineageos.lineageparts.search.Searchable;
 
-import java.util.List;
 import java.util.Set;
 
 public class StatusbarLyricSettings extends SettingsPreferenceFragment
@@ -31,14 +33,11 @@ public class StatusbarLyricSettings extends SettingsPreferenceFragment
     private static final String KEY_POSITION = "status_bar_lyric_position";
     private static final String KEY_HIDE_ICON_CLOCK_RIGHT =
             "status_bar_lyric_hide_icon_clock_right";
-    private static final String KEY_NOTIFICATION_ACCESS = "lyric_notification_listener";
-    private static final String KEY_ALLOWED_APPS = "status_bar_lyric_allowed_packages";
-    private static final String LYRIC_FETCH_PACKAGE = "cn.binbin323.statuslyricext";
+    private static final String KEY_SOURCES = "status_bar_lyric_sources";
 
     private ListPreference mPositionPreference;
     private SwitchPreferenceCompat mHideClockRightIconPreference;
-    private Preference mNotificationListenerPreference;
-    private Preference mAllowedAppsPreference;
+    private Preference mSourcesPreference;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,18 +46,10 @@ public class StatusbarLyricSettings extends SettingsPreferenceFragment
 
         mPositionPreference = findPreference(KEY_POSITION);
         mHideClockRightIconPreference = findPreference(KEY_HIDE_ICON_CLOCK_RIGHT);
-        mNotificationListenerPreference = findPreference(KEY_NOTIFICATION_ACCESS);
-        mAllowedAppsPreference = findPreference(KEY_ALLOWED_APPS);
+        mSourcesPreference = findPreference(KEY_SOURCES);
 
         if (mPositionPreference != null) {
             mPositionPreference.setOnPreferenceChangeListener(this);
-        }
-
-        if (mNotificationListenerPreference != null) {
-            mNotificationListenerPreference.setOnPreferenceClickListener(preference -> {
-                startActivity(new Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS));
-                return true;
-            });
         }
 
         syncState();
@@ -79,6 +70,15 @@ public class StatusbarLyricSettings extends SettingsPreferenceFragment
         return false;
     }
 
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if (KEY_SOURCES.equals(preference.getKey())) {
+            showSourcesDialog();
+            return true;
+        }
+        return super.onPreferenceTreeClick(preference);
+    }
+
     private void syncState() {
         Context context = getContext();
         if (context == null) {
@@ -88,8 +88,7 @@ public class StatusbarLyricSettings extends SettingsPreferenceFragment
         int position = LyricSecureSettings.getPosition(
                 context, LyricSecureSettings.POSITION_OVERLAY);
         updatePositionState(position, true);
-        updateNotificationAccessSummary(context);
-        updateAllowedAppsSummary(context);
+        updateSourcesSummary(context);
     }
 
     private void updatePositionState(int position, boolean enabled) {
@@ -105,44 +104,54 @@ public class StatusbarLyricSettings extends SettingsPreferenceFragment
         }
     }
 
-    private void updateNotificationAccessSummary(Context context) {
-        if (mNotificationListenerPreference == null) {
+    private void updateSourcesSummary(Context context) {
+        if (mSourcesPreference == null) {
             return;
         }
-        mNotificationListenerPreference.setSummary(
-                isNotificationListenerEnabled(context)
-                        ? R.string.status_bar_lyric_notification_listener_summary_on
-                        : R.string.status_bar_lyric_notification_listener_summary_off);
+        String sources = LyricSecureSettings.getSources(context);
+        mSourcesPreference.setSummary(TextUtils.isEmpty(sources)
+                ? R.string.status_bar_lyric_sources_summary_default
+                : R.string.status_bar_lyric_sources_summary_configured);
     }
 
-    private void updateAllowedAppsSummary(Context context) {
-        if (mAllowedAppsPreference == null) {
-            return;
-        }
-        List<String> packages = LyricSecureSettings.getAllowedPackages(context);
-        if (packages.isEmpty()) {
-            mAllowedAppsPreference.setSummary(R.string.status_bar_lyric_whitelist_summary_empty);
-            return;
-        }
-        mAllowedAppsPreference.setSummary(getResources().getQuantityString(
-                R.plurals.status_bar_lyric_whitelist_summary_count,
-                packages.size(), packages.size()));
-    }
+    private void showSourcesDialog() {
+        Context context = requireContext();
+        String current = LyricSecureSettings.getSources(context);
 
-    private boolean isNotificationListenerEnabled(Context context) {
-        String flat = Settings.Secure.getString(context.getContentResolver(),
-                Settings.Secure.ENABLED_NOTIFICATION_LISTENERS);
-        if (TextUtils.isEmpty(flat)) {
-            return false;
-        }
-        for (String name : flat.split(":")) {
-            ComponentName componentName = ComponentName.unflattenFromString(name);
-            if (componentName != null
-                    && LYRIC_FETCH_PACKAGE.equals(componentName.getPackageName())) {
-                return true;
+        AlertDialog.Builder alert = new AlertDialog.Builder(context);
+        alert.setTitle(R.string.status_bar_lyric_sources_dialog_title);
+        alert.setMessage(R.string.status_bar_lyric_sources_dialog_message);
+
+        LinearLayout container = new LinearLayout(context);
+        container.setOrientation(LinearLayout.VERTICAL);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
+        int margin = (int) (24 * context.getResources().getDisplayMetrics().density);
+        lp.setMargins(margin, margin / 2, margin, margin / 2);
+
+        final EditText input = new EditText(context);
+        input.setText(current);
+        input.setHint(R.string.status_bar_lyric_sources_dialog_hint);
+        input.setSelection(input.getText().length());
+        input.setMinLines(3);
+        input.setInputType(InputType.TYPE_CLASS_TEXT
+                | InputType.TYPE_TEXT_FLAG_MULTI_LINE
+                | InputType.TYPE_TEXT_VARIATION_URI);
+        input.setLayoutParams(lp);
+        input.setGravity(Gravity.START | Gravity.TOP);
+        container.addView(input);
+        alert.setView(container);
+
+        alert.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                LyricSecureSettings.setSources(context, input.getText().toString());
+                updateSourcesSummary(context);
             }
-        }
-        return false;
+        });
+        alert.setNegativeButton(android.R.string.cancel, null);
+        alert.show();
     }
 
     public static final Searchable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

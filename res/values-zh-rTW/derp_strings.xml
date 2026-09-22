@@ -56,8 +56,15 @@
 
     <!-- Statusbar lyric -->
     <string name="status_bar_lyric_title">狀態列歌詞</string>
-    <string name="status_bar_lyric_summary">在狀態列顯示歌詞 (需應用程式支援)</string>
+    <string name="status_bar_lyric_summary">根據目前的媒體工作階段在狀態列顯示同步歌詞</string>
     <string name="status_bar_show_lyric_title">啟用狀態列歌詞</string>
+    <string name="status_bar_lyric_section_sources">歌詞來源</string>
+    <string name="status_bar_lyric_sources_title">自訂歌詞來源</string>
+    <string name="status_bar_lyric_sources_summary_default">使用內建的網易雲歌詞來源</string>
+    <string name="status_bar_lyric_sources_summary_configured">使用已設定的 HTTPS 歌詞來源</string>
+    <string name="status_bar_lyric_sources_dialog_title">設定歌詞來源</string>
+    <string name="status_bar_lyric_sources_dialog_message">以分號分隔的 HTTPS 基礎網址。每個來源必須提供 GET /search 和 GET /lyric。留空則使用內建的網易雲歌詞來源。</string>
+    <string name="status_bar_lyric_sources_dialog_hint">https://example.com/api;https://mirror.example/api</string>
 
     <!-- Combined notification count -->
     <string name="status_bar_combined_notification_count">顯示合併通知計數</string>

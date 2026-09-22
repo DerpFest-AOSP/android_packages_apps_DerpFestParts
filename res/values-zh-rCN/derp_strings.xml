@@ -56,8 +56,15 @@
 
     <!-- Statusbar lyric -->
     <string name="status_bar_lyric_title">状态栏歌词</string>
-    <string name="status_bar_lyric_summary">在状态栏显示歌词（需要应用支持）</string>
+    <string name="status_bar_lyric_summary">根据当前媒体会话在状态栏中显示同步歌词</string>
     <string name="status_bar_show_lyric_title">启用状态栏歌词</string>
+    <string name="status_bar_lyric_section_sources">歌词源</string>
+    <string name="status_bar_lyric_sources_title">自定义歌词源</string>
+    <string name="status_bar_lyric_sources_summary_default">使用内置网易云歌词源</string>
+    <string name="status_bar_lyric_sources_summary_configured">使用已配置的 HTTPS 歌词源</string>
+    <string name="status_bar_lyric_sources_dialog_title">配置歌词源</string>
+    <string name="status_bar_lyric_sources_dialog_message">以分号分隔的 HTTPS 基础地址。每个源必须提供 GET /search 和 GET /lyric。留空则使用内置网易云歌词源。</string>
+    <string name="status_bar_lyric_sources_dialog_hint">https://example.com/api;https://mirror.example/api</string>
 
     <!-- Combined notification count -->
     <string name="status_bar_combined_notification_count">显示合并的通知数量</string>
