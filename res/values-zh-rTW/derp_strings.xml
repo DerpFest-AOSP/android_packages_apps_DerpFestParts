@@ -58,6 +58,8 @@
     <string name="status_bar_lyric_title">狀態列歌詞</string>
     <string name="status_bar_lyric_summary">根據目前的媒體工作階段在狀態列顯示同步歌詞</string>
     <string name="status_bar_show_lyric_title">啟用狀態列歌詞</string>
+    <string name="status_bar_lyric_word_timing_title">使用逐字歌詞</string>
+    <string name="status_bar_lyric_word_timing_summary">有可用資料時優先使用帶逐字時間軸的歌詞</string>
     <string name="status_bar_lyric_section_sources">歌詞來源</string>
     <string name="status_bar_lyric_sources_title">自訂歌詞來源</string>
     <string name="status_bar_lyric_sources_summary_default">使用預設的遠端歌詞來源，失敗時回退</string>

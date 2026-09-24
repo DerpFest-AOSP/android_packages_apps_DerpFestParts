@@ -58,6 +58,8 @@
     <string name="status_bar_lyric_title">状态栏歌词</string>
     <string name="status_bar_lyric_summary">根据当前媒体会话在状态栏中显示同步歌词</string>
     <string name="status_bar_show_lyric_title">启用状态栏歌词</string>
+    <string name="status_bar_lyric_word_timing_title">使用逐字歌词</string>
+    <string name="status_bar_lyric_word_timing_summary">有可用数据时优先使用带逐字时间轴的歌词</string>
     <string name="status_bar_lyric_section_sources">歌词源</string>
     <string name="status_bar_lyric_sources_title">自定义歌词源</string>
     <string name="status_bar_lyric_sources_summary_default">使用默认远程歌词源，失败时回退</string>

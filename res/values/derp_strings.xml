@@ -89,6 +89,8 @@
     <string name="status_bar_lyric_position_summary_clock_right">Show to the right of the clock</string>
     <string name="status_bar_lyric_show_translation_title">Show translation</string>
     <string name="status_bar_lyric_show_translation_summary">Show a second translated lyric line when available. Translations currently come from NetEase and are typically Chinese only</string>
+    <string name="status_bar_lyric_word_timing_title">Use word-timed lyrics</string>
+    <string name="status_bar_lyric_word_timing_summary">Prefer enhanced lyrics with per-word timing when available</string>
     <string name="status_bar_lyric_hide_icon_clock_right_title">Hide music app icon</string>
     <string name="status_bar_lyric_hide_icon_clock_right_summary">Hide the music app icon when showing lyrics to the right of the clock</string>
     <string name="status_bar_lyric_sources_title">Custom sources</string>
