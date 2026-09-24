@@ -92,11 +92,12 @@
     <string name="status_bar_lyric_hide_icon_clock_right_title">Hide music app icon</string>
     <string name="status_bar_lyric_hide_icon_clock_right_summary">Hide the music app icon when showing lyrics to the right of the clock</string>
     <string name="status_bar_lyric_sources_title">Custom sources</string>
-    <string name="status_bar_lyric_sources_summary_default">Using the built-in NetEase source</string>
+    <string name="status_bar_lyric_sources_summary_default">Using the default remote source with fallback</string>
     <string name="status_bar_lyric_sources_summary_configured">Using configured HTTPS sources</string>
     <string name="status_bar_lyric_sources_dialog_title">Configure lyric sources</string>
-    <string name="status_bar_lyric_sources_dialog_message">Semicolon-separated HTTPS base URLs. Each source must provide GET /search and GET /lyric. Leave empty to use the built-in NetEase source.</string>
-    <string name="status_bar_lyric_sources_dialog_hint">https://example.com/api;https://mirror.example/api</string>
+    <string name="status_bar_lyric_sources_dialog_message">Semicolon-separated HTTPS base URLs. Leave empty to use the default remote source with fallback.</string>
+    <string name="status_bar_lyric_sources_dialog_hint">https://example.com;https://mirror.example</string>
+    <string name="status_bar_lyric_sources_dialog_error">Enter HTTPS URLs separated by semicolons.</string>
 
     <!-- Carrier name on lockscreen/statusbar -->
     <string name="status_bar_carrier_category_title">Carrier label</string>

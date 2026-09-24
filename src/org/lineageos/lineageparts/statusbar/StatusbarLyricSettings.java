@@ -6,7 +6,7 @@
 package org.lineageos.lineageparts.statusbar;
 
 import android.content.Context;
-import android.content.DialogInterface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -143,15 +143,64 @@ public class StatusbarLyricSettings extends SettingsPreferenceFragment
         container.addView(input);
         alert.setView(container);
 
-        alert.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                LyricSecureSettings.setSources(context, input.getText().toString());
-                updateSourcesSummary(context);
-            }
-        });
+        alert.setPositiveButton(android.R.string.ok, null);
         alert.setNegativeButton(android.R.string.cancel, null);
-        alert.show();
+        AlertDialog dialog = alert.create();
+        dialog.setOnShowListener(shown -> dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+                .setOnClickListener(v -> {
+                    String value = input.getText().toString();
+                    if (!isValidSources(value)) {
+                        input.setError(context.getString(
+                                R.string.status_bar_lyric_sources_dialog_error));
+                        return;
+                    }
+                    LyricSecureSettings.setSources(context, normalizeSources(value));
+                    updateSourcesSummary(context);
+                    dialog.dismiss();
+                }));
+        dialog.show();
+    }
+
+    private static String normalizeSources(String value) {
+        StringBuilder builder = new StringBuilder();
+        for (String source : value.split(";")) {
+            String trimmed = source.trim();
+            if (trimmed.isEmpty()) {
+                continue;
+            }
+            if (builder.length() > 0) {
+                builder.append(';');
+            }
+            builder.append(trimmed);
+        }
+        return builder.toString();
+    }
+
+    private static boolean isValidSources(String value) {
+        for (String source : value.split(";")) {
+            String trimmed = source.trim();
+            if (trimmed.isEmpty()) {
+                continue;
+            }
+            if (containsWhitespace(trimmed)) {
+                return false;
+            }
+            Uri uri = Uri.parse(trimmed);
+            if (uri.getScheme() == null || !uri.getScheme().equalsIgnoreCase("https")
+                    || TextUtils.isEmpty(uri.getHost())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean containsWhitespace(String value) {
+        for (int i = 0; i < value.length(); i++) {
+            if (Character.isWhitespace(value.charAt(i))) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static final Searchable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

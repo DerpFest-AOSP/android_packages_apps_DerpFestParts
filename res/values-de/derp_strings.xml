@@ -92,11 +92,12 @@
     <string name="status_bar_lyric_hide_icon_clock_right_title">Musik-App-Symbol ausblenden</string>
     <string name="status_bar_lyric_hide_icon_clock_right_summary">Musik-App-Symbol ausblenden, wenn Lyrics rechts von der Uhr angezeigt werden</string>
     <string name="status_bar_lyric_sources_title">Eigene Quellen</string>
-    <string name="status_bar_lyric_sources_summary_default">Integrierte NetEase-Quelle wird verwendet</string>
+    <string name="status_bar_lyric_sources_summary_default">Standard-Remote-Quelle mit Fallback wird verwendet</string>
     <string name="status_bar_lyric_sources_summary_configured">Konfigurierte HTTPS-Quellen werden verwendet</string>
     <string name="status_bar_lyric_sources_dialog_title">Lyric-Quellen konfigurieren</string>
-    <string name="status_bar_lyric_sources_dialog_message">Mit Semikolon getrennte HTTPS-Basis-URLs. Jede Quelle muss GET /search und GET /lyric bereitstellen. Leer lassen, um die integrierte NetEase-Quelle zu verwenden.</string>
-    <string name="status_bar_lyric_sources_dialog_hint">https://example.com/api;https://mirror.example/api</string>
+    <string name="status_bar_lyric_sources_dialog_message">Mit Semikolon getrennte HTTPS-Basis-URLs. Leer lassen, um die Standard-Remote-Quelle mit Fallback zu verwenden.</string>
+    <string name="status_bar_lyric_sources_dialog_hint">https://example.com;https://mirror.example</string>
+    <string name="status_bar_lyric_sources_dialog_error">Geben Sie mit Semikolons getrennte HTTPS-URLs ein.</string>
 
     <!-- Carrier name on lockscreen/statusbar -->
     <string name="status_bar_carrier_category_title">Netzbetreiber-Anzeige</string>
