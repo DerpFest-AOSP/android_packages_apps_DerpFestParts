@@ -82,7 +82,7 @@
             android:defaultValue="0"
             app:useSimpleSummaryProvider="true" />
 
-        <org.derpfest.support.colorpicker.ColorPickerSystemPreference
+        <org.derpfest.support.colorpicker.HsvColorPickerSystemPreference
             android:key="statusbar_icon_tint_custom_color"
             android:title="@string/status_bar_icon_tint_custom_title"
             android:summary="@string/status_bar_icon_tint_custom_summary"
