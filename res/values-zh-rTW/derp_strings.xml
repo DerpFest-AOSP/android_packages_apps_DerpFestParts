@@ -17,6 +17,7 @@
     <string name="status_bar_logo_position_left">左側</string>
     <string name="status_bar_logo_style_title">標誌樣式</string>
     <string name="status_bar_logo_style_derp">DerpFest (預設)</string>
+    <string name="status_bar_logo_style_derp_alt">DerpFest 替代樣式</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">異形</string>
@@ -54,13 +55,30 @@
     <string name="status_bar_tint_icons_title">狀態列圖示著色</string>
     <string name="status_bar_tint_icons_summary">使用系統強調色對狀態列圖示進行著色</string>
 
+    <string name="status_bar_combined_notification_count_summary">以單一數量取代各別通知圖示</string>
+    <string name="status_bar_notification_icons_title">通知圖示</string>
+    <string name="status_bar_notification_icons_summary">選擇通知在狀態列中的顯示方式</string>
+    <string name="status_bar_notification_icons_show_icon">顯示圖示</string>
+    <string name="status_bar_notification_icons_app_icons">應用程式圖示</string>
+    <string name="status_bar_notification_icons_show_number">顯示數量</string>
+    <string name="status_bar_notification_icons_hidden">不顯示</string>
     <!-- Statusbar lyric -->
     <string name="status_bar_lyric_title">狀態列歌詞</string>
     <string name="status_bar_lyric_summary">根據目前的媒體工作階段在狀態列顯示同步歌詞</string>
     <string name="status_bar_show_lyric_title">啟用狀態列歌詞</string>
+    <string name="status_bar_lyric_position_title">顯示位置</string>
+    <string name="status_bar_lyric_position_entry_overlay">取代起始側內容</string>
+    <string name="status_bar_lyric_position_entry_clock_right">時鐘右側</string>
+    <string name="status_bar_lyric_position_summary_overlay">在狀態列起始側顯示</string>
+    <string name="status_bar_lyric_position_summary_clock_right">顯示在時鐘右側</string>
+    <string name="status_bar_lyric_show_translation_title">顯示翻譯</string>
+    <string name="status_bar_lyric_show_translation_summary">有翻譯時，顯示第二行翻譯歌詞。目前翻譯來自網易，通常僅提供中文</string>
     <string name="status_bar_lyric_word_timing_title">使用逐字歌詞</string>
     <string name="status_bar_lyric_word_timing_summary">有可用資料時優先使用帶逐字時間軸的歌詞</string>
+    <string name="status_bar_lyric_section_behavior">行為</string>
     <string name="status_bar_lyric_section_sources">歌詞來源</string>
+    <string name="status_bar_lyric_hide_icon_clock_right_title">隱藏音樂應用程式圖示</string>
+    <string name="status_bar_lyric_hide_icon_clock_right_summary">歌詞顯示在時鐘右側時，隱藏音樂應用程式圖示</string>
     <string name="status_bar_lyric_sources_title">自訂歌詞來源</string>
     <string name="status_bar_lyric_sources_summary_default">使用預設的遠端歌詞來源，失敗時回退</string>
     <string name="status_bar_lyric_sources_summary_configured">使用已設定的 HTTPS 歌詞來源</string>
@@ -69,9 +87,32 @@
     <string name="status_bar_lyric_sources_dialog_hint">https://example.com;https://mirror.example</string>
     <string name="status_bar_lyric_sources_dialog_error">請輸入以分號分隔的 HTTPS URL。</string>
 
+    <string name="status_bar_icon_tint_mode_title">狀態列圖示顏色</string>
+    <string name="status_bar_icon_tint_mode_summary">選擇狀態列圖示的上色方式（系統、強調色或自訂）</string>
+    <string name="status_bar_icon_tint_system">預設（配合桌布）</string>
+    <string name="status_bar_icon_tint_accent">強調色（Monet）</string>
+    <string name="status_bar_icon_tint_custom">自訂顏色</string>
+    <string name="status_bar_icon_tint_custom_title">自訂圖示顏色</string>
+    <string name="status_bar_icon_tint_custom_summary">選擇上方的「自訂顏色」時使用</string>
     <!-- Combined notification count -->
     <string name="status_bar_combined_notification_count">顯示合併通知計數</string>
 
+    <string name="status_bar_carrier_category_title">電信業者標籤</string>
+    <string name="lockscreen_show_carrier_title">顯示電信業者標籤</string>
+    <string name="carrier_show_lockscreen_only">僅鎖定畫面</string>
+    <string name="carrier_show_statusbar_only">僅狀態列</string>
+    <string name="carrier_show_both">鎖定畫面與狀態列</string>
+    <string name="custom_carrier_label_title">自訂電信業者標籤</string>
+    <string name="custom_carrier_label_summary">輕觸以設定自訂電信業者標籤</string>
+    <string name="custom_carrier_label_dialog_message">以自訂文字取代電信業者標籤。留空則使用實際的電信業者標籤。</string>
+    <string name="never">永不</string>
+    <string name="clock_chip_wallpaper_thumbnail">桌布縮圖</string>
+    <string name="status_bar_battery_estimate_title">電池剩餘時間</string>
+    <string name="status_bar_battery_estimate_summary">在快速設定中顯示電池耗盡前的預估剩餘時間</string>
+    <string name="status_bar_colored_icons_title">彩色圖示</string>
+    <string name="status_bar_colored_icons_summary">狀態列的通知圖示使用應用程式原有圖示</string>
+    <string name="status_bar_pinkbean_icons_title">Pink Bean 圖示</string>
+    <string name="status_bar_pinkbean_icons_summary">已內建對應圖示的應用程式使用 Pink Bean 套件的主題桌面圖示；其餘應用程式保留一般桌面圖示</string>
     <!-- Advanced restart options -->
     <string name="advanced_reboot_secured_title">安全鎖定畫面</string>
     <string name="advanced_reboot_secured_summary">在受保護的鎖定畫面上顯示進階重新啟動選項</string>
