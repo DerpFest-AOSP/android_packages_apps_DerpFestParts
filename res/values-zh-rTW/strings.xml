@@ -455,6 +455,10 @@
     <string name="status_bar_quick_qs_pulldown_off">關閉</string>
     <string name="status_bar_quick_qs_pulldown_left">左側</string>
     <string name="status_bar_quick_qs_pulldown_right">右側</string>
+    <string name="status_bar_brightness_control_title">亮度控制</string>
+    <string name="status_bar_brightness_control_summary">在狀態列上水平滑動以調整亮度</string>
+    <string name="status_bar_brightness_control_lockscreen_title">允許在鎖定畫面使用</string>
+    <string name="status_bar_brightness_control_lockscreen_summary">裝置鎖定時也能從狀態列調整亮度</string>
     <string name="status_bar_double_tap_to_sleep_title">輕點兩下關閉螢幕</string>
     <string name="status_bar_double_tap_to_sleep_summary">在狀態列輕點兩下以關閉螢幕</string>
 
@@ -469,6 +473,10 @@
     <string name="status_bar_clock_show_seconds_title">顯示秒數</string>
     <string name="status_bar_clock_show_seconds_summary">顯示時、分、秒</string>
 
+    <string name="status_bar_clock_period_separator_title">以句點分隔時間</string>
+    <string name="status_bar_clock_period_separator_summary">以句點分隔時、分、秒（例如使用 12.30.45，取代 12:30:45）</string>
+    <string name="status_bar_clock_bold_title">粗體時鐘</string>
+    <string name="status_bar_clock_bold_summary">狀態列時鐘使用粗體文字</string>
     <string name="status_bar_clock_auto_hide_title">自動隱藏</string>
     <string name="status_bar_clock_auto_hide_summary">若啟動器可見則隱藏時鐘</string>
 
@@ -520,6 +528,7 @@
     <string name="status_bar_battery_style_title">電池狀態樣式</string>
     <string name="status_bar_battery_style_icon_landscape">橫向圖示</string>
     <string name="status_bar_battery_style_circle">圓形</string>
+    <string name="status_bar_battery_style_full_circle">完整圓形</string>
     <string name="status_bar_battery_style_dotted_circle">虛線圓形</string>
     <string name="status_bar_battery_style_text">文字</string>
 
@@ -529,6 +538,8 @@
     <string name="status_bar_battery_percentage_text_inside">圖示內</string>
     <string name="status_bar_battery_percentage_text_next">圖示旁</string>
 
+    <string name="status_bar_battery_theme_store_title">電池圖示主題</string>
+    <string name="status_bar_battery_theme_store_summary">從主題商店安裝並套用電池外形資源覆蓋套件</string>
     <!-- Status bar - Brightness -->
     <string name="status_bar_brightness_category">亮度</string>
     <string name="status_bar_brightness_slider_title">亮度滑桿</string>
