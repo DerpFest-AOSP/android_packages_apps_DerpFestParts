@@ -17,6 +17,11 @@
     <string name="status_bar_logo_position_left">左側</string>
     <string name="status_bar_logo_style_title">標誌樣式</string>
     <string name="status_bar_logo_style_derp">DerpFest (預設)</string>
+    <string name="status_bar_logo_style_khloe">Khloe</string>
+    <string name="status_bar_logo_style_kronic">Kronic</string>
+    <string name="status_bar_logo_style_kronic2">Kronic 2.0</string>
+    <string name="status_bar_logo_style_kronic3">Kronic 3.0</string>
+    <string name="status_bar_logo_style_nest">Nest</string>
     <string name="status_bar_logo_style_derp_alt">DerpFest 替代樣式</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
