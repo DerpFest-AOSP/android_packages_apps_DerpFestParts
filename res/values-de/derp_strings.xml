@@ -77,9 +77,11 @@
     <string name="status_bar_notification_icons_hidden">Nicht anzeigen</string>
 
     <!-- Statusbar lyric -->
-    <string name="status_bar_lyric_title">Statusleisten-Lyric</string>
-    <string name="status_bar_lyric_summary">Synchronisierte Lyrics der aktuellen Medienwiedergabe in der Statusleiste anzeigen</string>
+    <string name="status_bar_lyric_title">Songtexte</string>
+    <string name="status_bar_lyric_summary">Übersetzung, Quellen und die Statusleisten-Anzeige</string>
     <string name="status_bar_show_lyric_title">Statusleisten-Lyric aktivieren</string>
+    <string name="status_bar_lyric_section_translation">Übersetzung</string>
+    <string name="status_bar_lyric_section_ticker">Statusleiste</string>
     <string name="status_bar_lyric_section_behavior">Verhalten</string>
     <string name="status_bar_lyric_section_sources">Lyric-Quellen</string>
     <string name="status_bar_lyric_position_title">Anzeigeposition</string>

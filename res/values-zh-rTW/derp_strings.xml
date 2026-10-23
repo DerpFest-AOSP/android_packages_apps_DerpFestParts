@@ -68,9 +68,11 @@
     <string name="status_bar_notification_icons_show_number">顯示數量</string>
     <string name="status_bar_notification_icons_hidden">不顯示</string>
     <!-- Statusbar lyric -->
-    <string name="status_bar_lyric_title">狀態列歌詞</string>
-    <string name="status_bar_lyric_summary">根據目前的媒體工作階段在狀態列顯示同步歌詞</string>
+    <string name="status_bar_lyric_title">歌詞</string>
+    <string name="status_bar_lyric_summary">翻譯、歌詞來源以及狀態列歌詞</string>
     <string name="status_bar_show_lyric_title">啟用狀態列歌詞</string>
+    <string name="status_bar_lyric_section_translation">翻譯</string>
+    <string name="status_bar_lyric_section_ticker">狀態列歌詞</string>
     <string name="status_bar_lyric_position_title">顯示位置</string>
     <string name="status_bar_lyric_position_entry_overlay">取代起始側內容</string>
     <string name="status_bar_lyric_position_entry_clock_right">時鐘右側</string>

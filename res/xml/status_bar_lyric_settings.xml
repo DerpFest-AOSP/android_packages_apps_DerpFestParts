@@ -7,22 +7,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/status_bar_lyric_title">
 
-    <org.derpfest.support.preferences.SecureSettingMainSwitchPreference
-        android:key="status_bar_show_lyric"
-        android:title="@string/status_bar_show_lyric_title"
-        android:defaultValue="false" />
-
     <PreferenceCategory
-        android:key="lyric_details"
-        android:title="@string/status_bar_lyric_section_behavior"
-        android:dependency="status_bar_show_lyric">
-
-        <org.derpfest.support.preferences.SecureSettingListPreference
-            android:key="status_bar_lyric_position"
-            android:title="@string/status_bar_lyric_position_title"
-            android:entries="@array/status_bar_lyric_position_entries"
-            android:entryValues="@array/status_bar_lyric_position_values"
-            android:defaultValue="0" />
+        android:key="lyric_translation"
+        android:title="@string/status_bar_lyric_section_translation">
 
         <org.derpfest.support.preferences.SecureSettingSwitchPreference
             android:key="status_bar_lyric_show_translation"
@@ -44,6 +31,11 @@
             android:summary="@string/status_bar_lyric_translation_wifi_only_summary"
             android:defaultValue="true"
             android:dependency="status_bar_lyric_show_translation" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="lyric_sources"
+        android:title="@string/status_bar_lyric_section_sources">
 
         <org.derpfest.support.preferences.SecureSettingSwitchPreference
             android:key="status_bar_lyric_word_timing"
@@ -51,20 +43,32 @@
             android:summary="@string/status_bar_lyric_word_timing_summary"
             android:defaultValue="true" />
 
+        <Preference
+            android:key="status_bar_lyric_sources"
+            android:title="@string/status_bar_lyric_sources_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="lyric_ticker"
+        android:title="@string/status_bar_lyric_section_ticker">
+
+        <org.derpfest.support.preferences.SecureSettingMainSwitchPreference
+            android:key="status_bar_show_lyric"
+            android:title="@string/status_bar_show_lyric_title"
+            android:defaultValue="false" />
+
+        <org.derpfest.support.preferences.SecureSettingListPreference
+            android:key="status_bar_lyric_position"
+            android:title="@string/status_bar_lyric_position_title"
+            android:entries="@array/status_bar_lyric_position_entries"
+            android:entryValues="@array/status_bar_lyric_position_values"
+            android:defaultValue="0"
+            android:dependency="status_bar_show_lyric" />
+
         <org.derpfest.support.preferences.SecureSettingSwitchPreference
             android:key="status_bar_lyric_hide_icon_clock_right"
             android:title="@string/status_bar_lyric_hide_icon_clock_right_title"
             android:summary="@string/status_bar_lyric_hide_icon_clock_right_summary"
             android:defaultValue="false" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="lyric_sources"
-        android:title="@string/status_bar_lyric_section_sources"
-        android:dependency="status_bar_show_lyric">
-
-        <Preference
-            android:key="status_bar_lyric_sources"
-            android:title="@string/status_bar_lyric_sources_title" />
     </PreferenceCategory>
 </PreferenceScreen>

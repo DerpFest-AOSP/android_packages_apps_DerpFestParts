@@ -213,6 +213,18 @@
             </intent-filter>
         </activity-alias>
 
+        <!-- Lyric settings, shared by the ticker, Dynamic Bar, and Dynamic Island -->
+        <activity-alias
+            android:name=".statusbar.StatusbarLyricSettings"
+            android:exported="true"
+            android:label="@string/status_bar_lyric_title"
+            android:targetActivity="PartsActivity">
+            <intent-filter>
+                <action android:name="org.lineageos.lineageparts.STATUS_BAR_LYRIC_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity-alias>
+
         <!-- Status bar settings (System category) -->
         <activity-alias
             android:name=".statusbar.StatusBarSettings"

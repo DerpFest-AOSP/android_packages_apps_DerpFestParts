@@ -55,9 +55,11 @@
     <string name="status_bar_tint_icons_summary">使用系统强调色着色状态栏图标</string>
 
     <!-- Statusbar lyric -->
-    <string name="status_bar_lyric_title">状态栏歌词</string>
-    <string name="status_bar_lyric_summary">根据当前媒体会话在状态栏中显示同步歌词</string>
+    <string name="status_bar_lyric_title">歌词</string>
+    <string name="status_bar_lyric_summary">翻译、歌词源以及状态栏歌词</string>
     <string name="status_bar_show_lyric_title">启用状态栏歌词</string>
+    <string name="status_bar_lyric_section_translation">翻译</string>
+    <string name="status_bar_lyric_section_ticker">状态栏歌词</string>
     <string name="status_bar_lyric_show_translation_title">显示翻译</string>
     <string name="status_bar_lyric_show_translation_summary">在第二行显示所选语言的翻译。翻译在设备上完成</string>
     <string name="status_bar_lyric_translation_target_title">翻译语言</string>
