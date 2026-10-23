@@ -225,6 +225,18 @@
             </intent-filter>
         </activity-alias>
 
+        <!-- Status bar lyric ticker -->
+        <activity-alias
+            android:name=".statusbar.StatusbarTickerSettings"
+            android:exported="true"
+            android:label="@string/status_bar_ticker_title"
+            android:targetActivity="PartsActivity">
+            <intent-filter>
+                <action android:name="org.lineageos.lineageparts.STATUS_BAR_TICKER_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity-alias>
+
         <!-- Status bar settings (System category) -->
         <activity-alias
             android:name=".statusbar.StatusBarSettings"

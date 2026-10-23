@@ -47,28 +47,4 @@
             android:key="status_bar_lyric_sources"
             android:title="@string/status_bar_lyric_sources_title" />
     </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="lyric_ticker"
-        android:title="@string/status_bar_lyric_section_ticker">
-
-        <org.derpfest.support.preferences.SecureSettingMainSwitchPreference
-            android:key="status_bar_show_lyric"
-            android:title="@string/status_bar_show_lyric_title"
-            android:defaultValue="false" />
-
-        <org.derpfest.support.preferences.SecureSettingListPreference
-            android:key="status_bar_lyric_position"
-            android:title="@string/status_bar_lyric_position_title"
-            android:entries="@array/status_bar_lyric_position_entries"
-            android:entryValues="@array/status_bar_lyric_position_values"
-            android:defaultValue="0"
-            android:dependency="status_bar_show_lyric" />
-
-        <org.derpfest.support.preferences.SecureSettingSwitchPreference
-            android:key="status_bar_lyric_hide_icon_clock_right"
-            android:title="@string/status_bar_lyric_hide_icon_clock_right_title"
-            android:summary="@string/status_bar_lyric_hide_icon_clock_right_summary"
-            android:defaultValue="false" />
-    </PreferenceCategory>
 </PreferenceScreen>

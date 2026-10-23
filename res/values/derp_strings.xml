@@ -78,7 +78,9 @@
 
     <!-- Statusbar lyric -->
     <string name="status_bar_lyric_title">Lyrics</string>
-    <string name="status_bar_lyric_summary">Translation, sources, and the status bar ticker</string>
+    <string name="status_bar_lyric_summary">Translation, language, and lyric sources</string>
+    <string name="status_bar_ticker_title">Status bar ticker</string>
+    <string name="status_bar_ticker_summary">Show lyrics in the status bar</string>
     <string name="status_bar_show_lyric_title">Enable status bar lyric</string>
     <string name="status_bar_lyric_section_translation">Translation</string>
     <string name="status_bar_lyric_section_ticker">Status bar ticker</string>

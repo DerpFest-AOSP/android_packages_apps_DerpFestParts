@@ -78,7 +78,9 @@
 
     <!-- Statusbar lyric -->
     <string name="status_bar_lyric_title">Songtexte</string>
-    <string name="status_bar_lyric_summary">Übersetzung, Quellen und die Statusleisten-Anzeige</string>
+    <string name="status_bar_lyric_summary">Übersetzung, Sprache und Quellen</string>
+    <string name="status_bar_ticker_title">Statusleisten-Ticker</string>
+    <string name="status_bar_ticker_summary">Songtext in der Statusleiste anzeigen</string>
     <string name="status_bar_show_lyric_title">Statusleisten-Lyric aktivieren</string>
     <string name="status_bar_lyric_section_translation">Übersetzung</string>
     <string name="status_bar_lyric_section_ticker">Statusleiste</string>
