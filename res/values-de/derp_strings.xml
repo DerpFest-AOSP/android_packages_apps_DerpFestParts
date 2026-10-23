@@ -88,7 +88,11 @@
     <string name="status_bar_lyric_position_summary_overlay">Auf der Startseite der Statusleiste anzeigen</string>
     <string name="status_bar_lyric_position_summary_clock_right">Rechts von der Uhr anzeigen</string>
     <string name="status_bar_lyric_show_translation_title">Übersetzung anzeigen</string>
-    <string name="status_bar_lyric_show_translation_summary">Zweite übersetzte Lyric-Zeile anzeigen, wenn verfügbar. Übersetzungen kommen derzeit von NetEase und sind typischerweise nur auf Chinesisch</string>
+    <string name="status_bar_lyric_show_translation_summary">Zeigt eine zweite Zeile mit einer Übersetzung in die gewählte Sprache. Die Übersetzung erfolgt auf dem Gerät</string>
+    <string name="status_bar_lyric_translation_target_title">Übersetzungssprache</string>
+    <string name="status_bar_lyric_translation_target_system">Systemsprache</string>
+    <string name="status_bar_lyric_translation_wifi_only_title">Modelle nur über WLAN herunterladen</string>
+    <string name="status_bar_lyric_translation_wifi_only_summary">Übersetzungsmodelle nur über WLAN herunterladen. Bereits vorhandene Modelle werden auch ohne WLAN verwendet</string>
     <string name="status_bar_lyric_word_timing_title">Wortgenaue Lyrics verwenden</string>
     <string name="status_bar_lyric_word_timing_summary">Erweiterte Lyrics mit Wort-Timing bevorzugen, wenn verfügbar</string>
     <string name="status_bar_lyric_hide_icon_clock_right_title">Musik-App-Symbol ausblenden</string>

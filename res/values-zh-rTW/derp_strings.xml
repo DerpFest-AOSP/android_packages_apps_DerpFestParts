@@ -77,7 +77,11 @@
     <string name="status_bar_lyric_position_summary_overlay">在狀態列起始側顯示</string>
     <string name="status_bar_lyric_position_summary_clock_right">顯示在時鐘右側</string>
     <string name="status_bar_lyric_show_translation_title">顯示翻譯</string>
-    <string name="status_bar_lyric_show_translation_summary">有翻譯時，顯示第二行翻譯歌詞。目前翻譯來自網易，通常僅提供中文</string>
+    <string name="status_bar_lyric_show_translation_summary">在第二行顯示所選語言的翻譯。翻譯在裝置上完成</string>
+    <string name="status_bar_lyric_translation_target_title">翻譯語言</string>
+    <string name="status_bar_lyric_translation_target_system">系統語言</string>
+    <string name="status_bar_lyric_translation_wifi_only_title">僅透過 Wi-Fi 下載模型</string>
+    <string name="status_bar_lyric_translation_wifi_only_summary">僅在 Wi-Fi 下下載翻譯模型。已下載的模型在沒有 Wi-Fi 時仍可使用</string>
     <string name="status_bar_lyric_word_timing_title">使用逐字歌詞</string>
     <string name="status_bar_lyric_word_timing_summary">有可用資料時優先使用帶逐字時間軸的歌詞</string>
     <string name="status_bar_lyric_section_behavior">行為</string>

@@ -58,6 +58,12 @@
     <string name="status_bar_lyric_title">状态栏歌词</string>
     <string name="status_bar_lyric_summary">根据当前媒体会话在状态栏中显示同步歌词</string>
     <string name="status_bar_show_lyric_title">启用状态栏歌词</string>
+    <string name="status_bar_lyric_show_translation_title">显示翻译</string>
+    <string name="status_bar_lyric_show_translation_summary">在第二行显示所选语言的翻译。翻译在设备上完成</string>
+    <string name="status_bar_lyric_translation_target_title">翻译语言</string>
+    <string name="status_bar_lyric_translation_target_system">系统语言</string>
+    <string name="status_bar_lyric_translation_wifi_only_title">仅在 WLAN 下下载模型</string>
+    <string name="status_bar_lyric_translation_wifi_only_summary">仅在 WLAN 下下载翻译模型。已下载的模型在没有 WLAN 时仍可使用</string>
     <string name="status_bar_lyric_word_timing_title">使用逐字歌词</string>
     <string name="status_bar_lyric_word_timing_summary">有可用数据时优先使用带逐字时间轴的歌词</string>
     <string name="status_bar_lyric_section_sources">歌词源</string>

@@ -88,7 +88,11 @@
     <string name="status_bar_lyric_position_summary_overlay">Show on the start side of the status bar</string>
     <string name="status_bar_lyric_position_summary_clock_right">Show to the right of the clock</string>
     <string name="status_bar_lyric_show_translation_title">Show translation</string>
-    <string name="status_bar_lyric_show_translation_summary">Show a second translated lyric line when available. Translations currently come from NetEase and are typically Chinese only</string>
+    <string name="status_bar_lyric_show_translation_summary">Show a second line translated on device into the chosen language</string>
+    <string name="status_bar_lyric_translation_target_title">Translation language</string>
+    <string name="status_bar_lyric_translation_target_system">System language</string>
+    <string name="status_bar_lyric_translation_wifi_only_title">Download models on Wi-Fi only</string>
+    <string name="status_bar_lyric_translation_wifi_only_summary">Download translation models on Wi-Fi only. Models already on the device are still used</string>
     <string name="status_bar_lyric_word_timing_title">Use word-timed lyrics</string>
     <string name="status_bar_lyric_word_timing_summary">Prefer enhanced lyrics with per-word timing when available</string>
     <string name="status_bar_lyric_hide_icon_clock_right_title">Hide music app icon</string>

@@ -143,6 +143,54 @@
         <item>1</item>
     </string-array>
 
+    <string-array name="status_bar_lyric_translation_target_entries" translatable="false">
+        <item>@string/status_bar_lyric_translation_target_system</item>
+        <item>English</item>
+        <item>Deutsch</item>
+        <item>Español</item>
+        <item>Français</item>
+        <item>Português</item>
+        <item>Italiano</item>
+        <item>Nederlands</item>
+        <item>Polski</item>
+        <item>Русский</item>
+        <item>Українська</item>
+        <item>Türkçe</item>
+        <item>العربية</item>
+        <item>हिन्दी</item>
+        <item>Bahasa Indonesia</item>
+        <item>ไทย</item>
+        <item>Tiếng Việt</item>
+        <item>日本語</item>
+        <item>한국어</item>
+        <item>中文</item>
+        <item>中文（繁體）</item>
+    </string-array>
+
+    <string-array name="status_bar_lyric_translation_target_values" translatable="false">
+        <item>system</item>
+        <item>en</item>
+        <item>de</item>
+        <item>es</item>
+        <item>fr</item>
+        <item>pt</item>
+        <item>it</item>
+        <item>nl</item>
+        <item>pl</item>
+        <item>ru</item>
+        <item>uk</item>
+        <item>tr</item>
+        <item>ar</item>
+        <item>hi</item>
+        <item>id</item>
+        <item>th</item>
+        <item>vi</item>
+        <item>ja</item>
+        <item>ko</item>
+        <item>zh</item>
+        <item>zh-TW</item>
+    </string-array>
+
     <!-- Carrier name on lockscreen/statusbar -->
     <string-array name="status_bar_carrier_display_entries">
         <item>@string/never</item>
