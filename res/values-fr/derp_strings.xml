@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_summary">Afficher un logo personnalisé à gauche ou à droite de la barre d\'état</string>
+    <string name="status_bar_logo_position_title">Position du logo</string>
+    <string name="status_bar_logo_position_right">Droite</string>
+    <string name="status_bar_logo_position_left">Gauche</string>
+    <string name="status_bar_logo_style_title">Style du logo</string>
+    <string name="status_bar_logo_style_batman_tdk">Batman le Chevalier Noir</string>
+    <string name="status_bar_logo_style_emoticon_cool">Emoticône cool</string>
+    <string name="status_bar_logo_style_emoticon_devil">Émoticône diable</string>
+    <string name="status_bar_logo_style_fire">Feu</string>
+    <string name="status_bar_logo_style_heart">Coeur</string>
+    <string name="status_bar_logo_style_pacman">Pac-Man</string>
+    <string name="status_bar_logo_style_ghost">Fantôme</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Couleur personnalisée</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="status_bar_carrier_category_title">Nom du service</string>
+    <string name="lockscreen_show_carrier_title">Afficher le nom du service</string>
+    <string name="carrier_show_lockscreen_only">Écran de verrouillage uniquement</string>
+    <string name="carrier_show_statusbar_only">Barre d\'état uniquement</string>
+    <string name="carrier_show_both">Écran de verrouillage &amp; barre d\'état</string>
+    <string name="custom_carrier_label_title">Nom de l\'opérateur personnalisé</string>
+    <string name="custom_carrier_label_summary">Touchez pour définir nom de service personnalisé</string>
+    <string name="custom_carrier_label_dialog_message">Remplacez le nom du service par un texte personnalisé. Laissez ce champ vide pour utiliser le nom du service.</string>
+    <string name="never">Jamais</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="statusbar_clock_chip_title">Puce d\'arrière-plan de l\'horloge</string>
+    <string name="statusbar_clock_chip_summary">Sélectionner un motif d\'arrière-plan personnalisé derrière l\'horloge</string>
+    <string name="solid_accent">Couleur d\'accentuation unie</string>
+    <string name="outline">Contour</string>
+    <string name="solid_accent_gradient">Dégradé d\'accentuation de couleur unie</string>
+    <string name="solid_gradient">Côté avec dégradé uni</string>
+    <string name="solid_gradient_corner">Dégradé d\'accentuation net et soutenu</string>
+    <string name="solid_gradient_void">Dégradé vide</string>
+    <string name="solid_gradient_neumorph">Dégradé neumorphique</string>
+    <string name="solid_gradient_stroke">Tracé à dégradé net</string>
+    <string name="solid_accent_transperent">Accentuation de la transparence</string>
+    <string name="solid_gradient_light">Luminosité du dégradé</string>
+    <string name="solid_gradient_shape">Coin à dégradé net</string>
+    <string name="solid_gradient_void_light">Lumière de vide en dégradé</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Icônes colorés</string>
+    <string name="status_bar_colored_icons_summary">Utiliser les icônes des applications comme icônes de notification dans la barre d\'état</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Redémarrage avancé sur l\'écran de verrouillage</string>
+    <string name="advanced_reboot_secured_summary">Afficher les options de redémarrage avancé sur l\'écran de verrouillage</string>
+</resources>

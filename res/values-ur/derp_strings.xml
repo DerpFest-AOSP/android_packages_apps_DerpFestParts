@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_title">علامت</string>
+    <string name="status_bar_logo_position_title">علامت کی جگہ</string>
+    <string name="status_bar_logo_position_right">دائیں</string>
+    <string name="status_bar_logo_position_left">بائیں</string>
+    <string name="status_bar_logo_style_title">علامت کا طرز</string>
+    <string name="status_bar_logo_style_android">اینڈرائیڈ</string>
+    <string name="status_bar_logo_style_apple">ایپل</string>
+    <string name="status_bar_logo_style_batman">بیٹ مین</string>
+    <string name="status_bar_logo_style_biohazard">حیاتیاتی خطرہ</string>
+    <string name="status_bar_logo_style_emoticon_cool">امیٹیکان کول</string>
+    <string name="status_bar_logo_style_emoticon_devil">امیٹیکان شیطان</string>
+    <string name="status_bar_logo_style_heart">دل</string>
+    <string name="status_bar_logo_style_superman">سپرمین</string>
+    <string name="status_bar_logo_style_windows">ونڈوز</string>
+    <string name="status_bar_logo_style_ghost">بھوت</string>
+    <string name="status_bar_logo_style_ninja">ننجا</string>
+    <string name="status_bar_logo_style_robot">روبوٹ</string>
+    <string name="status_bar_logo_style_flash">فلیش</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">منپسند رنگ</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="custom_carrier_label_title">کسٹم کیریئر لیبل</string>
+    <string name="never">کبھی نہیں</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">رنگین آیکن</string>
+    <string name="status_bar_colored_icons_summary">اسٹیٹس بار میں نوٹیفکیشن آئیکنز کے لیے مناسب ایپ آئیکنز استعمال کریں۔</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">محفوظ لاک سکرین</string>
+    <string name="advanced_reboot_secured_summary">محفوظ لاک سکرین میں ہونے پر پاور مینو میں ایڈوانسری سٹارٹ کے اختیارات شامل ہیں</string>
+</resources>

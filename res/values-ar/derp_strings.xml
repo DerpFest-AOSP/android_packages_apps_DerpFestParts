@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_title">شعار</string>
+    <string name="status_bar_logo_summary">عرض شعار مخصص على اليسار أو اليمين من شريط الحالة</string>
+    <string name="status_bar_logo_position_title">موقع الشعار</string>
+    <string name="status_bar_logo_position_right">يمين</string>
+    <string name="status_bar_logo_position_left">يسار</string>
+    <string name="status_bar_logo_style_title">نمط الشعار</string>
+    <string name="status_bar_logo_style_android">أندرويد</string>
+    <string name="status_bar_logo_style_adidas">أديداس</string>
+    <string name="status_bar_logo_style_alien">كائن فضائي</string>
+    <string name="status_bar_logo_style_apple">آبل</string>
+    <string name="status_bar_logo_style_avengers">المنتقمون</string>
+    <string name="status_bar_logo_style_batman">باتمان</string>
+    <string name="status_bar_logo_style_batman_tdk">فارس الظلام باتمان</string>
+    <string name="status_bar_logo_style_beats">بيتس</string>
+    <string name="status_bar_logo_style_biohazard">بيولوجي</string>
+    <string name="status_bar_logo_style_blackberry">بلاكبيري</string>
+    <string name="status_bar_logo_style_cannabis">القنب</string>
+    <string name="status_bar_logo_style_emoticon_cool">تعبير بارد</string>
+    <string name="status_bar_logo_style_emoticon_devil">تعبير الشرير</string>
+    <string name="status_bar_logo_style_fire">نار</string>
+    <string name="status_bar_logo_style_heart">قلب</string>
+    <string name="status_bar_logo_style_nike">نايك</string>
+    <string name="status_bar_logo_style_pacman">باك-مان</string>
+    <string name="status_bar_logo_style_puma">بوما</string>
+    <string name="status_bar_logo_style_rog">روج</string>
+    <string name="status_bar_logo_style_spiderman">الرجل العنكبوت</string>
+    <string name="status_bar_logo_style_superman">سوبرمان</string>
+    <string name="status_bar_logo_style_windows">ويندوز</string>
+    <string name="status_bar_logo_style_xbox">إكسبوكس</string>
+    <string name="status_bar_logo_style_ghost">شبح</string>
+    <string name="status_bar_logo_style_ninja">نينجا</string>
+    <string name="status_bar_logo_style_robot">إنسان آلي</string>
+    <string name="status_bar_logo_style_ironman">الرجل الحديدي</string>
+    <string name="status_bar_logo_style_captain_america">قبطان أمريكا</string>
+    <string name="status_bar_logo_style_flash">فلاش</string>
+    <string name="status_bar_logo_style_tux">توكس</string>
+    <string name="status_bar_logo_style_ubuntu">أوبنتو</string>
+    <string name="status_bar_logo_style_mint">لينكس منت</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">تخصيص اللون</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="status_bar_carrier_category_title">علامة مشغل الشبكة</string>
+    <string name="lockscreen_show_carrier_title">أظهر إسم مشغّل الشبكة</string>
+    <string name="carrier_show_lockscreen_only">شاشة القفل قفط</string>
+    <string name="carrier_show_statusbar_only">شريط الحالة فقط</string>
+    <string name="carrier_show_both">شاشة القفل &amp; شريط الحالة</string>
+    <string name="custom_carrier_label_title">تخصيص تسمية مزود الخدمة</string>
+    <string name="custom_carrier_label_summary">انقر لتعيين علامة مشغل مخصصة</string>
+    <string name="custom_carrier_label_dialog_message">استبدل تسمية الناقل بنص مخصص. اتركه فارغاً لاستخدام تسمية الناقل الحقيقية.</string>
+    <string name="never">أبدًا</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="statusbar_clock_chip_title">خلفية الساعة</string>
+    <string name="statusbar_clock_chip_summary">اختر خليفة مخصصة خلف الساعة</string>
+    <string name="solid_accent">سمه لون موحد</string>
+    <string name="outline">التخطيط</string>
+    <string name="solid_accent_gradient">تدرج لوني لسمه لون موحد</string>
+    <string name="solid_gradient">اتجاه تدرج اللون</string>
+    <string name="solid_gradient_corner">حده تدرج اللون</string>
+    <string name="solid_gradient_void">تدرج الفراغ المظلم</string>
+    <string name="solid_gradient_neumorph">التدرج البارز</string>
+    <string name="solid_gradient_stroke">خط متدرج حاد</string>
+    <string name="solid_accent_transperent">عنصر شفاف</string>
+    <string name="solid_gradient_light">إضاءة متدرجة</string>
+    <string name="solid_gradient_shape">تدرج حاد </string>
+    <string name="solid_gradient_void_light">إضاءة متدرجة</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">أيقونات ملونة</string>
+    <string name="status_bar_colored_icons_summary">استخدام أيقونات التطبيق المناسبة لأيقونات الإشعارات في شريط الحالة</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">شاشة قفل مؤمنة</string>
+    <string name="advanced_reboot_secured_summary">عرض خيارات إعادة التشغيل المتقدمة على شاشة القفل المؤمنة</string>
+</resources>

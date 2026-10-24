@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_title">Logó</string>
+    <string name="status_bar_logo_summary">Egyéni logo megjelenítése az állapotsor jobb vagy bal oldalán</string>
+    <string name="status_bar_logo_position_title">A logó pozíciója</string>
+    <string name="status_bar_logo_position_right">Jobbra</string>
+    <string name="status_bar_logo_position_left">Balra</string>
+    <string name="status_bar_logo_style_title">Logóstílus</string>
+    <string name="status_bar_logo_style_alien">Földönkívüli</string>
+    <string name="status_bar_logo_style_avengers">Bosszúállók</string>
+    <string name="status_bar_logo_style_batman_tdk">Batman a Sötét Lovag</string>
+    <string name="status_bar_logo_style_biohazard">Biológiai veszély</string>
+    <string name="status_bar_logo_style_cannabis">Kannabisz</string>
+    <string name="status_bar_logo_style_emoticon_cool">Menő</string>
+    <string name="status_bar_logo_style_emoticon_devil">Ördög</string>
+    <string name="status_bar_logo_style_fire">Tűz</string>
+    <string name="status_bar_logo_style_heart">Szív</string>
+    <string name="status_bar_logo_style_pacman">Pac-Man</string>
+    <string name="status_bar_logo_style_spiderman">Pókember</string>
+    <string name="status_bar_logo_style_ghost">Szellem</string>
+    <string name="status_bar_logo_style_ninja">Nindzsa</string>
+    <string name="status_bar_logo_style_captain_america">Amerika Kapitány</string>
+    <string name="status_bar_logo_style_flash">Villám</string>
+    <string name="status_bar_logo_style_tux">TUX</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Egyéni szín</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="status_bar_carrier_category_title">a Szolgáltató neve</string>
+    <string name="lockscreen_show_carrier_title">Szolgáltatónév megjelenítése</string>
+    <string name="carrier_show_lockscreen_only">Csak a záróképernyőn</string>
+    <string name="carrier_show_statusbar_only">Csak az állapotsoron</string>
+    <string name="carrier_show_both">Záróképernyőn és állapotsoron is</string>
+    <string name="custom_carrier_label_title">Egyéni szolgáltató név</string>
+    <string name="custom_carrier_label_summary">Kattintson ide egyéni név beírásához</string>
+    <string name="custom_carrier_label_dialog_message">Lecseréli a szolgáltatónevet egyéni szövegre. Ha üresen hagyja, akkor a valódi név jelenik meg.</string>
+    <string name="never">Soha</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="statusbar_clock_chip_title">Óraszámlap</string>
+    <string name="statusbar_clock_chip_summary">Válasszon egyedi hátteret az óra mögé</string>
+    <string name="solid_accent">Egyszínű kiemelés</string>
+    <string name="outline">Körvonalas</string>
+    <string name="solid_accent_gradient">Egyszínű átmenetes kiemelés</string>
+    <string name="solid_gradient">Egyszínű átmenetes oldal</string>
+    <string name="solid_gradient_corner">Átmenetes éles kiemelés</string>
+    <string name="solid_gradient_void">Void átmenet</string>
+    <string name="solid_gradient_neumorph">Neumorph átmenet</string>
+    <string name="solid_gradient_stroke">Éles simított átmenet</string>
+    <string name="solid_accent_transperent">A kiemelés áttetszősége</string>
+    <string name="solid_gradient_light">Az átmenet fénye</string>
+    <string name="solid_gradient_shape">Éles sarkított átmenet</string>
+    <string name="solid_gradient_void_light">A Void átmenet fénye</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Színes ikonok</string>
+    <string name="status_bar_colored_icons_summary">Alkalmazásonként változó ikonok használata az értesítési sávban</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Biztonságos záróképernyő</string>
+    <string name="advanced_reboot_secured_summary">A biztonságos záróképernyőn is megjelennek a speciális újraindítási lehetőségek</string>
+</resources>

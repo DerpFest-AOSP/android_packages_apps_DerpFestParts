@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_summary">Mostrar un logo personalizado a la izquierda o derecha de la barra de estado</string>
+    <string name="status_bar_logo_position_title">Posición del logo</string>
+    <string name="status_bar_logo_position_right">Derecha</string>
+    <string name="status_bar_logo_position_left">Izquierda</string>
+    <string name="status_bar_logo_style_title">Estilo del logo</string>
+    <string name="status_bar_logo_style_avengers">Vengadores</string>
+    <string name="status_bar_logo_style_batman_tdk">Batman El Caballero Oscuro</string>
+    <string name="status_bar_logo_style_emoticon_cool">Emoticono con gafas</string>
+    <string name="status_bar_logo_style_emoticon_devil">Emoticono diablo</string>
+    <string name="status_bar_logo_style_fire">Llama</string>
+    <string name="status_bar_logo_style_heart">Corazón</string>
+    <string name="status_bar_logo_style_spiderman">Spider-man</string>
+    <string name="status_bar_logo_style_ghost">Fantasma</string>
+    <string name="status_bar_logo_style_ninja">Estrellas ninja</string>
+    <string name="status_bar_logo_style_ironman">Iron man</string>
+    <string name="status_bar_logo_style_captain_america">Capitán América</string>
+    <string name="status_bar_logo_style_flash">Rayo</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Color personalizado</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="status_bar_carrier_category_title">Nombre del operador</string>
+    <string name="lockscreen_show_carrier_title">Mostrar nombre del operador</string>
+    <string name="carrier_show_lockscreen_only">Solo en pantalla de bloqueo</string>
+    <string name="carrier_show_statusbar_only">Solo en la barra de estado</string>
+    <string name="carrier_show_both">Pantalla de bloqueo &amp; barra de estado</string>
+    <string name="custom_carrier_label_title">Etiqueta de la operadora personalizada</string>
+    <string name="custom_carrier_label_summary">Toca para establecer un nombre de operador personalizado</string>
+    <string name="custom_carrier_label_dialog_message">Reemplaza el nombre del operador con un texto personalizado. Déjalo vacío para usar el nombre real del operador.</string>
+    <string name="never">Nunca</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="statusbar_clock_chip_title">Chip de fondo del reloj</string>
+    <string name="statusbar_clock_chip_summary">Seleccionar chip de fondo personalizado detrás del reloj</string>
+    <string name="solid_accent">Color de acento sólido</string>
+    <string name="outline">Contorno</string>
+    <string name="solid_accent_gradient">Color de acento degradado sólido</string>
+    <string name="solid_gradient">Borde degradado sólido</string>
+    <string name="solid_gradient_corner">Nitidez de acento sólido degradado</string>
+    <string name="solid_gradient_void">Vacío degradado</string>
+    <string name="solid_gradient_neumorph">Gradiente neumórfo</string>
+    <string name="solid_gradient_stroke">Trazo de gradiente marcado</string>
+    <string name="solid_accent_transperent">Acento transparente</string>
+    <string name="solid_gradient_light">Degradado suave</string>
+    <string name="solid_gradient_shape">Trazo de degradado marcado</string>
+    <string name="solid_gradient_void_light">Vacío degradado suave</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Iconos coloreados</string>
+    <string name="status_bar_colored_icons_summary">Usar iconos de aplicación adecuados para los iconos de notificación en la barra de estado</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Pantalla de bloqueo segura</string>
+    <string name="advanced_reboot_secured_summary">Mostrar opciones avanzadas de reinicio en la pantalla de bloqueo</string>
+</resources>

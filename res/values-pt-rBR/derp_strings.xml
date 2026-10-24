@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_title">Logotipo</string>
+    <string name="status_bar_logo_summary">Exibe uma logo personalizada no lado esquerdo ou direito da barra de status</string>
+    <string name="status_bar_logo_position_title">Posição do logo</string>
+    <string name="status_bar_logo_position_right">Direita</string>
+    <string name="status_bar_logo_position_left">Esquerda</string>
+    <string name="status_bar_logo_style_title">Estilo do logo</string>
+    <string name="status_bar_logo_style_alien">Alienígena</string>
+    <string name="status_bar_logo_style_avengers">Vingadores</string>
+    <string name="status_bar_logo_style_batman_tdk">Batman O Cavaleiro das Trevas</string>
+    <string name="status_bar_logo_style_cannabis">Maconha</string>
+    <string name="status_bar_logo_style_emoticon_cool">Emoticon legal</string>
+    <string name="status_bar_logo_style_emoticon_devil">Emoticon demônio</string>
+    <string name="status_bar_logo_style_fire">Fogo</string>
+    <string name="status_bar_logo_style_heart">Coração</string>
+    <string name="status_bar_logo_style_spiderman">Homem-Aranha</string>
+    <string name="status_bar_logo_style_superman">Super-Homem</string>
+    <string name="status_bar_logo_style_ghost">Fantasma</string>
+    <string name="status_bar_logo_style_robot">Robô</string>
+    <string name="status_bar_logo_style_ironman">Homem de Ferro</string>
+    <string name="status_bar_logo_style_captain_america">Capitão América</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Cor personalizada</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="status_bar_carrier_category_title">Nome da operadora</string>
+    <string name="lockscreen_show_carrier_title">Mostrar nome da operadora</string>
+    <string name="carrier_show_lockscreen_only">Apenas na tela de bloqueio</string>
+    <string name="carrier_show_statusbar_only">Apenas na barra de status</string>
+    <string name="carrier_show_both">Tela de bloqueio &amp; barra de status</string>
+    <string name="custom_carrier_label_title">Personalizar nome da operadora</string>
+    <string name="custom_carrier_label_summary">Toque para definir um nome de operadora personalizado</string>
+    <string name="custom_carrier_label_dialog_message">Substitui o nome da operadora por um texto personalizado. Deixe em branco para usar o nome real.</string>
+    <string name="never">Nunca</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="statusbar_clock_chip_title">Fundo de relógio</string>
+    <string name="statusbar_clock_chip_summary">Selecione uma cor de fundo personalizado atrás do relógio.</string>
+    <string name="outline">Contornado</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Ícones coloridos</string>
+    <string name="status_bar_colored_icons_summary">Usa a cor e formato do ícone do aplicativo para os ícones de notificação na barra de status</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Reinício avançando na tela de bloqueio</string>
+    <string name="advanced_reboot_secured_summary">Mostrar opções de reinício avançado na tela de bloqueio</string>
+</resources>

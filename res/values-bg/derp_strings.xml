@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_title">Лого</string>
+    <string name="status_bar_logo_summary">在状态栏的左侧或右侧显示自定义徽标</string>
+    <string name="status_bar_logo_position_title">Позиция на лого</string>
+    <string name="status_bar_logo_position_right">Отдясно</string>
+    <string name="status_bar_logo_position_left">Отляво</string>
+    <string name="status_bar_logo_style_title">Стил на логото</string>
+    <string name="status_bar_logo_style_android">Андроид</string>
+    <string name="status_bar_logo_style_adidas">adidas</string>
+    <string name="status_bar_logo_style_alien">外星人</string>
+    <string name="status_bar_logo_style_avengers">复仇者联盟（Avengers）</string>
+    <string name="status_bar_logo_style_batman">Батман</string>
+    <string name="status_bar_logo_style_batman_tdk">蝙蝠侠：黑暗骑士（Batman The Dark Knight）</string>
+    <string name="status_bar_logo_style_blackberry">黑莓</string>
+    <string name="status_bar_logo_style_cannabis">大麻</string>
+    <string name="status_bar_logo_style_emoticon_cool">Емотикон - готин</string>
+    <string name="status_bar_logo_style_emoticon_devil">Емотикон - дявол</string>
+    <string name="status_bar_logo_style_fire">火焰</string>
+    <string name="status_bar_logo_style_heart">Сърце</string>
+    <string name="status_bar_logo_style_pacman">吃豆人（Pac-Man）</string>
+    <string name="status_bar_logo_style_rog">华硕（ROG）</string>
+    <string name="status_bar_logo_style_spiderman">蜘蛛侠（Spider-Man）</string>
+    <string name="status_bar_logo_style_superman">Супермен</string>
+    <string name="status_bar_logo_style_windows">Уиндоус</string>
+    <string name="status_bar_logo_style_ghost">Призрак</string>
+    <string name="status_bar_logo_style_ninja">Нинджа</string>
+    <string name="status_bar_logo_style_robot">Робот</string>
+    <string name="status_bar_logo_style_ironman">钢铁侠（Iron Man）</string>
+    <string name="status_bar_logo_style_captain_america">祖国人（Captain America）</string>
+    <string name="status_bar_logo_style_flash">Светкавица</string>
+    <string name="status_bar_logo_style_tux">Tux（Linux吉祥物）</string>
+    <string name="status_bar_logo_style_ubuntu">Ubuntu（乌班图）</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Потребителски цвят</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="status_bar_carrier_category_title">Име на мобилен оператор</string>
+    <string name="lockscreen_show_carrier_title">Показване на името на мобилния оператор</string>
+    <string name="carrier_show_lockscreen_only">Само на заключен екран</string>
+    <string name="carrier_show_statusbar_only">Само лентата на състоянието</string>
+    <string name="carrier_show_both">Lockscreen &amp; лента на състоянието</string>
+    <string name="custom_carrier_label_title">Ваше име на оператор</string>
+    <string name="custom_carrier_label_summary">Докосни за избиране на собствено име на мобилния оператор</string>
+    <string name="custom_carrier_label_dialog_message">Замени името на мобилния оператор. Остави празно за истинското име.</string>
+    <string name="never">Никога</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="statusbar_clock_chip_title">Фонов чип на часовника</string>
+    <string name="statusbar_clock_chip_summary">Изберете персонализиран чип за фон зад часовника</string>
+    <string name="solid_accent">Твърд акцент на цвят</string>
+    <string name="outline">Контур</string>
+    <string name="solid_accent_gradient">Градиент на твърд акцент на цвят</string>
+    <string name="solid_gradient">Страничен твърд акцент</string>
+    <string name="solid_gradient_corner">Твърд градиент на акцент острота</string>
+    <string name="solid_gradient_void">Градиентна празнота</string>
+    <string name="solid_gradient_neumorph">Нейноморфен градиент</string>
+    <string name="solid_gradient_stroke">Остър градиент щрих</string>
+    <string name="solid_accent_transperent">Прозрачен акцент</string>
+    <string name="solid_gradient_light">Светлина на градиент</string>
+    <string name="solid_gradient_shape">Остър градиент краище</string>
+    <string name="solid_gradient_void_light">Градиентна празнота светлина</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Цветни икони</string>
+    <string name="status_bar_colored_icons_summary">Използвайте подходящи икони на приложения за икони за известия в лентата на състоянието</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Защитен заключен екран</string>
+    <string name="advanced_reboot_secured_summary">Покажи разширени опции за рестарт при защитен заключен екран</string>
+</resources>

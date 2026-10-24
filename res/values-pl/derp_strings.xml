@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_summary">Wyświetla własne logo po lewej lub prawej stronie paska stanu</string>
+    <string name="status_bar_logo_position_title">Położenie logo</string>
+    <string name="status_bar_logo_position_right">Po prawo</string>
+    <string name="status_bar_logo_position_left">Po lewo</string>
+    <string name="status_bar_logo_style_title">Styl logo</string>
+    <string name="status_bar_logo_style_alien">Obcy</string>
+    <string name="status_bar_logo_style_batman_tdk">Batman Mroczny Rycerz</string>
+    <string name="status_bar_logo_style_biohazard">Zagrożenie biologiczne</string>
+    <string name="status_bar_logo_style_cannabis">Konopie indyjskie</string>
+    <string name="status_bar_logo_style_emoticon_cool">Emotikona spoko</string>
+    <string name="status_bar_logo_style_emoticon_devil">Emotikona diabła</string>
+    <string name="status_bar_logo_style_fire">Ogień</string>
+    <string name="status_bar_logo_style_heart">Serce</string>
+    <string name="status_bar_logo_style_ghost">Duch</string>
+    <string name="status_bar_logo_style_captain_america">Kapitan Ameryka</string>
+    <string name="status_bar_logo_style_flash">Błysk</string>
+    <string name="status_bar_logo_style_mint">Linuks Mint</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Własny kolor</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="status_bar_carrier_category_title">Etykieta operatora</string>
+    <string name="lockscreen_show_carrier_title">Pokazuj etykietę operatora</string>
+    <string name="carrier_show_lockscreen_only">Tylko na ekranie blokady</string>
+    <string name="carrier_show_statusbar_only">Tylko na pasku stanu</string>
+    <string name="carrier_show_both">Na ekranie blokady i pasku stanu</string>
+    <string name="custom_carrier_label_title">Własna etykieta operatora</string>
+    <string name="custom_carrier_label_summary">Dotknij, aby ustawić własną etykietę operatora</string>
+    <string name="custom_carrier_label_dialog_message">Zastępuj etykietę operatora własnym tekstem. Pozostaw pole puste, aby używać prawdziwej etykiety operatora.</string>
+    <string name="never">Nigdy</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="statusbar_clock_chip_title">Tło zegara</string>
+    <string name="statusbar_clock_chip_summary">Wybierz własne, akcentowane tło za zegarem</string>
+    <string name="solid_accent">Jednolity akcent kolorystyczny</string>
+    <string name="outline">Kontur</string>
+    <string name="solid_accent_gradient">Jednolity kolor naznaczony gradientem</string>
+    <string name="solid_gradient">Jednolity gradient boczny</string>
+    <string name="solid_gradient_corner">Wyraźny, ostry akcent gradientu</string>
+    <string name="solid_gradient_void">Gradientowa pustka</string>
+    <string name="solid_gradient_neumorph">Gradient neumorficzny</string>
+    <string name="solid_gradient_stroke">Ostry gradientowy kontur</string>
+    <string name="solid_accent_transperent">Przezroczysty akcent</string>
+    <string name="solid_gradient_light">Lekki gradient</string>
+    <string name="solid_gradient_shape">Ostry gradientowy narożnik</string>
+    <string name="solid_gradient_void_light">Lekka gradientowa pustka</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Kolorowe ikony</string>
+    <string name="status_bar_colored_icons_summary">Używaj odpowiednich ikon aplikacji do powiadomień na pasku stanu</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Zabezpieczony ekran blokady</string>
+    <string name="advanced_reboot_secured_summary">Wyświetlaj zaawansowane opcje ponownego uruchamiania na zabezpieczonym ekranie blokady</string>
+</resources>

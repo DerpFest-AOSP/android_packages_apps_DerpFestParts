@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_title">Логотип</string>
+    <string name="status_bar_logo_summary">Показывать выбранный логотип слева или справа в строке состояния</string>
+    <string name="status_bar_logo_position_title">Расположение логотипа</string>
+    <string name="status_bar_logo_position_right">Справа</string>
+    <string name="status_bar_logo_position_left">Слева</string>
+    <string name="status_bar_logo_style_title">Выбор логотипа</string>
+    <string name="status_bar_logo_style_alien">Пришелец</string>
+    <string name="status_bar_logo_style_avengers">Мстители</string>
+    <string name="status_bar_logo_style_batman">Бэтмен</string>
+    <string name="status_bar_logo_style_batman_tdk">Бэтмен - Тёмный Рыцарь</string>
+    <string name="status_bar_logo_style_beats">Удары</string>
+    <string name="status_bar_logo_style_biohazard">Биологическая угроза</string>
+    <string name="status_bar_logo_style_cannabis">Конопля</string>
+    <string name="status_bar_logo_style_emoticon_cool">Клёвый смайлик </string>
+    <string name="status_bar_logo_style_emoticon_devil">Смайлик - дьявол</string>
+    <string name="status_bar_logo_style_fire">Огонь</string>
+    <string name="status_bar_logo_style_heart">Сердце</string>
+    <string name="status_bar_logo_style_pacman">Pac - man</string>
+    <string name="status_bar_logo_style_spiderman">Человек - Паук</string>
+    <string name="status_bar_logo_style_superman">Супермен</string>
+    <string name="status_bar_logo_style_ghost">Призрак</string>
+    <string name="status_bar_logo_style_ninja">Ниндзя</string>
+    <string name="status_bar_logo_style_robot">Робот</string>
+    <string name="status_bar_logo_style_ironman">Железный человек</string>
+    <string name="status_bar_logo_style_captain_america">Капитан Америка</string>
+    <string name="status_bar_logo_style_flash">Молния</string>
+    <string name="status_bar_logo_style_tux">Пингвин Tux</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Свой цвет</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="status_bar_carrier_category_title">Имя оператора</string>
+    <string name="lockscreen_show_carrier_title">Показать имя оператора</string>
+    <string name="carrier_show_lockscreen_only">На экране блокировки</string>
+    <string name="carrier_show_statusbar_only">В строке состояния</string>
+    <string name="carrier_show_both">На экране блокировки и в строке состояния</string>
+    <string name="custom_carrier_label_title">Своё название оператора</string>
+    <string name="custom_carrier_label_summary">Нажмите, чтобы задать название оператора</string>
+    <string name="custom_carrier_label_dialog_message">Замените название оператора своим текстом. Оставьте поле пустым, чтобы использовать настоящее название оператора.</string>
+    <string name="never">Никогда</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="statusbar_clock_chip_title">Фон под часами</string>
+    <string name="statusbar_clock_chip_summary">Выбрать свой фон под часами</string>
+    <string name="solid_accent">Сплошной цвет акцента</string>
+    <string name="outline">Контур</string>
+    <string name="solid_accent_gradient">Градиент цветового акцента</string>
+    <string name="solid_gradient">Сплошной вертикальный градиент</string>
+    <string name="solid_gradient_corner">Сплошной акцент с градиентным кантом</string>
+    <string name="solid_gradient_void">Градиент с кантом</string>
+    <string name="solid_gradient_neumorph">Вертикальный градиент с кантом</string>
+    <string name="solid_gradient_stroke">Резкий градиентный штрих</string>
+    <string name="solid_accent_transperent">Полупрозрачный акцент</string>
+    <string name="solid_gradient_light">Лёгкий градиент</string>
+    <string name="solid_gradient_shape">Лёгкий градиент с углами</string>
+    <string name="solid_gradient_void_light">Лёгкий горизонтальный градиент</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Цветные значки</string>
+    <string name="status_bar_colored_icons_summary">Использовать цветные значки приложений и уведомлений в строке состояния</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Защищённый экран блокировки</string>
+    <string name="advanced_reboot_secured_summary">Показывать дополнительные параметры перезагрузки на экране блокировки</string>
+</resources>

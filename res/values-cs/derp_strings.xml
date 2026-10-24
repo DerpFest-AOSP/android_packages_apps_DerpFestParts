@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_summary">Zobrazit vlastní logo vlevo nebo vpravo na stavové liště</string>
+    <string name="status_bar_logo_position_title">Umístění loga</string>
+    <string name="status_bar_logo_position_right">Vpravo</string>
+    <string name="status_bar_logo_position_left">Vlevo</string>
+    <string name="status_bar_logo_style_title">Styl loga</string>
+    <string name="status_bar_logo_style_batman_tdk">Batman Temný rytíř</string>
+    <string name="status_bar_logo_style_biohazard">Biologické riziko</string>
+    <string name="status_bar_logo_style_cannabis">Konopí</string>
+    <string name="status_bar_logo_style_emoticon_cool">Emotikon bezva</string>
+    <string name="status_bar_logo_style_emoticon_devil">Emotikon ďábel</string>
+    <string name="status_bar_logo_style_fire">Oheň</string>
+    <string name="status_bar_logo_style_heart">Srdce</string>
+    <string name="status_bar_logo_style_spiderman">Spider‑Man</string>
+    <string name="status_bar_logo_style_ghost">Duch</string>
+    <string name="status_bar_logo_style_ninja">Nindža</string>
+    <string name="status_bar_logo_style_flash">Blesk</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Vlastní barva</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="status_bar_carrier_category_title">Název operátora</string>
+    <string name="lockscreen_show_carrier_title">Zobrazit název operátora</string>
+    <string name="carrier_show_lockscreen_only">Pouze na obrazovce uzamčení</string>
+    <string name="carrier_show_statusbar_only">Pouze na stavovém řádku</string>
+    <string name="carrier_show_both">Na obrazovce uzamčení a\u00a0na stavovém řádku</string>
+    <string name="custom_carrier_label_title">Vlastní název operátora</string>
+    <string name="custom_carrier_label_summary">Klepnutím nastavíte vlastní název operátora</string>
+    <string name="custom_carrier_label_dialog_message">Nahradit název operátora vlastním textem. Ponechte pole prázdné pro použití názvu skutečného operátora.</string>
+    <string name="never">Nikdy</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="outline">Ohraničení</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Barevné ikony</string>
+    <string name="status_bar_colored_icons_summary">Použít správné ikony aplikací pro ikony oznámení ve stavovém řádku</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Zabezpečená obrazovka uzamčení</string>
+    <string name="advanced_reboot_secured_summary">Zobrazit rozšířené možnosti restartu na zabezpečené obrazovce uzamčení</string>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_title">لۆگۆ</string>
+    <string name="status_bar_logo_position_title">شوێنی لۆگۆ</string>
+    <string name="status_bar_logo_position_right">ڕاست</string>
+    <string name="status_bar_logo_position_left">چەپ</string>
+    <string name="status_bar_logo_style_title">شێوازی لۆگۆ</string>
+    <string name="status_bar_logo_style_android">ئەندرۆید</string>
+    <string name="status_bar_logo_style_apple">ئەپڵ</string>
+    <string name="status_bar_logo_style_batman">باتمان</string>
+    <string name="status_bar_logo_style_emoticon_cool">خەندەی قۆزی</string>
+    <string name="status_bar_logo_style_emoticon_devil">خەندەی شەیتانی</string>
+    <string name="status_bar_logo_style_heart">دڵ</string>
+    <string name="status_bar_logo_style_superman">سوپه‌رمان</string>
+    <string name="status_bar_logo_style_windows">ویندۆز</string>
+    <string name="status_bar_logo_style_ghost">تارمایی</string>
+    <string name="status_bar_logo_style_ninja">نینجا</string>
+    <string name="status_bar_logo_style_robot">ڕۆبۆت</string>
+    <string name="status_bar_logo_style_flash">فلاش</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="custom_carrier_label_title">نازناوی بریکاری دڵخواز</string>
+    <string name="never">هەرگیز</string>
+</resources>

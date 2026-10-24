@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_summary">Toon een aangepast logo links of rechts van de statusbalk</string>
+    <string name="status_bar_logo_position_title">Logo positie</string>
+    <string name="status_bar_logo_position_right">Rechts</string>
+    <string name="status_bar_logo_position_left">Links</string>
+    <string name="status_bar_logo_style_title">Logo stijl</string>
+    <string name="status_bar_logo_style_blackberry">Blackberry</string>
+    <string name="status_bar_logo_style_emoticon_cool">Emoticon koel</string>
+    <string name="status_bar_logo_style_emoticon_devil">Emoticon duivel</string>
+    <string name="status_bar_logo_style_heart">Hart</string>
+    <string name="status_bar_logo_style_spiderman">Spiderman</string>
+    <string name="status_bar_logo_style_ghost">Geest</string>
+    <string name="status_bar_logo_style_flash">Flits</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Aangepaste kleur</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="status_bar_carrier_category_title">Providernaam</string>
+    <string name="lockscreen_show_carrier_title">Provider label weergeven</string>
+    <string name="carrier_show_lockscreen_only">Alleen vergrendelscherm</string>
+    <string name="carrier_show_statusbar_only">Alleen statusbalk</string>
+    <string name="carrier_show_both">Vergrendelscherm &amp; statusbalk</string>
+    <string name="custom_carrier_label_title">Aangepaste providernaam</string>
+    <string name="custom_carrier_label_summary">Tik om een aangepast providerlabel in te stellen</string>
+    <string name="custom_carrier_label_dialog_message">Vervang providerlabel door aangepaste tekst. Laat leeg om het echte providerlabel te gebruiken.</string>
+    <string name="never">Nooit</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="statusbar_clock_chip_title">Klok achtergrond chip</string>
+    <string name="statusbar_clock_chip_summary">Aangepaste achtergrondchip achter klok selecteren</string>
+    <string name="solid_accent">Stevig kleuraccent</string>
+    <string name="outline">Buitenlijn</string>
+    <string name="solid_accent_gradient">Stevig kleuraccentverloop</string>
+    <string name="solid_gradient">Stevig kleurovergang zijde</string>
+    <string name="solid_gradient_corner">Stevig accentverloop scherp</string>
+    <string name="solid_gradient_void">Kleurovergang leegte</string>
+    <string name="solid_gradient_neumorph">Neumorf verloop</string>
+    <string name="solid_gradient_stroke">Scherpe kleurovergang</string>
+    <string name="solid_accent_transperent">Accent transparant</string>
+    <string name="solid_gradient_light">Kleurovergang licht</string>
+    <string name="solid_gradient_shape">Scherpe kleurovergang hoek</string>
+    <string name="solid_gradient_void_light">Kleurovergang leegte licht</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Gekleurde pictogrammen</string>
+    <string name="status_bar_colored_icons_summary">Gebruik juiste app pictogrammen voor notificatie pictogrammen in statusbalk</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Beveiligd vergrendelscherm</string>
+    <string name="advanced_reboot_secured_summary">Geavanceerde herstartopties weergeven op beveiligd vergrendelscherm</string>
+</resources>

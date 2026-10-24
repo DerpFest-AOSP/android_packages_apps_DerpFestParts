@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_title">Λογότυπο</string>
+    <string name="status_bar_logo_summary">Εμφάνιση ενός προσαρμοσμένου λογότυπου στα αριστερά ή στα δεξιά της γραμμής κατάστασης</string>
+    <string name="status_bar_logo_position_title">Θέση λογότυπου</string>
+    <string name="status_bar_logo_position_right">Δεξιά</string>
+    <string name="status_bar_logo_position_left">Αριστερά</string>
+    <string name="status_bar_logo_style_title">Στυλ λογότυπου</string>
+    <string name="status_bar_logo_style_heart">Καρδιά</string>
+    <string name="status_bar_logo_style_ghost">Φάντασμα</string>
+    <string name="status_bar_logo_style_robot">Ρομπότ</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Προσαρμοσμένο χρώμα</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="custom_carrier_label_title">Προσαρμοσμένο όνομα παρόχου</string>
+    <string name="never">Ποτέ</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="outline">Περίγραμμα</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Έγχρωμα εικονίδια</string>
+    <string name="status_bar_colored_icons_summary">Χρήση κατάλληλων εικονιδίων εφαρμογών για εικονίδια ειδοποιήσεων στη γραμμή κατάστασης</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Ασφαλής οθόνη κλειδώματος</string>
+    <string name="advanced_reboot_secured_summary">Εμφάνιση προηγμένων επιλογών επανεκκίνησης στην ασφαλή οθόνη κλειδώματος</string>
+</resources>

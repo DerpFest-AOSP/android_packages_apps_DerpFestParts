@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_title">Biểu tượng</string>
+    <string name="status_bar_logo_summary">Hiển thị biểu tượng tùy chỉnh ở bên trái hoặc bên phải của thanh trạng thái</string>
+    <string name="status_bar_logo_position_title">Vị trí biểu tượng</string>
+    <string name="status_bar_logo_position_right">Phải</string>
+    <string name="status_bar_logo_position_left">Trái</string>
+    <string name="status_bar_logo_style_title">Kiểu dáng của biểu tượng</string>
+    <string name="status_bar_logo_style_android">Hệ điều hành</string>
+    <string name="status_bar_logo_style_adidas">Tập đoàn phân phối</string>
+    <string name="status_bar_logo_style_alien">Người ngoài hành tinh</string>
+    <string name="status_bar_logo_style_apple">Táo khuyết</string>
+    <string name="status_bar_logo_style_avengers">Biệt đội siêu anh hùng</string>
+    <string name="status_bar_logo_style_batman">Người dơi</string>
+    <string name="status_bar_logo_style_batman_tdk">Người dơi hiệp sĩ bóng tối</string>
+    <string name="status_bar_logo_style_beats">Nhịp đập</string>
+    <string name="status_bar_logo_style_biohazard">Nguy hiểm sinh học</string>
+    <string name="status_bar_logo_style_blackberry">Quả mâm xôi</string>
+    <string name="status_bar_logo_style_cannabis">Cần sa</string>
+    <string name="status_bar_logo_style_emoticon_cool">Biểu tượng cảm xúc cực ngầu</string>
+    <string name="status_bar_logo_style_emoticon_devil">Biểu tượng cảm xúc ác quỷ</string>
+    <string name="status_bar_logo_style_fire">Lửa</string>
+    <string name="status_bar_logo_style_heart">Trái tim</string>
+    <string name="status_bar_logo_style_nike">Tập đoàn giày dép</string>
+    <string name="status_bar_logo_style_pacman">Cuộc chơi hoàn hảo</string>
+    <string name="status_bar_logo_style_puma">Báo sư tử</string>
+    <string name="status_bar_logo_style_spiderman">Người nhện</string>
+    <string name="status_bar_logo_style_superman">Siêu người máy</string>
+    <string name="status_bar_logo_style_windows">Các cửa sổ</string>
+    <string name="status_bar_logo_style_xbox">Thương hiệu trò chơi</string>
+    <string name="status_bar_logo_style_ghost">Ma quỷ</string>
+    <string name="status_bar_logo_style_ninja">Nhẫn giả</string>
+    <string name="status_bar_logo_style_robot">Người máy</string>
+    <string name="status_bar_logo_style_ironman">Người sắt</string>
+    <string name="status_bar_logo_style_captain_america">Đội trưởng</string>
+    <string name="status_bar_logo_style_flash">Tia chớp</string>
+    <string name="status_bar_logo_style_tux">Lễ phục</string>
+    <string name="status_bar_logo_style_ubuntu">Tình người</string>
+    <string name="status_bar_logo_style_mint">Bột rửa</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Tùy chỉnh màu sắc</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="status_bar_carrier_category_title">Tên nhà mạng</string>
+    <string name="lockscreen_show_carrier_title">Hiển thị tên nhà mạng</string>
+    <string name="carrier_show_lockscreen_only">Chỉ màn hình khóa</string>
+    <string name="carrier_show_statusbar_only">Chỉ thanh trạng thái</string>
+    <string name="carrier_show_both">Màn hình khóa &amp; thanh trạng thái</string>
+    <string name="custom_carrier_label_title">Tùy chỉnh tên nhà cung cấp</string>
+    <string name="custom_carrier_label_summary">Chạm để thiết lập tên tùy chỉnh</string>
+    <string name="custom_carrier_label_dialog_message">Thay thế bằng văn bản tùy chỉnh hoặc để trống nếu muốn sử dụng tên mặc định.</string>
+    <string name="never">Không bao giờ</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="statusbar_clock_chip_title">Màu nền đồng hồ</string>
+    <string name="statusbar_clock_chip_summary">Chọn nền tùy chỉnh phía sau đồng hồ</string>
+    <string name="solid_accent">Điểm nhấn màu nổi</string>
+    <string name="outline">Đường nét</string>
+    <string name="solid_accent_gradient">Màu đơn điểm nhấn chuyển sắc</string>
+    <string name="solid_gradient">Mặt bên chuyển sắc liền mạch</string>
+    <string name="solid_gradient_corner">Màu đậm chuyển sắc rõ nét</string>
+    <string name="solid_gradient_void">Khoảng trống chuyển sắc</string>
+    <string name="solid_gradient_neumorph">Chuyển sắc trung tính</string>
+    <string name="solid_gradient_stroke">Nét vẽ chuyển sắc nét</string>
+    <string name="solid_accent_transperent">Điểm nhấn trong suốt</string>
+    <string name="solid_gradient_light">Ánh sáng màu chuyển sắc</string>
+    <string name="solid_gradient_shape">Góc chuyển sắc có nét</string>
+    <string name="solid_gradient_void_light">Ánh sáng khoảng trống chuyển sắc</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Biểu tượng màu</string>
+    <string name="status_bar_colored_icons_summary">Sử dụng các biểu tượng ứng dụng thích hợp cho các biểu tượng thông báo trên thanh trạng thái</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Bảo mật màn hình khóa</string>
+    <string name="advanced_reboot_secured_summary">Tùy chọn khởi động lại nâng cao ở màn hình khóa</string>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_title">சின்னம்</string>
+    <string name="status_bar_logo_position_title">சின்னத்தின் நிலை</string>
+    <string name="status_bar_logo_position_right">வலது</string>
+    <string name="status_bar_logo_position_left">இடது</string>
+    <string name="status_bar_logo_style_title">சின்னம் பாணி</string>
+    <string name="status_bar_logo_style_apple">ஆப்பிள்</string>
+    <string name="status_bar_logo_style_batman">பேட்மேன்</string>
+    <string name="status_bar_logo_style_emoticon_cool">உணர்வுரு குளிர்</string>
+    <string name="status_bar_logo_style_emoticon_devil">உணர்வுரு பிசாசு</string>
+    <string name="status_bar_logo_style_heart">இதயம்</string>
+    <string name="status_bar_logo_style_superman">சூப்பர்மேன்</string>
+    <string name="status_bar_logo_style_ghost">பேய்</string>
+    <string name="status_bar_logo_style_ninja">நிஞ்சா</string>
+    <string name="status_bar_logo_style_robot">ரோபோ</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">தனிப்பயன் நிறம்</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="never">ஒருபோதுமில்லை</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">பாதுகாக்கப்பட்ட பூட்டுத்திரை</string>
+</resources>

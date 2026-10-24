@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_position_title">Pozicija loga</string>
+    <string name="status_bar_logo_position_right">Desno</string>
+    <string name="status_bar_logo_position_left">Levo</string>
+    <string name="status_bar_logo_style_title">Stil loga</string>
+    <string name="status_bar_logo_style_biohazard">Bioloski otrov</string>
+    <string name="status_bar_logo_style_emoticon_cool">Kul emotikon</string>
+    <string name="status_bar_logo_style_emoticon_devil">Demonski emotikon</string>
+    <string name="status_bar_logo_style_heart">Srce</string>
+    <string name="status_bar_logo_style_ghost">Duh</string>
+    <string name="status_bar_logo_style_ninja">Nindža</string>
+    <string name="status_bar_logo_style_flash">Munja</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Prilagodjene boje</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="custom_carrier_label_title">Prilagođena oznaka operatera</string>
+    <string name="never">Nikad</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Ikone u boji</string>
+    <string name="status_bar_colored_icons_summary">Koristi ikonu aplikacije za obaveštenja kod prikaza statusa</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Siguran zaključan ekran</string>
+    <string name="advanced_reboot_secured_summary">Prikaži napredne opcije za ponovno pokretanje sistema na sigurnom zaključanom ekranu</string>
+</resources>

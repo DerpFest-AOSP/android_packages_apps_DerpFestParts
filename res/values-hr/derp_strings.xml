@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_summary">Prikaz prilagođenog logotipa lijevo ili desno od statusne trake</string>
+    <string name="status_bar_logo_position_title">Položaj logotipa</string>
+    <string name="status_bar_logo_position_right">Desno</string>
+    <string name="status_bar_logo_position_left">Lijevo</string>
+    <string name="status_bar_logo_style_title">Stil logotipa</string>
+    <string name="status_bar_logo_style_alien">Vanzemaljci</string>
+    <string name="status_bar_logo_style_batman">Batmen</string>
+    <string name="status_bar_logo_style_blackberry">Blackberry</string>
+    <string name="status_bar_logo_style_emoticon_cool">Emotikon cool</string>
+    <string name="status_bar_logo_style_emoticon_devil">Emotikon vrag</string>
+    <string name="status_bar_logo_style_fire">Vatra</string>
+    <string name="status_bar_logo_style_heart">Srce</string>
+    <string name="status_bar_logo_style_pacman">Pac-Man</string>
+    <string name="status_bar_logo_style_ghost">Duh</string>
+    <string name="status_bar_logo_style_flash">Bljeskalica</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Prilagođena boja</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="never">Nikad</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="statusbar_clock_chip_title">Čip pozadine sata</string>
+    <string name="outline">Obris</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Obojene ikone</string>
+    <string name="status_bar_colored_icons_summary">Koristi odgovarajuće ikone aplikacija za ikone obavijesti u statusnoj traci</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Osiguran zaključani zaslon</string>
+    <string name="advanced_reboot_secured_summary">Prikaži napredne opcije ponovnog pokretanja na osiguranom zaključanom zaslonu</string>
+</resources>

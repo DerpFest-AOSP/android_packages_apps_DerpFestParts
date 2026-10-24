@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_summary">Zobraziť vlastné logo na ľavej alebo pravej strane stavového riadka</string>
+    <string name="status_bar_logo_position_title">Umiestnenie loga</string>
+    <string name="status_bar_logo_position_right">Vpravo</string>
+    <string name="status_bar_logo_position_left">Vľavo</string>
+    <string name="status_bar_logo_style_title">Štýl loga</string>
+    <string name="status_bar_logo_style_alien">Mimozemšťan</string>
+    <string name="status_bar_logo_style_avengers">Avenger</string>
+    <string name="status_bar_logo_style_batman_tdk">Batman Temný rytier</string>
+    <string name="status_bar_logo_style_emoticon_cool">Smajlík kúl (cool)</string>
+    <string name="status_bar_logo_style_emoticon_devil">Smajlík diabol</string>
+    <string name="status_bar_logo_style_fire">Oheň</string>
+    <string name="status_bar_logo_style_heart">Srdce</string>
+    <string name="status_bar_logo_style_pacman">Pac-Man</string>
+    <string name="status_bar_logo_style_spiderman">Spider‑Man</string>
+    <string name="status_bar_logo_style_ghost">Duch</string>
+    <string name="status_bar_logo_style_captain_america">Kapitán Amerika</string>
+    <string name="status_bar_logo_style_flash">Blesk</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Vlastná farba</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="status_bar_carrier_category_title">Názov operátora</string>
+    <string name="lockscreen_show_carrier_title">Zobraziť názov operátora</string>
+    <string name="carrier_show_statusbar_only">Iba stavový riadok</string>
+    <string name="custom_carrier_label_title">Vlastný názov operátora</string>
+    <string name="custom_carrier_label_dialog_message">Vymeniť označenie operátora z vlastným textom. Nechať prázdne na použitie reálneho označenia.</string>
+    <string name="never">Nikdy</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="statusbar_clock_chip_title">Čipové pozadie hodín</string>
+    <string name="statusbar_clock_chip_summary">Vybrať vlastné pozadie za hodinami</string>
+    <string name="solid_accent">Jednofarebný akcent</string>
+    <string name="outline">Obrys</string>
+    <string name="solid_accent_gradient">Jednofarebný akcent s prechodom</string>
+    <string name="solid_gradient">Bočný farebný prechod</string>
+    <string name="solid_gradient_corner">Plný akcent s ostrým prechodom</string>
+    <string name="solid_gradient_void">Prázdny prechod</string>
+    <string name="solid_gradient_neumorph">Neomorfný prechod</string>
+    <string name="solid_gradient_stroke">Ostrý ťah s prechodom</string>
+    <string name="solid_accent_transperent">Priehľadný akcent</string>
+    <string name="solid_gradient_light">Svetlý prechod</string>
+    <string name="solid_gradient_shape">Ostrý roh s prechodom</string>
+    <string name="solid_gradient_void_light">Svetlý prázdny prechod</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Farebné ikony</string>
+    <string name="status_bar_colored_icons_summary">Použít správné ikony aplikací pre ikony oznámení v stavovom riadku</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Zabezpečená obrazovka uzamknutia</string>
+    <string name="advanced_reboot_secured_summary">Zobraziť rozšírené možnosti reštartu na zabezpečenej obrazovke uzamknutia</string>
+</resources>

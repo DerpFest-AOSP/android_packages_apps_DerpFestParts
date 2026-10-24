@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_title">লোগো</string>
+    <string name="status_bar_logo_position_title">লোগোর অবস্থান</string>
+    <string name="status_bar_logo_position_right">ডানে</string>
+    <string name="status_bar_logo_position_left">বামে</string>
+    <string name="status_bar_logo_style_title">লোগো স্টাইল</string>
+    <string name="status_bar_logo_style_android">অ্যান্ড্রয়েড</string>
+    <string name="status_bar_logo_style_apple">আপেল</string>
+    <string name="status_bar_logo_style_batman">ব্যাটম্যান</string>
+    <string name="status_bar_logo_style_biohazard">বায়োহাজার্ড</string>
+    <string name="status_bar_logo_style_emoticon_cool">ইমোটিকন কুল</string>
+    <string name="status_bar_logo_style_emoticon_devil">ইমোটিকন ডেভিল</string>
+    <string name="status_bar_logo_style_heart">হৃদয়</string>
+    <string name="status_bar_logo_style_superman">সুপারম্যান</string>
+    <string name="status_bar_logo_style_windows">উইন্ডোজ</string>
+    <string name="status_bar_logo_style_ghost">ভূত</string>
+    <string name="status_bar_logo_style_ninja">নিঞ্জা</string>
+    <string name="status_bar_logo_style_robot">রোবট</string>
+    <string name="status_bar_logo_style_flash">ফ্ল্যাশ</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">কাস্টম রং</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="custom_carrier_label_title">কাস্টম ক্যারিয়ার লেবেল</string>
+    <string name="never">কখনও না</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">রঙিন আইকন দেখাবে</string>
+    <string name="status_bar_colored_icons_summary">স্ট্যাটাসবারে বিজ্ঞপ্তি আইকনগুলির জন্য সঠিক অ্যাপ আইকন ব্যবহার করুন</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">সুরক্ষিত লকস্ক্রিন</string>
+    <string name="advanced_reboot_secured_summary">সুরক্ষিত লকস্ক্রিনে উন্নত রিস্টার্ট অপশন প্রদর্শন করুন</string>
+</resources>

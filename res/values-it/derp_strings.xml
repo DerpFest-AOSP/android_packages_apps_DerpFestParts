@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_summary">Mostra un logo personalizzato a sinistra o a destra della barra di stato</string>
+    <string name="status_bar_logo_position_title">Posizione logo</string>
+    <string name="status_bar_logo_position_right">Destra</string>
+    <string name="status_bar_logo_position_left">Sinistra</string>
+    <string name="status_bar_logo_style_title">Stile logo</string>
+    <string name="status_bar_logo_style_alien">Alieno</string>
+    <string name="status_bar_logo_style_batman_tdk">Batman Il Cavaliere Oscuro</string>
+    <string name="status_bar_logo_style_beats">Battiti</string>
+    <string name="status_bar_logo_style_emoticon_devil">Emoticon diavolo</string>
+    <string name="status_bar_logo_style_fire">Fiamma</string>
+    <string name="status_bar_logo_style_heart">Cuore</string>
+    <string name="status_bar_logo_style_pacman">Pac-Man</string>
+    <string name="status_bar_logo_style_ghost">Fantasma</string>
+    <string name="status_bar_logo_style_flash">Fulmine</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Colore personalizzato</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="custom_carrier_label_title">Etichetta operatore personalizzata</string>
+    <string name="never">Mai</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="outline">Contorno</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Icone colorate</string>
+    <string name="status_bar_colored_icons_summary">Usa icone app appropriate per le icone delle notifiche nella barra di stato</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Schermata di blocco sicura</string>
+    <string name="advanced_reboot_secured_summary">Mostra le opzioni di riavvio avanzate nella schermata di blocco sicura</string>
+</resources>

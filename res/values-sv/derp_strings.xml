@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_title">Logotyp</string>
+    <string name="status_bar_logo_summary">Visa en egen logotyp till vänster eller höger i statusfältet</string>
+    <string name="status_bar_logo_position_title">Position på logotyp</string>
+    <string name="status_bar_logo_position_right">Höger</string>
+    <string name="status_bar_logo_position_left">Vänster</string>
+    <string name="status_bar_logo_style_title">Stil på logotyp</string>
+    <string name="status_bar_logo_style_alien">Utomjordisk</string>
+    <string name="status_bar_logo_style_biohazard">Biologisk kontamination</string>
+    <string name="status_bar_logo_style_emoticon_cool">Cool känsloikon</string>
+    <string name="status_bar_logo_style_emoticon_devil">Ond känsloikon</string>
+    <string name="status_bar_logo_style_fire">Eld</string>
+    <string name="status_bar_logo_style_heart">Hjärta</string>
+    <string name="status_bar_logo_style_superman">Stålmannen</string>
+    <string name="status_bar_logo_style_ghost">Spöke</string>
+    <string name="status_bar_logo_style_flash">Blixt</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Anpassad färg</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="custom_carrier_label_title">Anpassad operatörsetikett</string>
+    <string name="never">Aldrig</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="outline">Kontur</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Färgade ikoner</string>
+    <string name="status_bar_colored_icons_summary">Använd korrekta applikationsikoner som aviseringsikoner i statusfältet</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Skyddad låsskärm</string>
+    <string name="advanced_reboot_secured_summary">Visa avancerade alternativ för omstart på skyddad låsskärm</string>
+</resources>

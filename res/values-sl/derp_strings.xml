@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_title">Logotip</string>
+    <string name="status_bar_logo_summary">Prikažite logotip po meri na levi ali desni strani vrstice stanja</string>
+    <string name="status_bar_logo_position_title">Položaj logotipa</string>
+    <string name="status_bar_logo_position_right">Desno</string>
+    <string name="status_bar_logo_position_left">Levo</string>
+    <string name="status_bar_logo_style_title">Slog logotipa</string>
+    <string name="status_bar_logo_style_alien">Vesoljec</string>
+    <string name="status_bar_logo_style_avengers">Maščevalci</string>
+    <string name="status_bar_logo_style_beats">Ritem</string>
+    <string name="status_bar_logo_style_biohazard">Biološka nevarnost</string>
+    <string name="status_bar_logo_style_cannabis">Konoplja</string>
+    <string name="status_bar_logo_style_emoticon_cool">Kul smeško</string>
+    <string name="status_bar_logo_style_emoticon_devil">Hudič smeško</string>
+    <string name="status_bar_logo_style_fire">Ogenj</string>
+    <string name="status_bar_logo_style_heart">Srce</string>
+    <string name="status_bar_logo_style_ghost">Duh</string>
+    <string name="status_bar_logo_style_captain_america">Stotnik Amerika</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Barva po meri</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="never">Nikoli</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="outline">Obroba</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Barvne ikone</string>
+    <string name="status_bar_colored_icons_summary">Uporabi pravilne ikone za ikone obvestil v vrstici stanja</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Varni zaklenjen zaslon</string>
+    <string name="advanced_reboot_secured_summary">Prikaži napredne možnosti vnovičnega zagona na varnem zaklenjenem zaslonu</string>
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_summary">Kuva kohandatud logo olekuribast vasakul või paremal</string>
+    <string name="status_bar_logo_position_title">Logo asukoht</string>
+    <string name="status_bar_logo_position_right">Paremal</string>
+    <string name="status_bar_logo_position_left">Vasakul</string>
+    <string name="status_bar_logo_style_title">Logo stiil</string>
+    <string name="status_bar_logo_style_alien">Tulnukas</string>
+    <string name="status_bar_logo_style_avengers">Tasujad</string>
+    <string name="status_bar_logo_style_batman_tdk">Batman: Pimeduse rüütel</string>
+    <string name="status_bar_logo_style_biohazard">Bioloogiline oht</string>
+    <string name="status_bar_logo_style_cannabis">Kanep</string>
+    <string name="status_bar_logo_style_emoticon_cool">Lahe emotikon</string>
+    <string name="status_bar_logo_style_emoticon_devil">Saatan emotikon</string>
+    <string name="status_bar_logo_style_fire">Tuli</string>
+    <string name="status_bar_logo_style_heart">Süda</string>
+    <string name="status_bar_logo_style_pacman">Pac-Man</string>
+    <string name="status_bar_logo_style_spiderman">Ämblikmees</string>
+    <string name="status_bar_logo_style_ghost">Kummitus</string>
+    <string name="status_bar_logo_style_ironman">Raudmees</string>
+    <string name="status_bar_logo_style_captain_america">Kapten Ameerika</string>
+    <string name="status_bar_logo_style_flash">Välk</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Kohandatud värv</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="custom_carrier_label_title">Kohandatud operaatori nimi</string>
+    <string name="never">Mitte kunagi</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="outline">Kontuur</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Värvilised ikoonid</string>
+    <string name="status_bar_colored_icons_summary">Kuva õigeid rakenduse ikoone olekuriba teavituste ikoonidena</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Turvatud lukustuskuva</string>
+    <string name="advanced_reboot_secured_summary">Kuva täpsemaid taaskäivitusvalikuid turvatud lukustuskuval</string>
+</resources>

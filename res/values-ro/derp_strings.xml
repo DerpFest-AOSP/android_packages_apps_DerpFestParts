@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_summary">Afișează o siglă personalizată pe partea stângă sau dreaptă a barei de stare</string>
+    <string name="status_bar_logo_position_title">Pozitie logo</string>
+    <string name="status_bar_logo_position_right">Drepta</string>
+    <string name="status_bar_logo_position_left">Stânga</string>
+    <string name="status_bar_logo_style_title">Stil logo</string>
+    <string name="status_bar_logo_style_alien">Extraterestru</string>
+    <string name="status_bar_logo_style_avengers">Răzbunători</string>
+    <string name="status_bar_logo_style_batman_tdk">Batman Cavalerul Întunecat</string>
+    <string name="status_bar_logo_style_beats">Bătăi</string>
+    <string name="status_bar_logo_style_biohazard">Risc biologic</string>
+    <string name="status_bar_logo_style_cannabis">Canabis</string>
+    <string name="status_bar_logo_style_emoticon_devil">Emoticon drăcușor</string>
+    <string name="status_bar_logo_style_fire">Foc</string>
+    <string name="status_bar_logo_style_heart">Inimă</string>
+    <string name="status_bar_logo_style_ghost">Fantomă</string>
+    <string name="status_bar_logo_style_ironman">Omul de fier</string>
+    <string name="status_bar_logo_style_captain_america">Căpitanul America</string>
+    <string name="status_bar_logo_style_flash">Bliț</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Culoare personalizată</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="status_bar_carrier_category_title">Etichetă operator</string>
+    <string name="lockscreen_show_carrier_title">Arată eticheta operatorului</string>
+    <string name="carrier_show_lockscreen_only">Numai ecranul de blocare</string>
+    <string name="carrier_show_statusbar_only">Doar bara de stare</string>
+    <string name="carrier_show_both">Ecran de blocare &amp; bară de stare</string>
+    <string name="custom_carrier_label_title">Eticheta operatorului particularizată</string>
+    <string name="custom_carrier_label_summary">Atingeți pentru a seta o etichetă personalizată a operatorului</string>
+    <string name="custom_carrier_label_dialog_message">Înlocuiți eticheta operatorului cu un text personalizat. Lăsați gol pentru a utiliza eticheta reală a transportatorului.</string>
+    <string name="never">Niciodată</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="statusbar_clock_chip_title">Fundal cip ceas</string>
+    <string name="statusbar_clock_chip_summary">Selectaţi un cip de fundal personalizat în spatele ceasului</string>
+    <string name="solid_accent">Culoare solidă de accent</string>
+    <string name="outline">Contur</string>
+    <string name="solid_accent_gradient">Gradient accentuat de culoare solidă</string>
+    <string name="solid_gradient">Gradient solid lateral</string>
+    <string name="solid_gradient_corner">Accent solid gradient ascuțit</string>
+    <string name="solid_gradient_void">Gradient anulat</string>
+    <string name="solid_gradient_neumorph">Gradient Neumorph</string>
+    <string name="solid_gradient_stroke">Contur gradient ascuțit</string>
+    <string name="solid_accent_transperent">Accent transparent</string>
+    <string name="solid_gradient_light">Gradient luminos</string>
+    <string name="solid_gradient_shape">Colț gradient ascuțit</string>
+    <string name="solid_gradient_void_light">Gradient vid luminos</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Pictograme colorate</string>
+    <string name="status_bar_colored_icons_summary">Utilizați pictogramele aplicației corecte pentru pictogramele de notificare din bara de stare</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Ecran de blocare securizat</string>
+    <string name="advanced_reboot_secured_summary">Afișează opțiuni avansate de repornire pe ecranul de blocare securizat</string>
+</resources>

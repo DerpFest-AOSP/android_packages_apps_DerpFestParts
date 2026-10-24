@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_title">آرم</string>
+    <string name="status_bar_logo_position_title">موقعیت آرم</string>
+    <string name="status_bar_logo_position_right">راست</string>
+    <string name="status_bar_logo_position_left">چپ</string>
+    <string name="status_bar_logo_style_title">سبک آرم</string>
+    <string name="status_bar_logo_style_android">اندروید</string>
+    <string name="status_bar_logo_style_batman">بتمن</string>
+    <string name="status_bar_logo_style_biohazard">خطر زیستی</string>
+    <string name="status_bar_logo_style_emoticon_cool">شکلک باحال</string>
+    <string name="status_bar_logo_style_emoticon_devil">شکلک شیطان</string>
+    <string name="status_bar_logo_style_fire">آتش</string>
+    <string name="status_bar_logo_style_heart">قلب</string>
+    <string name="status_bar_logo_style_superman">سوپرمن</string>
+    <string name="status_bar_logo_style_windows">ویندوز</string>
+    <string name="status_bar_logo_style_ghost">روح</string>
+    <string name="status_bar_logo_style_ninja">نینجا</string>
+    <string name="status_bar_logo_style_robot">ربات</string>
+    <string name="status_bar_logo_style_ironman">مرد آهنی</string>
+    <string name="status_bar_logo_style_captain_america">کاپیتان آمریکایی</string>
+    <string name="status_bar_logo_style_flash">فلاش</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">رنگ سفارشی</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="status_bar_carrier_category_title">نام سرویس دهنده</string>
+    <string name="lockscreen_show_carrier_title">نمایش نام سرویس دهنده</string>
+    <string name="carrier_show_lockscreen_only">فقط قفل صفحه</string>
+    <string name="carrier_show_statusbar_only">فقط نوار اعلان</string>
+    <string name="carrier_show_both">صفحه قفل &amp; نوار وضعیت</string>
+    <string name="custom_carrier_label_title">برچسب حامل سفارشی</string>
+    <string name="custom_carrier_label_summary">برای تنظیم نام سرویس دهنده سفارشی ضربه بزنید</string>
+    <string name="custom_carrier_label_dialog_message">نام سرویس دهنده را با متن دلخواه جایگزین کنید. برای استفاده از اسم اصلی، خالی بگذارید.</string>
+    <string name="never">هرگز</string>
+
+    <!-- Statusbar clock background chip -->
+    <string name="statusbar_clock_chip_title">تراشه پس زمینه ساعت</string>
+    <string name="statusbar_clock_chip_summary">تراشه پس‌زمینه سفارشی را پشت ساعت انتخاب کنید</string>
+    <string name="solid_accent">لهجه تک رنگ</string>
+    <string name="outline">طرح کلی</string>
+    <string name="solid_accent_gradient">گرادیان تاکیدی رنگ ثابت</string>
+    <string name="solid_gradient">سمت گرادیان ثابت</string>
+    <string name="solid_gradient_corner">شیب لهجه گرادیان جامد تیز</string>
+    <string name="solid_gradient_void">گرادیان خالی</string>
+    <string name="solid_gradient_neumorph">گرادیان نئومورف</string>
+    <string name="solid_gradient_stroke">خط گرادیانی تیز</string>
+    <string name="solid_accent_transperent">لهجه شفاف</string>
+    <string name="solid_gradient_light">گرادیان روشن</string>
+    <string name="solid_gradient_shape">گوشه گرادیانی تیز</string>
+    <string name="solid_gradient_void_light">نور گرادیانی توخالی</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">آیکون‌های رنگی</string>
+    <string name="status_bar_colored_icons_summary">از آیکون های برنامه مطبوع برای آیکون های اعلان در نوار وضعیت استفاده کنید</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">قفل صفجه محافظت شده</string>
+    <string name="advanced_reboot_secured_summary">نمایش گزینه های شروع مجدد پیشرفته بر روی صفحه قفل محافظت شده</string>
+</resources>

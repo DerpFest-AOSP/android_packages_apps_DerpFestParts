@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_title">Logotip</string>
+    <string name="status_bar_logo_summary">Mostra un logotip personalitzat a la part dreta o esquerra de la barra d\'estat</string>
+    <string name="status_bar_logo_position_title">Posició del logotip</string>
+    <string name="status_bar_logo_position_right">Dreta</string>
+    <string name="status_bar_logo_position_left">Esquerra</string>
+    <string name="status_bar_logo_style_title">Estil del logotip</string>
+    <string name="status_bar_logo_style_alien">Alienígena</string>
+    <string name="status_bar_logo_style_avengers">Venjadors</string>
+    <string name="status_bar_logo_style_batman_tdk">Batman: El cavaller fosc</string>
+    <string name="status_bar_logo_style_cannabis">Cànnabis</string>
+    <string name="status_bar_logo_style_emoticon_cool">Emoticona guai</string>
+    <string name="status_bar_logo_style_emoticon_devil">Emoticona dimoni</string>
+    <string name="status_bar_logo_style_fire">Foc</string>
+    <string name="status_bar_logo_style_heart">Cor</string>
+    <string name="status_bar_logo_style_pacman">Pac-Man</string>
+    <string name="status_bar_logo_style_ghost">Fantasma</string>
+    <string name="status_bar_logo_style_captain_america">Capità Amèrica</string>
+    <string name="status_bar_logo_style_flash">Flaix</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Color personalitzat</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="never">Mai</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Icones de colors</string>
+    <string name="status_bar_colored_icons_summary">Usar icones d\'aplicacions reals per a notificacions de la barra d\'estat</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Pantalla de bloqueig segura</string>
+    <string name="advanced_reboot_secured_summary">Mostrar opcions de reinici avançades quan la pantalla de bloqueig sigui segura</string>
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_title">Loqo</string>
+    <string name="status_bar_logo_summary">Vəziyyət panelinin solunda və ya sağında fərdi loqo göstərin</string>
+    <string name="status_bar_logo_position_title">Loqo məkanı</string>
+    <string name="status_bar_logo_position_right">Sağ</string>
+    <string name="status_bar_logo_position_left">Sol</string>
+    <string name="status_bar_logo_style_title">Loqo görünüşü</string>
+    <string name="status_bar_logo_style_flash">Flaş</string>
+
+    <!-- Status bar - Icon tinting -->
+    <string name="status_bar_icon_tint_custom">Xüsusi rəng</string>
+
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="custom_carrier_label_title">Xüsusi operator paneli</string>
+    <string name="never">Heç vaxt</string>
+
+    <!-- Status bar colored notification icons -->
+    <string name="status_bar_colored_icons_title">Rəngli Nişanlar</string>
+    <string name="status_bar_colored_icons_summary">Status Panelində bildiriş nişanları üçün müvafiq proqram nişanlarından istifadə edin</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_secured_title">Təhlükəsiz kilid ekranı</string>
+    <string name="advanced_reboot_secured_summary">Qabaqcıl yenidən başlatma seçimlərini təhlükəsiz kilid ekranında göstərin</string>
+</resources>
