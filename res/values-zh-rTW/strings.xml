@@ -209,6 +209,8 @@
     <string name="hardware_keys_action_notifications_panel">切換通知面板</string>
     <string name="hardware_keys_action_expand_qs_panel">展開快速設定面板</string>
     <string name="hardware_keys_action_ringer_modes">切換鈴聲模式</string>
+    <string name="hardware_keys_action_partial_screenshot">局部截圖</string>
+    <string name="hardware_keys_action_cycle_ringer_mode">循環切換鈴聲模式</string>
     <string name="camera_sleep_on_release_title">螢幕顯示 (Screen peek)</string>
     <string name="camera_sleep_on_release_summary">半按按鍵時螢幕保持開啟，僅在按住期間有效</string>
     <string name="camera_launch_title">啟動相機</string>

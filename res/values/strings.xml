@@ -209,7 +209,8 @@
     <string name="hardware_keys_action_notifications_panel">Toggle notifications panel</string>
     <string name="hardware_keys_action_expand_qs_panel">Expand QS panel</string>
     <string name="hardware_keys_action_ringer_modes">Change ringer mode</string>
-    <string name="hardware_keys_action_partial_screenshot" translatable="false">Partial screenshot</string>
+    <string name="hardware_keys_action_partial_screenshot">Partial screenshot</string>
+    <string name="hardware_keys_action_cycle_ringer_mode">Cycle ringer mode</string>
     <string name="camera_sleep_on_release_title">Screen peek</string>
     <string name="camera_sleep_on_release_summary">A half press will keep the screen on only while the button is held down</string>
     <string name="camera_launch_title">Launch camera</string>
