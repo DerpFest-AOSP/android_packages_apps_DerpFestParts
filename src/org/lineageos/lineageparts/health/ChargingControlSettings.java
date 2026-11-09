@@ -14,6 +14,7 @@ import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.ArraySet;
 import android.view.Menu;
@@ -104,18 +105,31 @@ public class ChargingControlSettings extends SettingsPreferenceFragment implemen
 
         refreshValues();
 
-        watch(LineageSettings.System.getUriFor(LineageSettings.System.CHARGING_CONTROL_ENABLED));
+        watch(LineageSettings.System.getUriFor(LineageSettings.System.CHARGING_CONTROL_ENABLED),
+                LineageSettings.System.getUriFor(
+                        LineageSettings.System.CHARGING_CONTROL_CANCELLED_ONCE));
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        refreshUi();
+        refreshValues();
+    }
+
+    @Override
+    public void onSettingsChanged(Uri contentUri) {
+        super.onSettingsChanged(contentUri);
+        refreshValues();
     }
 
     private void refreshValues() {
+        final boolean isCancelledOnce = LineageSettings.System.getInt(
+                getContentResolver(),
+                LineageSettings.System.CHARGING_CONTROL_CANCELLED_ONCE, 0) != 0;
         if (mChargingControlEnabledPref != null) {
             mChargingControlEnabledPref.setChecked(mHealthInterface.getEnabled());
+            mChargingControlEnabledPref.setSummary(isCancelledOnce
+                    ? getText(R.string.charging_control_cancelled_once_summary) : null);
         }
 
         if (mChargingControlModePref != null) {
@@ -125,16 +139,33 @@ public class ChargingControlSettings extends SettingsPreferenceFragment implemen
         }
 
         if (mChargingControlStartTimePref != null) {
-            updateStartTime(LocalTime.ofSecondOfDay(mHealthInterface.getStartTime()));
+            updateStartTimeSummary(LocalTime.ofSecondOfDay(mHealthInterface.getStartTime()));
         }
 
         if (mChargingControlTargetTimePref != null) {
-            updateTargetTime(LocalTime.ofSecondOfDay(mHealthInterface.getTargetTime()));
+            updateTargetTimeSummary(LocalTime.ofSecondOfDay(mHealthInterface.getTargetTime()));
         }
 
         if (mChargingControlLimitPref != null) {
             mChargingControlLimitPref.setValue(
                     mChargingControlLimitPref.getSetting());
+        }
+
+        setChargingControlPreferencesEnabled(!isCancelledOnce);
+    }
+
+    private void setChargingControlPreferencesEnabled(boolean enabled) {
+        if (mChargingControlModePref != null) {
+            mChargingControlModePref.setEnabled(enabled);
+        }
+        if (mChargingControlStartTimePref != null) {
+            mChargingControlStartTimePref.setEnabled(enabled);
+        }
+        if (mChargingControlTargetTimePref != null) {
+            mChargingControlTargetTimePref.setEnabled(enabled);
+        }
+        if (mChargingControlLimitPref != null) {
+            mChargingControlLimitPref.setEnabled(enabled);
         }
     }
 
@@ -252,6 +283,10 @@ public class ChargingControlSettings extends SettingsPreferenceFragment implemen
 
     private void updateStartTime(final LocalTime time) {
         mHealthInterface.setStartTime(time.toSecondOfDay());
+        updateStartTimeSummary(time);
+    }
+
+    private void updateStartTimeSummary(final LocalTime time) {
         mChargingControlStartTimePref.setSummary(
                 String.format(getContext().getString(R.string.charging_control_start_time_summary),
                 time.format(mFormatter)));
@@ -259,6 +294,10 @@ public class ChargingControlSettings extends SettingsPreferenceFragment implemen
 
     private void updateTargetTime(final LocalTime time) {
         mHealthInterface.setTargetTime(time.toSecondOfDay());
+        updateTargetTimeSummary(time);
+    }
+
+    private void updateTargetTimeSummary(final LocalTime time) {
         mChargingControlTargetTimePref.setSummary(
                 String.format(getContext().getString(R.string.charging_control_target_time_summary),
                 time.format(mFormatter)));

@@ -71,6 +71,7 @@
     <!-- Charging control settings -->
     <string name="charging_control_title">Charging control</string>
     <string name="charging_control_enable_title">Enable charging control</string>
+    <string name="charging_control_cancelled_once_summary">Charging control is disabled for the current session</string>
     <string name="charging_control_mode_title">Charging mode</string>
     <string name="charging_control_mode_auto_title">Automatic schedule</string>
     <string name="charging_control_mode_auto_summary">Automatically determine when to start charging based on alarms set</string>
