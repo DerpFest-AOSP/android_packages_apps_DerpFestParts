@@ -79,6 +79,8 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements S
             LineageSettings.System.getUriFor(LineageSettings.System.DISPLAY_TEMPERATURE_NIGHT);
     private final Uri DISPLAY_TEMPERATURE_MODE_URI =
             LineageSettings.System.getUriFor(LineageSettings.System.DISPLAY_TEMPERATURE_MODE);
+    private final Uri DISPLAY_READING_MODE_URI =
+            LineageSettings.System.getUriFor(LineageSettings.System.DISPLAY_READING_MODE);
 
     private ListPreference mLiveDisplay;
 
@@ -227,7 +229,8 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements S
         updateTemperatureSummary();
         updateReadingModeStatus();
         SettingsHelper.get(getActivity()).startWatching(this, DISPLAY_TEMPERATURE_DAY_URI,
-                DISPLAY_TEMPERATURE_MODE_URI, DISPLAY_TEMPERATURE_NIGHT_URI);
+                DISPLAY_TEMPERATURE_MODE_URI, DISPLAY_TEMPERATURE_NIGHT_URI,
+                DISPLAY_READING_MODE_URI);
     }
 
     @Override
@@ -267,9 +270,17 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements S
 
     private void updateReadingModeStatus() {
         if (mReadingMode != null) {
-            mReadingMode.setChecked(
-                    mHardware.get(LineageHardwareManager.FEATURE_READING_ENHANCEMENT));
+            mReadingMode.setChecked(isReadingModeEnabled());
         }
+    }
+
+    private boolean isReadingModeEnabled() {
+        if (LineageSettings.System.getString(getContentResolver(),
+                LineageSettings.System.DISPLAY_READING_MODE) == null) {
+            return mHardware.get(LineageHardwareManager.FEATURE_READING_ENHANCEMENT);
+        }
+        return LineageSettings.System.getInt(getContentResolver(),
+                LineageSettings.System.DISPLAY_READING_MODE, 0) != 0;
     }
 
     @Override
