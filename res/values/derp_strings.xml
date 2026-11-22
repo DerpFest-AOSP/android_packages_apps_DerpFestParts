@@ -81,6 +81,18 @@
     <string name="status_bar_lyric_summary">Translation, language, and lyric sources</string>
     <string name="status_bar_ticker_title">Status bar ticker</string>
     <string name="status_bar_ticker_summary">Show lyrics in the status bar</string>
+
+    <!-- Internet speed indicator -->
+    <string name="network_speed_settings_title">Internet speed</string>
+    <string name="network_speed_settings_summary">Show the current network speed in the status bar</string>
+    <string name="network_speed_settings_summary_hidden">Off</string>
+    <string name="network_speed_settings_summary_always">Shown while connected</string>
+    <string name="network_speed_settings_summary_threshold">Hidden at or below %1$d KB/s</string>
+    <string name="network_speed_switch_title">Show internet speed</string>
+    <string name="network_speed_switch_summary">Display the combined upload and download speed</string>
+    <string name="network_speed_threshold_title">Hide below</string>
+    <string name="network_speed_threshold_summary">Keep the indicator hidden until the combined speed is above this value. 0 shows it whenever a network is connected.</string>
+    <string name="network_speed_threshold_units">" KB/s"</string>
     <string name="status_bar_show_lyric_title">Enable status bar lyric</string>
     <string name="status_bar_lyric_section_translation">Translation</string>
     <string name="status_bar_lyric_section_ticker">Status bar ticker</string>

@@ -59,6 +59,8 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
     private static final String CARRIER_NAME = "lockscreen_show_carrier";
     private static final String CUSTOM_CARRIER_LABEL = "lockscreen_show_custom_carrier_text";
 
+    private static final String NETWORK_SPEED_SETTINGS = "network_speed_settings";
+
     private static final String STATUSBAR_ICON_TINT_MODE = "statusbar_icon_tint_mode";
     private static final String STATUSBAR_ICON_TINT_CUSTOM_COLOR = "statusbar_icon_tint_custom_color";
     /** @see android.provider.Settings.System#TINT_STATUSBAR_ICONS_WITH_ACCENT */
@@ -209,6 +211,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
 
         updateStatusBarIconTintCustomColorEnabled();
         updateCustomCarrierTextSummary();
+        updateNetworkSpeedSummary();
 
         final String curIconBlacklist = Settings.Secure.getString(getContext().getContentResolver(),
                 ICON_BLACKLIST);
@@ -320,6 +323,28 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
                 requireActivity().getContentResolver(),
                 CARRIER_NAME, 1, UserHandle.USER_CURRENT);
         updateCustomCarrierLabelEnabled(showCarrier);
+    }
+
+    private void updateNetworkSpeedSummary() {
+        Preference pref = findPreference(NETWORK_SPEED_SETTINGS);
+        if (pref == null || getContext() == null) {
+            return;
+        }
+        ContentResolver resolver = getContext().getContentResolver();
+        boolean enabled = Settings.Secure.getInt(resolver,
+                Settings.Secure.STATUS_BAR_SHOW_NETWORK_SPEED, 1) != 0;
+        if (!enabled) {
+            pref.setSummary(R.string.network_speed_settings_summary_hidden);
+            return;
+        }
+        int thresholdKb = Settings.Secure.getInt(resolver,
+                Settings.Secure.STATUS_BAR_NETWORK_SPEED_THRESHOLD, 1);
+        if (thresholdKb <= 0) {
+            pref.setSummary(R.string.network_speed_settings_summary_always);
+        } else {
+            pref.setSummary(getString(
+                    R.string.network_speed_settings_summary_threshold, thresholdKb));
+        }
     }
 
     private void updateCustomCarrierLabelEnabled(int showCarrier) {

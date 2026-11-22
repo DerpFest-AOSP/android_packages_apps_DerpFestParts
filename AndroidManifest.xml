@@ -238,6 +238,18 @@
             </intent-filter>
         </activity-alias>
 
+        <!-- Status bar internet speed indicator -->
+        <activity-alias
+            android:name=".statusbar.NetworkSpeedSettings"
+            android:exported="true"
+            android:label="@string/network_speed_settings_title"
+            android:targetActivity="PartsActivity">
+            <intent-filter>
+                <action android:name="org.lineageos.lineageparts.NETWORK_SPEED_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity-alias>
+
         <!-- Status bar settings (System category) -->
         <activity-alias
             android:name=".statusbar.StatusBarSettings"

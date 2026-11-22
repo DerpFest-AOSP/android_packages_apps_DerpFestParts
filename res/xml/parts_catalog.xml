@@ -69,6 +69,12 @@
           android:fragment="org.lineageos.lineageparts.statusbar.StatusbarTickerSettings"
           lineage:xmlRes="@xml/status_bar_ticker_settings" />
 
+    <part android:key="network_speed_settings"
+          android:title="@string/network_speed_settings_title"
+          android:summary="@string/network_speed_settings_summary"
+          android:fragment="org.lineageos.lineageparts.statusbar.NetworkSpeedSettings"
+          lineage:xmlRes="@xml/network_speed_settings" />
+
     <part android:key="power_menu"
           android:title="@string/power_menu_title"
           android:fragment="org.lineageos.lineageparts.input.PowerMenuActions"
